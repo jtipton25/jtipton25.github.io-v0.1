@@ -1,7 +1,7 @@
 ---
-title: "moving from for to foreach"
-author: "Henry Scharf"
-date: "December 18, 2014"
+title: "moving from for to snowfall"
+author: "Henry Scharf, edited to snowfall by John Tipton"
+date: "May 6, 2014"
 output:
   pdf_document:
     keep_tex: yes
@@ -68,13 +68,13 @@ In contrast, some sequential or <span class = 'eleven'>**non-parallel**</span> p
 
 
 ## why snowfall?
-We would like to find a way to make use of our whole computer, and make valuable tasks like bootstrapping available, but without having to invest large amounts of time in learning new programming languages. Enter `foreach`, which keeps the structure of a for loop, but allows us to drop two key assumptions: 
+We would like to find a way to make use of our whole computer, and make valuable tasks like bootstrapping available, but without having to invest large amounts of time in learning new programming languages. Enter `snowfall`, which keeps the structure of a for loop, but allows us to drop two key assumptions: 
 
 - sequentiality
 - single processor architecture
 
 <span class = 'ten'>**Our goal**</span>: 
-We will begin with a simple chunk of R code involving a for loop and transform it into a `foreach` loop. Along the way, we'll take a look at the equivalent computation done with an `apply()` function, and see that using `foreach` and multiple processors outperforms this.
+We will begin with a simple chunk of R code involving a for loop and transform it into a `snowfall` loop. Along the way, we'll take a look at the equivalent computation done with an `apply()` function, and see that using `snowfall` and multiple processors outperforms this.
 
 # example: data and research question
 We are going to look at data from the New York City bikeshare program [Citibike](https://www.citibikenyc.com/). 
@@ -88,11 +88,11 @@ One of the costliest parts of operating a bike share program comes from the fini
 We want to find a model which can offer good prediction, with the hope that this will inform our plans for future station locations/sizes. For this example, we start with a few plausible models and use K-fold cross validation to decide which one to use.
 
 ## locations of our 7 sites
-![locations](../fig/map_top7.png)
+![locations](./fig/map_top7.png)
 
 ****
 ## data
-![data](../fig/top7_average_day.png)
+![data](./fig/top7_average_day.png)
 
 ****
 # fitting GLMs and extracting prediction error
@@ -153,12 +153,12 @@ get.errs <- function(test.set = NULL,
 ```
 
 The fits using all the data look like:
-![fit.all](../fig/fit_all.png)
+![fit.all](./fig/fit_all.png)
 
 <!--
-<img src="../fig/predictions_sml.png">
-<img src="../fig/predictions_med.png">
-<img src="../fig/predictions_big.png">
+<img src="./fig/predictions_sml.png">
+<img src="./fig/predictions_med.png">
+<img src="./fig/predictions_big.png">
 -->
 
 ## K-fold CV with a for loop
@@ -193,8 +193,8 @@ system.time(
 Neither of the first two methods take advantage of multiple processors. While the `apply()` functions avoid the inherently sluggish nature of for loops in `R`, they are still ignorant of the processor structure. We want to chop the job into halves, fourths, etc. and use the _whole_ computer!
 
 
-## K-fold CV with a foreach loop
-Here is the same computation written with a `foreach` loop
+## K-fold CV with a snowfall loop
+Here is the same computation written with a `snowfall` loop
 ```{r snowfall, eval = TRUE}
 
 ## Define a wrapper function
