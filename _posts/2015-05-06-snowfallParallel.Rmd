@@ -210,6 +210,8 @@ library(rlecuyer)
 cps=detectCores()
 ## Initalize multicore 
 sfInit(parallel=TRUE, cpus=cps)
+## Setup random number generator on the cluster
+sfClusterSetupRNG()
 # export global variables
 sfExportAll()
 # export library
