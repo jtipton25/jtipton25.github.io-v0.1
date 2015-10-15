@@ -1,8 +1,0 @@
-# ggplot examples
-
-```{r}
-library(ggplot2)
-movies=movies[sample(nrow(movies), 1000), ]
-str(movies)
-ggplot(movies, aes(x=rating)) + geom_density() + facet_grid(Action ~ Comedy)
-```
