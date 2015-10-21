@@ -12,7 +12,7 @@ if(!grepl(".Rmd", filename)) {
 
 # Knit and place in _posts.
 dir = paste0("../_posts/", Sys.Date(), "-")
-output = paste0(dir, sub('.Rmd', '.markdown', filename))
+output = paste0(dir, sub('.Rmd', '.md', filename))
 knit(filename, output)
 
 # Copy .png files to the images directory.
