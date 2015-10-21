@@ -3,9 +3,11 @@ title: The posterior
 email: jtipton25@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Here I will post commonly used code examples and statistical problems 
+  
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jtipton25.github.io" # the base hostname & protocol for your site
 github_username:  jtipton25
 
 # Build settings
 markdown: kramdown
+highlighter: pygments
