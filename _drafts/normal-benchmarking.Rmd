@@ -8,6 +8,8 @@ library(microbenchmark)
 library(mvtnorm)
 library(mvnfast)
 source('~/functions/rMVN.R')
+library(knitr)
+opts_chunk$set(cache=TRUE)
 ```
 
 ## Simulate data

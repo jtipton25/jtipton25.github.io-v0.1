@@ -24,11 +24,7 @@ output:
 - references
 -->
 
-```{r setup, include=FALSE}
-# set global chunk options
-library(knitr)
-opts_chunk$set(cache=TRUE)
-```
+
 
 <!--
 <span class='one'>class one</span>
@@ -99,7 +95,8 @@ We want to find a model which can offer good prediction, with the hope that this
 We are considering three increasingly complex models of the arrival behavior. In order to compare three candidate models' prediction error, we'll use K-fold cross validation, where we use the same folds for all three models. 
 
 First, we the load the data and make our K-fold test sets (and implicitly, our training sets):
-```{r CV_test_sets}
+
+```r
 load(url("http://www.stat.colostate.edu/~scharfh/CSP_parallel/data/arrivals_subset.RData"))
 K <- 50
 N <- dim(arrivals.sub)[1]
@@ -111,7 +108,8 @@ cv.test.sets <- matrix(sample((1:N)[-discarded], size = N - 8), ncol = K)
 ```
 
 Next, we build a function to fit the data to the training sets and extract the corresponding estimate of prediciton error. This should still be familiar code, no new packages yet.
-```{r get_errs, eval=TRUE}
+
+```r
 library(splines)
 lq.loss <- function(y, y.hat, q = 1) {(abs(y - y.hat))^q}
 get.errs <- function(test.set = NULL,
@@ -164,7 +162,8 @@ The fits using all the data look like:
 
 ## K-fold CV with a for loop
 Using a naive for loop, we could implement this as:
-```{r for_loop}
+
+```r
 err.for <- NULL
 system.time(
     for (i in 1:K) {
@@ -175,10 +174,16 @@ system.time(
     )
 ```
 
+```
+##    user  system elapsed 
+##  19.858   1.365  21.253
+```
+
 
 ## K-fold CV with an apply function
 If you're good with `apply()` functions you might upgrade (slightly) to
-```{r sapply, eval = TRUE}
+
+```r
 ## apply version
 system.time(
     err.apply <- sapply(X = 1:K, 
@@ -191,38 +196,19 @@ system.time(
     )
 ```
 
+```
+##    user  system elapsed 
+##  20.172   1.285  21.475
+```
+
 Neither of the first two methods take advantage of multiple processors. While the `apply()` functions avoid the inherently sluggish nature of for loops in `R`, they are still ignorant of the processor structure. We want to chop the job into halves, fourths, etc. and use the _whole_ computer!
 
 
 ## K-fold CV with a snowfall loop
 Here is the same computation written with a `snowfall` loop
-```{r snowfall, eval = TRUE, message=FALSE, include=FALSE}
 
-## Define a wrapper function
-wrapper = function(i){
-  get.errs(test.set = cv.test.sets[, i], discarded = discarded, q = 1)
-}
 
-## snowfall version
-library(snowfall)
-library(parallel)
-library(rlecuyer)
-# ## determines the number of cores on the machine
-cps=detectCores()
-## Initalize multicore 
-sfInit(parallel=TRUE, cpus=cps)
-## Setup random number generator on the cluster
-sfClusterSetupRNG()
-# export global variables
-sfExportAll()
-# export library
-sfLibrary(splines)
-system.time(err.snowfall <- sfSapply(1:K, wrapper))
-## ends snowfall session
-sfStop()
-```
-```{r snowfall2, eval = FALSE, echo=TRUE}
-
+```r
 ## Define a wrapper function
 wrapper = function(i){
   get.errs(test.set = cv.test.sets[, i], discarded = discarded, q = 1)
@@ -250,22 +236,7 @@ sfStop()
 Note that the syntax of snowfall is almost identical to a for loop. The major difference is the need to write a wrapper function that evaluates one iteration of the for loop and the need to set up and export the relevent data, functions, and libraries.
 
 # results
-```{r errs, include = FALSE, echo=FALSE, dev = 'pdf'}
-err <- data.frame(t(err.snowfall))
-names(err) <- c("sml", "med", "big")
-library(RColorBrewer)
-pal <- brewer.pal(n = 3, name = "Dark2")
-plot(density(err$sml), col = pal[1], lwd = 2,
-     main = "distribution of absolute errors",
-     xlab = "size of error",
-     ylab = "density estimate")
-lines(density(err$med), col = pal[2], lwd = 2)
-lines(density(err$big), col = pal[3], lwd = 2)
-legend("topright",
-       legend = c("sml", "med", "big"),
-       lty = 1, lwd = 2,
-       col = pal)
-```
+
 
 <img src = "https://pbs.twimg.com/media/B4AFeZvIgAABsqn.jpg" alt = "parallel puppies">
 
