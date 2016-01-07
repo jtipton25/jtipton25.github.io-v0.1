@@ -1,20 +1,19 @@
-# ggplot examples
+<h1 id="ggplot-examples">ggplot examples</h1>
 
-
-```r
+<p><code>r
 library(ggplot2)
-```
+</code></p>
 
-```
+<p><code>
 ## Loading required package: methods
-```
+</code></p>
 
-```r
+<p><code>r
 movies=movies[sample(nrow(movies), 1000), ]
 str(movies)
-```
+</code></p>
 
-```
+<p><code>
 ## 'data.frame':	1000 obs. of  24 variables:
 ##  $ title      : chr  "Airman's Letter to His Mother, An" "Sexual Intent" "Captain Kidd and the Slave Girl" "Hansel e Gretel" ...
 ##  $ year       : int  1941 1994 1954 1990 1970 1981 1976 1954 2000 1998 ...
@@ -40,10 +39,10 @@ str(movies)
 ##  $ Documentary: int  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ Romance    : int  0 0 0 0 0 0 0 0 0 1 ...
 ##  $ Short      : int  1 0 0 0 0 0 0 1 1 0 ...
-```
+</code></p>
 
-```r
+<p><code>r
 ggplot(movies, aes(x=rating)) + geom_density() + facet_grid(Action ~ Comedy)
-```
+</code></p>
 
-![plot of chunk unnamed-chunk-1](/figure/drafts/2015-09-01-gglpot-commands/unnamed-chunk-1-1.png) 
+<p><img src="/figure/drafts/2015-09-01-gglpot-commands/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1" /></p>

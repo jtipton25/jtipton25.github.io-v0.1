@@ -1,0 +1,31 @@
+<p>One annoyance when using R is the need to re-install packages with each new installation of R. This is a method to avoid this (at least on unix-like systems), but make sure you use the R command</p>
+
+<p><code>r
+update.packages()
+</code>
+regularly. The first step is to make a directory where you plan to install the libraries. I choose the home directory <code>~/</code> and name my directory <code>Rlibs</code>. To do this, open the terminal and type</p>
+
+<p><code>bash
+mkdir ~/Rlibs
+</code>
+Then, go to your home directory (by typing <code>cd</code>) and create a new file (<code>.Renviron</code>) that R will use to set environment variables using emacs by typing</p>
+
+<p><code>bash
+emacs .Renviron
+</code>
+opening the file using the <code>emacs</code> text editor. Then type</p>
+
+<p><code>bash
+R_LIBS=~/Rlibs
+</code>
+to tell R that packages should be installed and loaded from the <code>~/Rlibs</code> directory. To save the <code>.Renviron</code> file, use the emacs command for save</p>
+
+<p><code>bash
+ctrl-x ctrl-s
+</code>
+where, while holding the <code>ctrl</code> key you type <code>x</code> then <code>s</code>. Then exit emacs using</p>
+
+<p><code>bash
+ctrl-x ctrl-c
+</code>
+If at anytime you are unsure, just hit <code>esc</code> a few times to clear out the <code>emacs</code> buffer. Make sure to use <code>update.packages()</code> often in R to keep the libraries up to date.</p>

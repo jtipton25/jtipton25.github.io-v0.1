@@ -1,0 +1,64 @@
+<h1 id="some-example-code-to-parallelize-the-building-of-random-forests">some example code to parallelize the building of random forests</h1>
+
+<h2 id="load-the-required-libraries">load the required libraries</h2>
+
+<p><code>r
+library(knitr)
+opts_chunk$set(cache = TRUE)
+library(randomForest)
+library(parallel)
+library(snowfall)
+library(rlecuyer)
+</code>
+## load the data and set up the model</p>
+
+<p>```r
+## load the data
+theData &lt;- iris</p>
+
+<h1 id="set-the-formula">set the formula</h1>
+<p>theFormula &lt;- as.formula(“Species ~ . “)</p>
+
+<h1 id="total-number-of-trees-in-the-random-forest">total number of trees in the random forest</h1>
+<p>totalTrees &lt;- 500
+```
+## Setup the parallel functions</p>
+
+<h2 id="fit-the-random-forest">Fit the random forest</h2>
+
+<p>```r
+# build the random forests
+allForests &lt;- sfClusterApplyLB(1:threads, parallelRF)</p>
+
+<h1 id="close-the-cluster">Close the cluster</h1>
+<p>sfStop()
+```
+## Process forest output</p>
+
+<p>```r
+# merge all the forests into one object
+myRandomForest &lt;- allForests[[1]]
+for (i in 2:threads) {
+    myRandomForest &lt;- combine(myRandomForest, allForests[[i]])
+}</p>
+
+<h1 id="convince-oursleves-we-have-them-all-combined">convince oursleves we have them all combined</h1>
+<p>myRandomForest$ntree
+```</p>
+
+<p><code>
+## [1] 496
+</code></p>
+
+<p><code>r
+# what is important
+myRandomForest$importance
+</code></p>
+
+<p><code>
+##              MeanDecreaseGini
+## Sepal.Length        10.025435
+## Sepal.Width          2.556842
+## Petal.Length        44.540894
+## Petal.Width         42.111466
+</code></p>

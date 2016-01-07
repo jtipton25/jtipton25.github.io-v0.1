@@ -3,10 +3,7 @@ title: "moving from for to snowfall"
 author: "Henry Scharf, edited to snowfall by John Tipton"
 date: "May 6, 2014"
 output:
-  pdf_document:
-    keep_tex: yes
-    toc: yes
-  html_document:
+  html_document:    
     css: style_rainbow_brewer_11.css
     highlight: tango
     keep_md: yes

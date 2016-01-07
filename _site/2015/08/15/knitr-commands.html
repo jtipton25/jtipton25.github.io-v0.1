@@ -1,0 +1,34 @@
+<h1 id="knitr-commands">Knitr commands</h1>
+<ul>
+  <li>
+    <p>To knit an R markdown document using the command line 
+<code>bash
+&gt; Rscript -e "library(knitr); knit('kernelConvolution.Rmd')"
+</code></p>
+  </li>
+  <li>
+    <p>To use accents in Rmd</p>
+  </li>
+</ul>
+
+<p>include in the header</p>
+
+<p><code>
+header-includes:
+  - \usepackage[latin9]{inputenc}
+</code></p>
+
+<p>Then on a mac insert the character of interest</p>
+
+<p>```
+Acute          ó Ó     Option+E, V</p>
+
+<p>Circumflex     ô Ô     Option+I, V</p>
+
+<p>Grave          ò Ò     Option+`, V</p>
+
+<p>Tilde          õ Õ     Option+N, V     Only works with “n,N,o,O,a,A”</p>
+
+<p>Umlaut         ö Ö     Option+U, V
+```</p>
+

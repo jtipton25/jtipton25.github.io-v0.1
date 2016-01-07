@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The posterior</title>
+    <description>Here I will post commonly used code examples and statistical problems 
+</description>
+    <link>http://jtipton25.github.io/</link>
+    <atom:link href="http://jtipton25.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 07 Jan 2016 14:04:37 -0700</pubDate>
+    <lastBuildDate>Thu, 07 Jan 2016 14:04:37 -0700</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Test Post</title>
+        <description>&lt;h2 id=&quot;r-markdown&quot;&gt;R Markdown&lt;/h2&gt;
+
+&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&quot;http://rmarkdown.rstudio.com&quot;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When you click the &lt;strong&gt;Knit&lt;/strong&gt; button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+summary(cars)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;including-plots&quot;&gt;Including Plots&lt;/h2&gt;
+
+&lt;p&gt;You can also embed plots, for example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2016-01-01-Test/pressure-1.png&quot; alt=&quot;plot of chunk pressure&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that the &lt;code&gt;echo = FALSE&lt;/code&gt; parameter was added to the code chunk to prevent printing of the R code that generated the plot.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 07 Jan 2016 00:00:00 -0700</pubDate>
+        <link>http://jtipton25.github.io/2016/01/07/Test.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2016/01/07/Test.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Updating R without needing to re-install packages</title>
+        <description>&lt;p&gt;One annoyance when using R is the need to re-install packages with each new installation of R. This is a method to avoid this (at least on unix-like systems), but make sure you use the R command&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+update.packages()
+&lt;/code&gt;
+regularly. The first step is to make a directory where you plan to install the libraries. I choose the home directory &lt;code&gt;~/&lt;/code&gt; and name my directory &lt;code&gt;Rlibs&lt;/code&gt;. To do this, open the terminal and type&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bash
+mkdir ~/Rlibs
+&lt;/code&gt;
+Then, go to your home directory (by typing &lt;code&gt;cd&lt;/code&gt;) and create a new file (&lt;code&gt;.Renviron&lt;/code&gt;) that R will use to set environment variables using emacs by typing&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bash
+emacs .Renviron
+&lt;/code&gt;
+opening the file using the &lt;code&gt;emacs&lt;/code&gt; text editor. Then type&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bash
+R_LIBS=~/Rlibs
+&lt;/code&gt;
+to tell R that packages should be installed and loaded from the &lt;code&gt;~/Rlibs&lt;/code&gt; directory. To save the &lt;code&gt;.Renviron&lt;/code&gt; file, use the emacs command for save&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bash
+ctrl-x ctrl-s
+&lt;/code&gt;
+where, while holding the &lt;code&gt;ctrl&lt;/code&gt; key you type &lt;code&gt;x&lt;/code&gt; then &lt;code&gt;s&lt;/code&gt;. Then exit emacs using&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bash
+ctrl-x ctrl-c
+&lt;/code&gt;
+If at anytime you are unsure, just hit &lt;code&gt;esc&lt;/code&gt; a few times to clear out the &lt;code&gt;emacs&lt;/code&gt; buffer. Make sure to use &lt;code&gt;update.packages()&lt;/code&gt; often in R to keep the libraries up to date.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 15 Oct 2015 00:00:00 -0600</pubDate>
+        <link>http://jtipton25.github.io/2015/10/15/updating-R-packages.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2015/10/15/updating-R-packages.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Normal Benchmarking</title>
+        <description>&lt;h1 id=&quot;random-normal-timings&quot;&gt;random normal timings&lt;/h1&gt;
+
+&lt;p&gt;Load libraries and functions&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+library(myFunctions)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## Warning in .doLoadActions(where, attach): trying to execute load actions
+## without &#39;methods&#39; package
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## 
+## Attaching package: &#39;myFunctions&#39;
+## 
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     colSums, rowMeans, rowSums
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+library(microbenchmark)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## Error in library(microbenchmark): there is no package called &#39;microbenchmark&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+library(mvtnorm)
+library(mvnfast)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## Error in library(mvnfast): there is no package called &#39;mvnfast&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+source(&#39;~/functions/rMVN.R&#39;)
+library(knitr)
+opts_chunk$set(cache=TRUE)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;simulate-data&quot;&gt;Simulate data&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;r
+mu &amp;lt;- rnorm(200)
+D &amp;lt;- as.matrix(dist(1:200))
+Sig &amp;lt;- exp(-D)
+y &amp;lt;- rnorm(200)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;run-bencmarks-on-simulating-a-multivariate-normal&quot;&gt;Run bencmarks on simulating a multivariate normal&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;r
+print(microbenchmark(mvrnormArma(100, mu, Sig),
+               rmvnorm(100, mu, Sig),
+               rmvn(100, mu, Sig),
+               times = 100L))
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## Error in print(microbenchmark(mvrnormArma(100, mu, Sig), rmvnorm(100, : could not find function &quot;microbenchmark&quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+layout(matrix(1:3, 1, 3))
+hist(mvrnormArma(100, mu, Sig))
+hist(rmvnorm(100, mu, Sig))
+hist(rmvn(100, mu, Sig))
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## Error in hist(rmvn(100, mu, Sig)): could not find function &quot;rmvn&quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-3-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;run-bencmarks-on-simulating-a-full-conditional-draw&quot;&gt;Run bencmarks on simulating a full conditional draw&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;r
+print(microbenchmark(rMVN(chol(Sig), mu),
+               rMVNArma(Sig, mu),
+               times = 100L))
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## Error in print(microbenchmark(rMVN(chol(Sig), mu), rMVNArma(Sig, mu), : could not find function &quot;microbenchmark&quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+layout(matrix(1:2, 1, 2))
+hist(rMVN(chol(Sig), mu))
+hist(rMVNArma(Sig, mu))
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-4-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-4&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;compare-mvnfast-random-normal-to-rmvn-random-normal&quot;&gt;Compare mvnfast random normal to rMVN random normal&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;r
+microbenchmark(rMVNArma(Sig, mu),
+               rmvn(1, solve(Sig) %*% mu, solve(Sig)))
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## Error in eval(expr, envir, enclos): could not find function &quot;microbenchmark&quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;run-benchmarks-on-density-evaluation&quot;&gt;Run benchmarks on density evaluation&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;r
+microbenchmark(dMVNorm(y, mu, Sig),
+               dmvn(y, mu, Sig, log = TRUE)) 
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## Error in eval(expr, envir, enclos): could not find function &quot;microbenchmark&quot;
+&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Oct 2015 00:00:00 -0600</pubDate>
+        <link>http://jtipton25.github.io/2015/10/01/normal-benchmarking.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2015/10/01/normal-benchmarking.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Install Rgeos And Rgdal</title>
+        <description>&lt;h1 id=&quot;installing-rgeos-and-rgdal-packages&quot;&gt;Installing Rgeos and Rgdal packages&lt;/h1&gt;
+
+&lt;h2 id=&quot;package-rgdal&quot;&gt;Package rgdal&lt;/h2&gt;
+
+&lt;p&gt;The usual &lt;code&gt;install.packages(“rgdal”)&lt;/code&gt; won’t work.&lt;/p&gt;
+
+&lt;h3 id=&quot;download-the-gdal-os-x-install-from-kyngchaos&quot;&gt;Download the GDAL OS X install from kyngchaos&lt;/h3&gt;
+&lt;p&gt;Go to http://www.kyngchaos.com/software/frameworks and install the file
+In the Terminal, modify the .bash_profile file by typing
+&lt;code&gt;
+emacs .bash_profile
+&lt;/code&gt;
+to open the file and modify the PATH environment by adding the line
+&lt;code&gt;
+export PATH=”/Library/Frameworks/GDAL.framework/Programs:$PATH”
+&lt;/code&gt;
+Save and close the emacs file&lt;/p&gt;
+
+&lt;h3 id=&quot;download-and-install-proj4-from-source&quot;&gt;Download and install proj4 from source&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;http://trac.osgeo.org/proj/wiki/WikiStart#Download&lt;/li&gt;
+  &lt;li&gt;Download source code version proj-4.8.0.tar.gz (or more recent update)&lt;/li&gt;
+  &lt;li&gt;Fire up the Terminal
+&amp;gt; cd ~/Downloads/
+&amp;gt; tar -xzvf proj-4.8.0.tar.gz
+&amp;gt; cd proj-4.8.0
+&amp;gt; ./configure
+&amp;gt; make &amp;amp;&amp;amp; make test
+&amp;gt; sudo make install
+[ should install to /usr/local/lib by default]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download and install rgdal from source
+    &lt;ul&gt;
+      &lt;li&gt;http://cran.r-project.org/web/packages/rgdal/index.html &amp;lt;- most recent update&lt;/li&gt;
+      &lt;li&gt;Fire up the Terminal
+&amp;gt; cd ~/Downloads/
+&amp;gt; sudo R CMD INSTALL –configure-args=’–with-proj-include=/usr/local/lib’ rgdal_0.8-16.tar.gz&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;r
+library(rgdal)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## Loading required package: methods
+## Loading required package: sp
+## rgdal: version: 1.0-4, (SVN revision 548)
+##  Geospatial Data Abstraction Library extensions to R successfully loaded
+##  Loaded GDAL runtime: GDAL 1.11.2, released 2015/02/10
+##  Path to GDAL shared files: /Users/Tips/Rlibs/rgdal/gdal
+##  Loaded PROJ.4 runtime: Rel. 4.9.1, 04 March 2015, [PJ_VERSION: 491]
+##  Path to PROJ.4 shared files: /Users/Tips/Rlibs/rgdal/proj
+##  Linking to sp version: 1.1-1
+&lt;/code&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 15 Sep 2015 00:00:00 -0600</pubDate>
+        <link>http://jtipton25.github.io/2015/09/15/install-rgeos-and-rgdal.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2015/09/15/install-rgeos-and-rgdal.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Gglpot Commands</title>
+        <description>&lt;h1 id=&quot;ggplot-examples&quot;&gt;ggplot examples&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;r
+library(ggplot2)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## Loading required package: methods
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+movies=movies[sample(nrow(movies), 1000), ]
+str(movies)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## &#39;data.frame&#39;:	1000 obs. of  24 variables:
+##  $ title      : chr  &quot;Airman&#39;s Letter to His Mother, An&quot; &quot;Sexual Intent&quot; &quot;Captain Kidd and the Slave Girl&quot; &quot;Hansel e Gretel&quot; ...
+##  $ year       : int  1941 1994 1954 1990 1970 1981 1976 1954 2000 1998 ...
+##  $ length     : int  5 88 82 87 95 91 93 7 25 101 ...
+##  $ budget     : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ rating     : num  8.3 3.7 5.5 4.3 2.8 6.4 5.2 6.9 8.9 4.9 ...
+##  $ votes      : int  18 18 5 13 22 8 248 31 11 44 ...
+##  $ r1         : num  0 24.5 0 34.5 24.5 0 4.5 0 0 4.5 ...
+##  $ r2         : num  0 4.5 0 0 4.5 0 4.5 0 4.5 4.5 ...
+##  $ r3         : num  0 24.5 24.5 4.5 4.5 0 4.5 0 0 4.5 ...
+##  $ r4         : num  0 14.5 0 4.5 4.5 0 4.5 0 0 4.5 ...
+##  $ r5         : num  4.5 14.5 24.5 4.5 4.5 14.5 14.5 14.5 0 14.5 ...
+##  $ r6         : num  14.5 4.5 24.5 14.5 4.5 24.5 14.5 14.5 0 4.5 ...
+##  $ r7         : num  24.5 4.5 0 0 14.5 0 14.5 24.5 0 4.5 ...
+##  $ r8         : num  24.5 0 44.5 0 4.5 14.5 14.5 24.5 4.5 4.5 ...
+##  $ r9         : num  24.5 0 0 4.5 4.5 14.5 4.5 4.5 14.5 14.5 ...
+##  $ r10        : num  14.5 4.5 0 14.5 14.5 34.5 4.5 14.5 64.5 14.5 ...
+##  $ mpaa       : Factor w/ 5 levels &quot;&quot;,&quot;NC-17&quot;,&quot;PG&quot;,..: 1 1 1 1 1 1 1 1 1 5 ...
+##  $ Action     : int  0 1 1 0 0 0 0 0 0 0 ...
+##  $ Animation  : int  0 0 0 0 0 0 0 1 0 0 ...
+##  $ Comedy     : int  0 0 0 0 0 0 0 1 0 0 ...
+##  $ Drama      : int  0 1 0 0 1 0 0 0 1 1 ...
+##  $ Documentary: int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ Romance    : int  0 0 0 0 0 0 0 0 0 1 ...
+##  $ Short      : int  1 0 0 0 0 0 0 1 1 0 ...
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+ggplot(movies, aes(x=rating)) + geom_density() + facet_grid(Action ~ Comedy)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-09-01-gglpot-commands/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Sep 2015 00:00:00 -0600</pubDate>
+        <link>http://jtipton25.github.io/2015/09/01/gglpot-commands.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2015/09/01/gglpot-commands.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Knitr Commands</title>
+        <description>&lt;h1 id=&quot;knitr-commands&quot;&gt;Knitr commands&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;To knit an R markdown document using the command line 
+&lt;code&gt;bash
+&amp;gt; Rscript -e &quot;library(knitr); knit(&#39;kernelConvolution.Rmd&#39;)&quot;
+&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To use accents in Rmd&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;include in the header&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+header-includes:
+  - \usepackage[latin9]{inputenc}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then on a mac insert the character of interest&lt;/p&gt;
+
+&lt;p&gt;```
+Acute          ó Ó     Option+E, V&lt;/p&gt;
+
+&lt;p&gt;Circumflex     ô Ô     Option+I, V&lt;/p&gt;
+
+&lt;p&gt;Grave          ò Ò     Option+`, V&lt;/p&gt;
+
+&lt;p&gt;Tilde          õ Õ     Option+N, V     Only works with “n,N,o,O,a,A”&lt;/p&gt;
+
+&lt;p&gt;Umlaut         ö Ö     Option+U, V
+```&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 15 Aug 2015 00:00:00 -0600</pubDate>
+        <link>http://jtipton25.github.io/2015/08/15/knitr-commands.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2015/08/15/knitr-commands.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Jekyll Commands</title>
+        <description>&lt;h1 id=&quot;webpage-for-a-jekyll-workflow&quot;&gt;Webpage for a Jekyll workflow&lt;/h1&gt;
+
+&lt;p&gt;Building the blog&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bash
+cd myblog/
+jekyll build
+# =&amp;gt; The current folder will be generated into ./_site
+&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 01 Aug 2015 00:00:00 -0600</pubDate>
+        <link>http://jtipton25.github.io/2015/08/01/jekyll-commands.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2015/08/01/jekyll-commands.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>parallelRandomForest</title>
+        <description>&lt;h1 id=&quot;some-example-code-to-parallelize-the-building-of-random-forests&quot;&gt;some example code to parallelize the building of random forests&lt;/h1&gt;
+
+&lt;h2 id=&quot;load-the-required-libraries&quot;&gt;load the required libraries&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;r
+library(knitr)
+opts_chunk$set(cache = TRUE)
+library(randomForest)
+library(parallel)
+library(snowfall)
+library(rlecuyer)
+&lt;/code&gt;
+## load the data and set up the model&lt;/p&gt;
+
+&lt;p&gt;```r
+## load the data
+theData &amp;lt;- iris&lt;/p&gt;
+
+&lt;h1 id=&quot;set-the-formula&quot;&gt;set the formula&lt;/h1&gt;
+&lt;p&gt;theFormula &amp;lt;- as.formula(“Species ~ . “)&lt;/p&gt;
+
+&lt;h1 id=&quot;total-number-of-trees-in-the-random-forest&quot;&gt;total number of trees in the random forest&lt;/h1&gt;
+&lt;p&gt;totalTrees &amp;lt;- 500
+```
+## Setup the parallel functions&lt;/p&gt;
+
+&lt;h2 id=&quot;fit-the-random-forest&quot;&gt;Fit the random forest&lt;/h2&gt;
+
+&lt;p&gt;```r
+# build the random forests
+allForests &amp;lt;- sfClusterApplyLB(1:threads, parallelRF)&lt;/p&gt;
+
+&lt;h1 id=&quot;close-the-cluster&quot;&gt;Close the cluster&lt;/h1&gt;
+&lt;p&gt;sfStop()
+```
+## Process forest output&lt;/p&gt;
+
+&lt;p&gt;```r
+# merge all the forests into one object
+myRandomForest &amp;lt;- allForests[[1]]
+for (i in 2:threads) {
+    myRandomForest &amp;lt;- combine(myRandomForest, allForests[[i]])
+}&lt;/p&gt;
+
+&lt;h1 id=&quot;convince-oursleves-we-have-them-all-combined&quot;&gt;convince oursleves we have them all combined&lt;/h1&gt;
+&lt;p&gt;myRandomForest$ntree
+```&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+## [1] 496
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+# what is important
+myRandomForest$importance
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+##              MeanDecreaseGini
+## Sepal.Length        10.025435
+## Sepal.Width          2.556842
+## Petal.Length        44.540894
+## Petal.Width         42.111466
+&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 17 May 2015 00:00:00 -0600</pubDate>
+        <link>http://jtipton25.github.io/2015/05/17/parallel-random-forest.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2015/05/17/parallel-random-forest.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>moving from for to snowfall</title>
+        <description>&lt;!--
+# THOUGHTS and TODO: 
+- need something more compelling for `iterators`
+- more complicated example for `.combine`? mean?
+- images for heavy analysis?
+- references
+--&gt;
+
+&lt;!--
+&lt;span class=&#39;one&#39;&gt;class one&lt;/span&gt;
+&lt;span class=&#39;two&#39;&gt;class two&lt;/span&gt;
+&lt;span class=&#39;three&#39;&gt;class three&lt;/span&gt;
+&lt;span class=&#39;four&#39;&gt;class four&lt;/span&gt;
+&lt;span class=&#39;five&#39;&gt;class five&lt;/span&gt;
+&lt;span class=&#39;six&#39;&gt;class six&lt;/span&gt;
+&lt;span class=&#39;seven&#39;&gt;class seven&lt;/span&gt;
+&lt;span class=&#39;eight&#39;&gt;class eight&lt;/span&gt;
+&lt;span class=&#39;nine&#39;&gt;class nine&lt;/span&gt;
+&lt;span class=&#39;ten&#39;&gt;class ten&lt;/span&gt;
+&lt;span class=&#39;eleven&#39;&gt;class eleven&lt;/span&gt;
+&lt;span class=&#39;twelve&#39;&gt;class twelve&lt;/span&gt;
+--&gt;
+
+&lt;h1 id=&quot;why&quot;&gt;why?&lt;/h1&gt;
+&lt;p&gt;## embarassingly parallel tasks
+These are computational tasks which involve many separate, independently executable calculations. Some common statistical examples of embarassingly &lt;span class=&quot;eleven&quot;&gt;&lt;strong&gt;parallel&lt;/strong&gt;&lt;/span&gt; processes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;bootstrapping&lt;/li&gt;
+  &lt;li&gt;cross-validation&lt;/li&gt;
+  &lt;li&gt;simulating independent random variables (&lt;code&gt;dorng&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In contrast, some sequential or &lt;span class=&quot;eleven&quot;&gt;&lt;strong&gt;non-parallel&lt;/strong&gt;&lt;/span&gt; processes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MCMC algorithms&lt;/li&gt;
+  &lt;li&gt;several types of model selection (e.g.: &lt;code&gt;step()&lt;/code&gt; or the LARS algorithm for LASSO)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;for&lt;/code&gt; loops that do not explicitly involve dependent calculations are wasteful if we have multiple processors available. Perhaps even worse, the time cost of using such an approach can put some useful statistical tools beyond our reach!&lt;/p&gt;
+
+&lt;h2 id=&quot;options&quot;&gt;options&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Changing from a for loop to one of the &lt;code&gt;apply()&lt;/code&gt; functions can help, but still doesn’t use multiple processors.&lt;/li&gt;
+  &lt;li&gt;Use the &lt;code&gt;parallel&lt;/code&gt; package.&lt;/li&gt;
+  &lt;li&gt;Don’t use R.&lt;/li&gt;
+  &lt;li&gt;Use the &lt;code&gt;snowfall&lt;/code&gt; package! [@snowfall]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;why-snowfall&quot;&gt;why snowfall?&lt;/h2&gt;
+&lt;p&gt;We would like to find a way to make use of our whole computer, and make valuable tasks like bootstrapping available, but without having to invest large amounts of time in learning new programming languages. Enter &lt;code&gt;snowfall&lt;/code&gt;, which keeps the structure of a for loop, but allows us to drop two key assumptions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sequentiality&lt;/li&gt;
+  &lt;li&gt;single processor architecture&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span class=&quot;ten&quot;&gt;&lt;strong&gt;Our goal&lt;/strong&gt;&lt;/span&gt;: 
+We will begin with a simple chunk of R code involving a for loop and transform it into a &lt;code&gt;snowfall&lt;/code&gt; loop. Along the way, we’ll take a look at the equivalent computation done with an &lt;code&gt;apply()&lt;/code&gt; function, and see that using &lt;code&gt;snowfall&lt;/code&gt; and multiple processors outperforms this.&lt;/p&gt;
+
+&lt;h1 id=&quot;example-data-and-research-question&quot;&gt;example: data and research question&lt;/h1&gt;
+&lt;p&gt;We are going to look at data from the New York City bikeshare program &lt;a href=&quot;https://www.citibikenyc.com/&quot;&gt;Citibike&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;7 busiest locations from May 2014&lt;/li&gt;
+  &lt;li&gt;response: # of arrivals each hour of every day in the month&lt;/li&gt;
+  &lt;li&gt;covariates: hour of the day and whether the day is a weekend&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One of the costliest parts of operating a bike share program comes from the finiteness of the bicycle stations. A station can only hold so many bicycles, and a full (empty) station means customers cannot drop off (pick up) a bike. Thus, managers are forced to use trucks to manually redistribute bicycles.&lt;/p&gt;
+
+&lt;p&gt;We want to find a model which can offer good prediction, with the hope that this will inform our plans for future station locations/sizes. For this example, we start with a few plausible models and use K-fold cross validation to decide which one to use.&lt;/p&gt;
+
+&lt;h2 id=&quot;locations-of-our-7-sites&quot;&gt;locations of our 7 sites&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;./fig/map_top7.png&quot; alt=&quot;locations&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;## data
+&lt;img src=&quot;./fig/top7_average_day.png&quot; alt=&quot;data&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;# fitting GLMs and extracting prediction error
+We are considering three increasingly complex models of the arrival behavior. In order to compare three candidate models’ prediction error, we’ll use K-fold cross validation, where we use the same folds for all three models.&lt;/p&gt;
+
+&lt;p&gt;First, we the load the data and make our K-fold test sets (and implicitly, our training sets):&lt;/p&gt;
+
+&lt;p&gt;```r
+load(url(“http://www.stat.colostate.edu/~scharfh/CSP_parallel/data/arrivals_subset.RData”))
+K &amp;lt;- 50
+N &amp;lt;- dim(arrivals.sub)[1]&lt;/p&gt;
+
+&lt;h2 id=&quot;for-convenience-kill-off-8-observations-we-have-5208-and-make-cv-test-sets&quot;&gt;for convenience kill off 8 observations (we have 5208) and make cv test sets&lt;/h2&gt;
+&lt;p&gt;set.seed(1985)
+discarded &amp;lt;- sample(1:N, size = 8)
+cv.test.sets &amp;lt;- matrix(sample((1:N)[-discarded], size = N - 8), ncol = K)
+```&lt;/p&gt;
+
+&lt;p&gt;Next, we build a function to fit the data to the training sets and extract the corresponding estimate of prediciton error. This should still be familiar code, no new packages yet.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+library(splines)
+lq.loss &amp;lt;- function(y, y.hat, q = 1) {(abs(y - y.hat))^q}
+get.errs &amp;lt;- function(test.set = NULL,
+                     discarded = NULL,
+                     q = 1) {
+    sml.glm &amp;lt;- glm(arrivals ~
+                   bs(hour, degree = 4)
+                   + weekend
+                   + as.factor(id),
+                   data = arrivals.sub[-c(discarded, test.set), ],
+                   family = &quot;poisson&quot;)
+    med.glm &amp;lt;- glm(arrivals ~
+                   bs(hour, degree = 4)*weekend
+                   + as.factor(id),
+                   data = arrivals.sub[-c(discarded, test.set), ],
+                   family = &quot;poisson&quot;)
+    big.glm &amp;lt;- glm(arrivals ~
+                   bs(hour, degree = 4)*weekend
+                   + bs(hour, degree = 4)*as.factor(id),
+                   data = arrivals.sub[-c(discarded, test.set), ],
+                   family = &quot;poisson&quot;)
+    sml.err &amp;lt;- mean(lq.loss(predict(object = sml.glm,
+                                    newdata = arrivals.sub[test.set, -7],
+                                    type = &quot;response&quot;),
+                            arrivals.sub[test.set, 7],
+                            q = q))
+    med.err &amp;lt;- mean(lq.loss(predict(object = med.glm,
+                                    newdata = arrivals.sub[test.set, -7],
+                                    type = &quot;response&quot;),
+                            arrivals.sub[test.set, 7],
+                            q = q))
+    big.err &amp;lt;- mean(lq.loss(predict(object = big.glm,
+                                    newdata = arrivals.sub[test.set, -7],
+                                    type = &quot;response&quot;),
+                            arrivals.sub[test.set, 7],
+                            q = q))
+    return(c(sml.err, med.err, big.err))
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The fits using all the data look like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./fig/fit_all.png&quot; alt=&quot;fit.all&quot; /&gt;&lt;/p&gt;
+
+&lt;!--
+&lt;img src=&quot;./fig/predictions_sml.png&quot;&gt;
+&lt;img src=&quot;./fig/predictions_med.png&quot;&gt;
+&lt;img src=&quot;./fig/predictions_big.png&quot;&gt;
+--&gt;
+
+&lt;h2 id=&quot;k-fold-cv-with-a-for-loop&quot;&gt;K-fold CV with a for loop&lt;/h2&gt;
+&lt;p&gt;Using a naive for loop, we could implement this as:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+err.for &amp;lt;- NULL
+system.time(
+    for (i in 1:K) {
+        err.for &amp;lt;- cbind(err.for, get.errs(test.set = cv.test.sets[, i],
+                                           discarded = discarded,
+                                           q = 1))
+        }
+    )
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+##    user  system elapsed 
+##  20.206   1.325  21.542
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;k-fold-cv-with-an-apply-function&quot;&gt;K-fold CV with an apply function&lt;/h2&gt;
+&lt;p&gt;If you’re good with &lt;code&gt;apply()&lt;/code&gt; functions you might upgrade (slightly) to&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r
+## apply version
+system.time(
+    err.apply &amp;lt;- sapply(X = 1:K, 
+                        FUN = function(i) {
+                            get.errs(test.set = cv.test.sets[, i],
+                                     discarded = discarded,
+                                     q = 1)
+                            }
+                        )
+    )
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+##    user  system elapsed 
+##  19.800   1.337  21.143
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Neither of the first two methods take advantage of multiple processors. While the &lt;code&gt;apply()&lt;/code&gt; functions avoid the inherently sluggish nature of for loops in &lt;code&gt;R&lt;/code&gt;, they are still ignorant of the processor structure. We want to chop the job into halves, fourths, etc. and use the &lt;em&gt;whole&lt;/em&gt; computer!&lt;/p&gt;
+
+&lt;h2 id=&quot;k-fold-cv-with-a-snowfall-loop&quot;&gt;K-fold CV with a snowfall loop&lt;/h2&gt;
+&lt;p&gt;Here is the same computation written with a &lt;code&gt;snowfall&lt;/code&gt; loop&lt;/p&gt;
+
+&lt;p&gt;```r
+## Define a wrapper function
+wrapper = function(i){
+  get.errs(test.set = cv.test.sets[, i], discarded = discarded, q = 1)
+}&lt;/p&gt;
+
+&lt;h2 id=&quot;snowfall-version&quot;&gt;snowfall version&lt;/h2&gt;
+&lt;p&gt;library(snowfall)
+library(parallel)
+library(rlecuyer)
+# ## determines the number of cores on the machine
+cps=detectCores()
+## Initalize multicore 
+sfInit(parallel=TRUE, cpus=cps)
+## Setup random number generator on the cluster
+sfClusterSetupRNG()
+# export global variables
+sfExportAll()
+# export library
+sfLibrary(splines)
+system.time(err.snowfall &amp;lt;- sfSapply(1:K, wrapper))
+## ends snowfall session
+sfStop()
+```
+# components of a snowfall loop
+Note that the syntax of snowfall is almost identical to a for loop. The major difference is the need to write a wrapper function that evaluates one iteration of the for loop and the need to set up and export the relevent data, functions, and libraries.&lt;/p&gt;
+
+&lt;h1 id=&quot;results&quot;&gt;results&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/media/B4AFeZvIgAABsqn.jpg&quot; alt=&quot;parallel puppies&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://CRAN.R-project.org/package=snowfall&quot;&gt;snowfall&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;other-tutorials&quot;&gt;Other tutorials&lt;/h2&gt;
+
+&lt;h2 id=&quot;data&quot;&gt;Data&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.citibikenyc.com/system-data&quot;&gt;citibike system data&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 06 May 2014 00:00:00 -0600</pubDate>
+        <link>http://jtipton25.github.io/2014/05/06/snowfall.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2014/05/06/snowfall.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

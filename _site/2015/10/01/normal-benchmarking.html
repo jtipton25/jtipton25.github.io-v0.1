@@ -1,0 +1,121 @@
+<h1 id="random-normal-timings">random normal timings</h1>
+
+<p>Load libraries and functions</p>
+
+<p><code>r
+library(myFunctions)
+</code></p>
+
+<p><code>
+## Warning in .doLoadActions(where, attach): trying to execute load actions
+## without 'methods' package
+</code></p>
+
+<p><code>
+## 
+## Attaching package: 'myFunctions'
+## 
+## The following objects are masked from 'package:base':
+## 
+##     colSums, rowMeans, rowSums
+</code></p>
+
+<p><code>r
+library(microbenchmark)
+</code></p>
+
+<p><code>
+## Error in library(microbenchmark): there is no package called 'microbenchmark'
+</code></p>
+
+<p><code>r
+library(mvtnorm)
+library(mvnfast)
+</code></p>
+
+<p><code>
+## Error in library(mvnfast): there is no package called 'mvnfast'
+</code></p>
+
+<p><code>r
+source('~/functions/rMVN.R')
+library(knitr)
+opts_chunk$set(cache=TRUE)
+</code></p>
+
+<h2 id="simulate-data">Simulate data</h2>
+
+<p><code>r
+mu &lt;- rnorm(200)
+D &lt;- as.matrix(dist(1:200))
+Sig &lt;- exp(-D)
+y &lt;- rnorm(200)
+</code></p>
+
+<h2 id="run-bencmarks-on-simulating-a-multivariate-normal">Run bencmarks on simulating a multivariate normal</h2>
+
+<p><code>r
+print(microbenchmark(mvrnormArma(100, mu, Sig),
+               rmvnorm(100, mu, Sig),
+               rmvn(100, mu, Sig),
+               times = 100L))
+</code></p>
+
+<p><code>
+## Error in print(microbenchmark(mvrnormArma(100, mu, Sig), rmvnorm(100, : could not find function "microbenchmark"
+</code></p>
+
+<p><code>r
+layout(matrix(1:3, 1, 3))
+hist(mvrnormArma(100, mu, Sig))
+hist(rmvnorm(100, mu, Sig))
+hist(rmvn(100, mu, Sig))
+</code></p>
+
+<p><code>
+## Error in hist(rmvn(100, mu, Sig)): could not find function "rmvn"
+</code></p>
+
+<p><img src="/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" /></p>
+
+<h2 id="run-bencmarks-on-simulating-a-full-conditional-draw">Run bencmarks on simulating a full conditional draw</h2>
+
+<p><code>r
+print(microbenchmark(rMVN(chol(Sig), mu),
+               rMVNArma(Sig, mu),
+               times = 100L))
+</code></p>
+
+<p><code>
+## Error in print(microbenchmark(rMVN(chol(Sig), mu), rMVNArma(Sig, mu), : could not find function "microbenchmark"
+</code></p>
+
+<p><code>r
+layout(matrix(1:2, 1, 2))
+hist(rMVN(chol(Sig), mu))
+hist(rMVNArma(Sig, mu))
+</code></p>
+
+<p><img src="/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" /></p>
+
+<h2 id="compare-mvnfast-random-normal-to-rmvn-random-normal">Compare mvnfast random normal to rMVN random normal</h2>
+
+<p><code>r
+microbenchmark(rMVNArma(Sig, mu),
+               rmvn(1, solve(Sig) %*% mu, solve(Sig)))
+</code></p>
+
+<p><code>
+## Error in eval(expr, envir, enclos): could not find function "microbenchmark"
+</code></p>
+
+<h2 id="run-benchmarks-on-density-evaluation">Run benchmarks on density evaluation</h2>
+
+<p><code>r
+microbenchmark(dMVNorm(y, mu, Sig),
+               dmvn(y, mu, Sig, log = TRUE)) 
+</code></p>
+
+<p><code>
+## Error in eval(expr, envir, enclos): could not find function "microbenchmark"
+</code></p>

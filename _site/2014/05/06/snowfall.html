@@ -1,0 +1,233 @@
+<!--
+# THOUGHTS and TODO: 
+- need something more compelling for `iterators`
+- more complicated example for `.combine`? mean?
+- images for heavy analysis?
+- references
+-->
+
+<!--
+<span class='one'>class one</span>
+<span class='two'>class two</span>
+<span class='three'>class three</span>
+<span class='four'>class four</span>
+<span class='five'>class five</span>
+<span class='six'>class six</span>
+<span class='seven'>class seven</span>
+<span class='eight'>class eight</span>
+<span class='nine'>class nine</span>
+<span class='ten'>class ten</span>
+<span class='eleven'>class eleven</span>
+<span class='twelve'>class twelve</span>
+-->
+
+<h1 id="why">why?</h1>
+<p>## embarassingly parallel tasks
+These are computational tasks which involve many separate, independently executable calculations. Some common statistical examples of embarassingly <span class="eleven"><strong>parallel</strong></span> processes:</p>
+
+<ul>
+  <li>bootstrapping</li>
+  <li>cross-validation</li>
+  <li>simulating independent random variables (<code>dorng</code>)</li>
+</ul>
+
+<p>In contrast, some sequential or <span class="eleven"><strong>non-parallel</strong></span> processes:</p>
+
+<ul>
+  <li>MCMC algorithms</li>
+  <li>several types of model selection (e.g.: <code>step()</code> or the LARS algorithm for LASSO)</li>
+</ul>
+
+<p><code>for</code> loops that do not explicitly involve dependent calculations are wasteful if we have multiple processors available. Perhaps even worse, the time cost of using such an approach can put some useful statistical tools beyond our reach!</p>
+
+<h2 id="options">options</h2>
+<ul>
+  <li>Changing from a for loop to one of the <code>apply()</code> functions can help, but still doesn’t use multiple processors.</li>
+  <li>Use the <code>parallel</code> package.</li>
+  <li>Don’t use R.</li>
+  <li>Use the <code>snowfall</code> package! [@snowfall]</li>
+</ul>
+
+<h2 id="why-snowfall">why snowfall?</h2>
+<p>We would like to find a way to make use of our whole computer, and make valuable tasks like bootstrapping available, but without having to invest large amounts of time in learning new programming languages. Enter <code>snowfall</code>, which keeps the structure of a for loop, but allows us to drop two key assumptions:</p>
+
+<ul>
+  <li>sequentiality</li>
+  <li>single processor architecture</li>
+</ul>
+
+<p><span class="ten"><strong>Our goal</strong></span>: 
+We will begin with a simple chunk of R code involving a for loop and transform it into a <code>snowfall</code> loop. Along the way, we’ll take a look at the equivalent computation done with an <code>apply()</code> function, and see that using <code>snowfall</code> and multiple processors outperforms this.</p>
+
+<h1 id="example-data-and-research-question">example: data and research question</h1>
+<p>We are going to look at data from the New York City bikeshare program <a href="https://www.citibikenyc.com/">Citibike</a>.</p>
+
+<ul>
+  <li>7 busiest locations from May 2014</li>
+  <li>response: # of arrivals each hour of every day in the month</li>
+  <li>covariates: hour of the day and whether the day is a weekend</li>
+</ul>
+
+<p>One of the costliest parts of operating a bike share program comes from the finiteness of the bicycle stations. A station can only hold so many bicycles, and a full (empty) station means customers cannot drop off (pick up) a bike. Thus, managers are forced to use trucks to manually redistribute bicycles.</p>
+
+<p>We want to find a model which can offer good prediction, with the hope that this will inform our plans for future station locations/sizes. For this example, we start with a few plausible models and use K-fold cross validation to decide which one to use.</p>
+
+<h2 id="locations-of-our-7-sites">locations of our 7 sites</h2>
+<p><img src="./fig/map_top7.png" alt="locations" /></p>
+
+<hr />
+<p>## data
+<img src="./fig/top7_average_day.png" alt="data" /></p>
+
+<hr />
+<p># fitting GLMs and extracting prediction error
+We are considering three increasingly complex models of the arrival behavior. In order to compare three candidate models’ prediction error, we’ll use K-fold cross validation, where we use the same folds for all three models.</p>
+
+<p>First, we the load the data and make our K-fold test sets (and implicitly, our training sets):</p>
+
+<p>```r
+load(url(“http://www.stat.colostate.edu/~scharfh/CSP_parallel/data/arrivals_subset.RData”))
+K &lt;- 50
+N &lt;- dim(arrivals.sub)[1]</p>
+
+<h2 id="for-convenience-kill-off-8-observations-we-have-5208-and-make-cv-test-sets">for convenience kill off 8 observations (we have 5208) and make cv test sets</h2>
+<p>set.seed(1985)
+discarded &lt;- sample(1:N, size = 8)
+cv.test.sets &lt;- matrix(sample((1:N)[-discarded], size = N - 8), ncol = K)
+```</p>
+
+<p>Next, we build a function to fit the data to the training sets and extract the corresponding estimate of prediciton error. This should still be familiar code, no new packages yet.</p>
+
+<p><code>r
+library(splines)
+lq.loss &lt;- function(y, y.hat, q = 1) {(abs(y - y.hat))^q}
+get.errs &lt;- function(test.set = NULL,
+                     discarded = NULL,
+                     q = 1) {
+    sml.glm &lt;- glm(arrivals ~
+                   bs(hour, degree = 4)
+                   + weekend
+                   + as.factor(id),
+                   data = arrivals.sub[-c(discarded, test.set), ],
+                   family = "poisson")
+    med.glm &lt;- glm(arrivals ~
+                   bs(hour, degree = 4)*weekend
+                   + as.factor(id),
+                   data = arrivals.sub[-c(discarded, test.set), ],
+                   family = "poisson")
+    big.glm &lt;- glm(arrivals ~
+                   bs(hour, degree = 4)*weekend
+                   + bs(hour, degree = 4)*as.factor(id),
+                   data = arrivals.sub[-c(discarded, test.set), ],
+                   family = "poisson")
+    sml.err &lt;- mean(lq.loss(predict(object = sml.glm,
+                                    newdata = arrivals.sub[test.set, -7],
+                                    type = "response"),
+                            arrivals.sub[test.set, 7],
+                            q = q))
+    med.err &lt;- mean(lq.loss(predict(object = med.glm,
+                                    newdata = arrivals.sub[test.set, -7],
+                                    type = "response"),
+                            arrivals.sub[test.set, 7],
+                            q = q))
+    big.err &lt;- mean(lq.loss(predict(object = big.glm,
+                                    newdata = arrivals.sub[test.set, -7],
+                                    type = "response"),
+                            arrivals.sub[test.set, 7],
+                            q = q))
+    return(c(sml.err, med.err, big.err))
+}
+</code></p>
+
+<p>The fits using all the data look like:</p>
+
+<p><img src="./fig/fit_all.png" alt="fit.all" /></p>
+
+<!--
+<img src="./fig/predictions_sml.png">
+<img src="./fig/predictions_med.png">
+<img src="./fig/predictions_big.png">
+-->
+
+<h2 id="k-fold-cv-with-a-for-loop">K-fold CV with a for loop</h2>
+<p>Using a naive for loop, we could implement this as:</p>
+
+<p><code>r
+err.for &lt;- NULL
+system.time(
+    for (i in 1:K) {
+        err.for &lt;- cbind(err.for, get.errs(test.set = cv.test.sets[, i],
+                                           discarded = discarded,
+                                           q = 1))
+        }
+    )
+</code></p>
+
+<p><code>
+##    user  system elapsed 
+##  20.206   1.325  21.542
+</code></p>
+
+<h2 id="k-fold-cv-with-an-apply-function">K-fold CV with an apply function</h2>
+<p>If you’re good with <code>apply()</code> functions you might upgrade (slightly) to</p>
+
+<p><code>r
+## apply version
+system.time(
+    err.apply &lt;- sapply(X = 1:K, 
+                        FUN = function(i) {
+                            get.errs(test.set = cv.test.sets[, i],
+                                     discarded = discarded,
+                                     q = 1)
+                            }
+                        )
+    )
+</code></p>
+
+<p><code>
+##    user  system elapsed 
+##  19.800   1.337  21.143
+</code></p>
+
+<p>Neither of the first two methods take advantage of multiple processors. While the <code>apply()</code> functions avoid the inherently sluggish nature of for loops in <code>R</code>, they are still ignorant of the processor structure. We want to chop the job into halves, fourths, etc. and use the <em>whole</em> computer!</p>
+
+<h2 id="k-fold-cv-with-a-snowfall-loop">K-fold CV with a snowfall loop</h2>
+<p>Here is the same computation written with a <code>snowfall</code> loop</p>
+
+<p>```r
+## Define a wrapper function
+wrapper = function(i){
+  get.errs(test.set = cv.test.sets[, i], discarded = discarded, q = 1)
+}</p>
+
+<h2 id="snowfall-version">snowfall version</h2>
+<p>library(snowfall)
+library(parallel)
+library(rlecuyer)
+# ## determines the number of cores on the machine
+cps=detectCores()
+## Initalize multicore 
+sfInit(parallel=TRUE, cpus=cps)
+## Setup random number generator on the cluster
+sfClusterSetupRNG()
+# export global variables
+sfExportAll()
+# export library
+sfLibrary(splines)
+system.time(err.snowfall &lt;- sfSapply(1:K, wrapper))
+## ends snowfall session
+sfStop()
+```
+# components of a snowfall loop
+Note that the syntax of snowfall is almost identical to a for loop. The major difference is the need to write a wrapper function that evaluates one iteration of the for loop and the need to set up and export the relevent data, functions, and libraries.</p>
+
+<h1 id="results">results</h1>
+
+<p><img src="https://pbs.twimg.com/media/B4AFeZvIgAABsqn.jpg" alt="parallel puppies" /></p>
+
+<p><a href="http://CRAN.R-project.org/package=snowfall">snowfall</a></p>
+
+<h2 id="other-tutorials">Other tutorials</h2>
+
+<h2 id="data">Data</h2>
+<p><a href="https://www.citibikenyc.com/system-data">citibike system data</a></p>
