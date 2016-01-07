@@ -1,0 +1,81 @@
+---
+title: "parallelRandomForest"
+author: "John Tipton"
+date: "May 17, 2015"
+output: html_document
+---
+
+# some example code to parallelize the building of random forests
+
+
+## load the required libraries
+```{r, tidy=TRUE, message=FALSE}
+library(knitr)
+opts_chunk$set(cache=TRUE)
+library(randomForest)
+library(parallel)
+library(snowfall)    
+library(rlecuyer)
+```
+## load the data and set up the model
+```{r, tidy=TRUE}
+##
+#load the data
+theData <- iris
+
+#set the formula
+theFormula <- as.formula("Species ~ . ")
+
+#total number of trees in the random forest
+totalTrees <- 500
+```
+## Setup the parallel functions
+```{r, tidy=TRUE, message=FALSE, include=FALSE}
+#specify number of threads
+threads <- detectCores()
+
+#number of trees to build per thread
+trees <- as.integer(totalTrees / threads)
+
+#the wrapper function each thread calls (for sequential computation, this is a for loop)
+parallelRF <- function(i){
+    return(randomForest(theFormula, data=theData, ntree=trees))
+}    
+ 
+# Initialise "cluster"
+sfInit(parallel = TRUE, cpus = threads)
+
+# Export data to the cluster
+sfExport(list = c("theData", "theFormula","trees"))
+
+# Load a library on each processor of the cluster
+sfLibrary(randomForest)
+sfLibrary(rlecuyer)
+ 
+# Use a parallel RNG to avoid correlated random numbers
+# Requires library(rlecuyer) installed on all nodes
+sfClusterSetupRNG()
+```
+## Fit the random forest
+```{r, message=FALSE}
+# build the random forests
+allForests <- sfClusterApplyLB(1:threads, parallelRF)
+
+# Close the cluster
+sfStop()
+```
+## Process forest output
+```{r, tidy=TRUE}
+
+# merge all the forests into one object
+myRandomForest <- allForests[[1]]
+for(i in 2:threads){
+  myRandomForest <- combine(myRandomForest,allForests[[i]])
+}
+
+#convince oursleves we have them all combined
+myRandomForest$ntree
+
+#what is important
+myRandomForest$importance
+```
