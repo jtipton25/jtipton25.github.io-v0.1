@@ -6,8 +6,8 @@
 </description>
     <link>http://jtipton25.github.io/</link>
     <atom:link href="http://jtipton25.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Jan 2016 15:08:40 -0700</pubDate>
-    <lastBuildDate>Thu, 07 Jan 2016 15:08:40 -0700</lastBuildDate>
+    <pubDate>Thu, 07 Jan 2016 15:22:23 -0700</pubDate>
+    <lastBuildDate>Thu, 07 Jan 2016 15:22:23 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -79,42 +79,41 @@
 &lt;h3&gt;Download the GDAL OS X install from kyngchaos&lt;/h3&gt;
 
 &lt;p&gt;Go to http://www.kyngchaos.com/software/frameworks and install the file
-In the Terminal, modify the .bash&lt;em&gt;profile file by typing
-```
-emacs .bash&lt;/em&gt;profile
-&lt;code&gt;
-to open the file and modify the PATH environment by adding the line
-&lt;/code&gt;
-export PATH=”/Library/Frameworks/GDAL.framework/Programs:$PATH”
-```
-Save and close the emacs file&lt;/p&gt;
+In the Terminal, modify the .bash_profile file by typing&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;emacs .bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;to open the file and modify the PATH environment by adding the line&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;”/Library/Frameworks/GDAL.framework/Programs:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;”
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Save and close the emacs file&lt;/p&gt;
 
 &lt;h3&gt;Download and install proj4 from source&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;http://trac.osgeo.org/proj/wiki/WikiStart#Download&lt;/li&gt;
 &lt;li&gt;Download source code version proj-4.8.0.tar.gz (or more recent update)&lt;/li&gt;
-&lt;li&gt;Fire up the Terminal
-&amp;gt; cd ~/Downloads/
-&amp;gt; tar -xzvf proj-4.8.0.tar.gz
-&amp;gt; cd proj-4.8.0
-&amp;gt; ./configure
-&amp;gt; make &amp;amp;&amp;amp; make test
-&amp;gt; sudo make install
-[ should install to /usr/local/lib by default]&lt;/li&gt;
+&lt;li&gt;Fire up the Terminal&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Downloads/
+tar -xzvf proj-4.8.0.tar.gz
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;proj-4.8.0
+./configure
+make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[ should install to /usr/local/lib by default]&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Download and install rgdal from source&lt;/li&gt;
 &lt;li&gt;http://cran.r-project.org/web/packages/rgdal/index.html &amp;lt;- most recent update&lt;/li&gt;
-&lt;li&gt;Fire up the Terminal
-&amp;gt; cd ~/Downloads/
-&amp;gt; sudo R CMD INSTALL –configure-args=’–with-proj-include=/usr/local/lib’ rgdal_0.8-16.tar.gz&lt;/li&gt;
+&lt;li&gt;Fire up the Terminal&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rgdal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Downloads/
+sudo R CMD INSTALL –configure-args&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;’–with-proj-include&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/lib’ rgdal_0.8-16.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rgdal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Loading required package: methods
-## Loading required package: sp
-## rgdal: version: 1.0-4, (SVN revision 548)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Loading required package: sp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## rgdal: version: 1.0-4, (SVN revision 548)
 ##  Geospatial Data Abstraction Library extensions to R successfully loaded
 ##  Loaded GDAL runtime: GDAL 1.11.2, released 2015/02/10
 ##  Path to GDAL shared files: /Users/Tips/Rlibs/rgdal/gdal
