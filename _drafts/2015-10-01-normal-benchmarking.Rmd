@@ -1,4 +1,9 @@
-# random normal timings
+---
+title: "Normal Random Variable Simulation Timings"
+author: "John Tipton"
+date: "August 15, 2015"
+layout: post
+---
  
  Load libraries and functions
  

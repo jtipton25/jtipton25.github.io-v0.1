@@ -1,4 +1,9 @@
-# random normal timings
+---
+title: "Normal Random Variable Simulation Timings"
+author: "John Tipton"
+date: "August 15, 2015"
+layout: post
+---
  
  Load libraries and functions
  
@@ -23,22 +28,8 @@ library(myFunctions)
 
 ```r
 library(microbenchmark)
-```
-
-```
-## Error in library(microbenchmark): there is no package called 'microbenchmark'
-```
-
-```r
 library(mvtnorm)
 library(mvnfast)
-```
-
-```
-## Error in library(mvnfast): there is no package called 'mvnfast'
-```
-
-```r
 source('~/functions/rMVN.R')
 library(knitr)
 opts_chunk$set(cache=TRUE)

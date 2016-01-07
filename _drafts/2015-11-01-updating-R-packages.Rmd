@@ -2,6 +2,7 @@
 title: "Updating R without needing to re-install packages"
 author: "John Tipton"
 date: "October 15, 2015"
+layout: post
 ---
 
 One annoyance when using R is the need to re-install packages with each new installation of R. This is a method to avoid this (at least on unix-like systems), but make sure you use the R command

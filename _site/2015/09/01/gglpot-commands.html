@@ -1,33 +1,153 @@
-<h1>ggplot examples</h1>
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GGPlot examples</title>
+  <meta name="description" content="ggplot examples">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://jtipton25.github.io/2015/09/01/gglpot-commands.html">
+  <link rel="alternate" type="application/rss+xml" title="The posterior" href="http://jtipton25.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">The posterior</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">GGPlot examples</h1>
+    <p class="post-meta">Sep 1, 2015 • John Tipton</p>
+  </header>
+
+  <article class="post-content">
+    <h1>ggplot examples</h1>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: methods
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">movies<span class="o">=</span>movies<span class="p">[</span><span class="kp">sample</span><span class="p">(</span><span class="kp">nrow</span><span class="p">(</span>movies<span class="p">),</span> <span class="m">1000</span><span class="p">),</span> <span class="p">]</span>
 str<span class="p">(</span>movies<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## &#39;data.frame&#39;:    1000 obs. of  24 variables:
-##  $ title      : chr  &quot;Ach du lieber Harry&quot; &quot;Jardin des supplices, Le&quot; &quot;Emmanuelle&#39;s Love&quot; &quot;Abismos da Meia-Noite, Os&quot; ...
-##  $ year       : int  1981 1976 1993 1984 2003 1961 1996 1996 1973 1931 ...
-##  $ length     : int  85 90 83 105 96 90 105 103 8 69 ...
-##  $ budget     : int  NA NA NA NA NA 500000 NA NA NA NA ...
-##  $ rating     : num  5.1 2.4 3.1 4.4 5.5 3.1 9.7 6.7 6.7 5.8 ...
-##  $ votes      : int  54 9 52 10 86 122 10 192 5 24 ...
-##  $ r1         : num  4.5 14.5 14.5 34.5 4.5 14.5 34.5 4.5 0 0 ...
-##  $ r2         : num  4.5 14.5 4.5 0 4.5 14.5 24.5 4.5 0 0 ...
-##  $ r3         : num  4.5 24.5 4.5 0 4.5 14.5 0 4.5 24.5 0 ...
-##  $ r4         : num  4.5 34.5 4.5 0 14.5 14.5 0 4.5 0 4.5 ...
-##  $ r5         : num  24.5 0 4.5 24.5 14.5 14.5 0 4.5 0 14.5 ...
-##  $ r6         : num  24.5 0 4.5 0 14.5 4.5 0 14.5 24.5 44.5 ...
-##  $ r7         : num  14.5 0 4.5 24.5 14.5 4.5 0 14.5 24.5 24.5 ...
-##  $ r8         : num  4.5 0 4.5 0 14.5 4.5 0 14.5 0 14.5 ...
-##  $ r9         : num  0 14.5 4.5 0 4.5 0 24.5 14.5 24.5 0 ...
-##  $ r10        : num  4.5 14.5 44.5 34.5 4.5 4.5 34.5 24.5 24.5 0 ...
-##  $ mpaa       : Factor w/ 5 levels &quot;&quot;,&quot;NC-17&quot;,&quot;PG&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ title      : chr  &quot;Pallbearer, The&quot; &quot;Mrs Meitlemeihr&quot; &quot;Amazing Dobermans, The&quot; &quot;Doctor in the House&quot; ...
+##  $ year       : int  1996 2002 1976 1954 1988 1997 2003 1987 1999 1996 ...
+##  $ length     : int  98 30 96 92 97 118 103 138 96 38 ...
+##  $ budget     : int  NA NA NA NA NA NA NA NA 7000000 NA ...
+##  $ rating     : num  4.8 8.7 4.6 6.8 2.9 3.4 4.7 9.1 6.1 6.2 ...
+##  $ votes      : int  2093 19 101 195 91 15 76 7 2735 20 ...
+##  $ r1         : num  4.5 0 4.5 0 34.5 14.5 4.5 0 4.5 0 ...
+##  $ r2         : num  4.5 0 14.5 4.5 4.5 4.5 4.5 0 4.5 4.5 ...
+##  $ r3         : num  4.5 0 14.5 4.5 4.5 0 4.5 0 4.5 4.5 ...
+##  $ r4         : num  14.5 0 14.5 4.5 14.5 14.5 4.5 14.5 4.5 0 ...
+##  $ r5         : num  14.5 0 14.5 14.5 4.5 4.5 14.5 0 14.5 24.5 ...
+##  $ r6         : num  14.5 4.5 14.5 14.5 4.5 14.5 24.5 0 24.5 4.5 ...
+##  $ r7         : num  14.5 14.5 4.5 24.5 4.5 4.5 14.5 14.5 24.5 0 ...
+##  $ r8         : num  4.5 24.5 4.5 24.5 4.5 24.5 4.5 0 14.5 14.5 ...
+##  $ r9         : num  4.5 14.5 4.5 14.5 4.5 14.5 4.5 44.5 4.5 14.5 ...
+##  $ r10        : num  4.5 44.5 4.5 14.5 14.5 4.5 14.5 24.5 4.5 44.5 ...
+##  $ mpaa       : Factor w/ 5 levels &quot;&quot;,&quot;NC-17&quot;,&quot;PG&quot;,..: 4 1 1 1 1 1 1 1 5 1 ...
 ##  $ Action     : int  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ Animation  : int  0 0 0 0 0 0 0 0 0 0 ...
-##  $ Comedy     : int  1 0 0 0 1 0 0 1 0 0 ...
-##  $ Drama      : int  0 0 1 0 1 0 1 0 0 1 ...
-##  $ Documentary: int  0 0 0 0 0 0 0 0 1 0 ...
-##  $ Romance    : int  0 0 1 0 0 0 0 0 0 1 ...
-##  $ Short      : int  0 0 0 0 0 0 0 0 1 0 ...
+##  $ Comedy     : int  1 1 1 1 0 0 1 0 1 1 ...
+##  $ Drama      : int  1 1 0 0 1 0 0 0 1 0 ...
+##  $ Documentary: int  0 0 0 0 0 0 0 1 0 0 ...
+##  $ Romance    : int  0 0 0 0 0 0 0 0 1 0 ...
+##  $ Short      : int  0 1 0 0 0 0 0 0 0 1 ...
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>movies<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>rating<span class="p">))</span> <span class="o">+</span> geom_density<span class="p">()</span> <span class="o">+</span> facet_grid<span class="p">(</span>Action <span class="o">~</span> Comedy<span class="p">)</span>
 </code></pre></div>
 <p><img src="/figure/drafts/2015-09-01-gglpot-commands/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">The posterior</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>The posterior</li>
+          <li><a href="mailto:jtipton25@gmail.com">jtipton25@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/jtipton25">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">jtipton25</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Here I will post commonly used code examples and statistical problems 
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

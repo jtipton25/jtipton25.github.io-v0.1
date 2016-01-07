@@ -1,4 +1,8 @@
 ---
+title: "GGPlot examples"
+author: "John Tipton"
+date: "September 1, 2015"
+layout: post
 ---
 # ggplot examples
 

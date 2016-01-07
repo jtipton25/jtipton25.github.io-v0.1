@@ -2,6 +2,7 @@
 title: "moving from for to snowfall"
 author: "Henry Scharf, edited to snowfall by John Tipton"
 date: "May 6, 2014"
+layout: post
 ---
 
 

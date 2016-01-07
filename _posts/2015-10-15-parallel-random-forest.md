@@ -2,6 +2,7 @@
 title: "parallelRandomForest"
 author: "John Tipton"
 date: "May 17, 2015"
+layout: post
 ---
 
 # some example code to parallelize the building of random forests

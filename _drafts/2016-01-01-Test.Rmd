@@ -2,6 +2,7 @@
 title: "Test Post"
 author: "John Tipton"
 date: "January 7, 2016"
+layout: post
 ---
 
 ```{r setup, include=FALSE}

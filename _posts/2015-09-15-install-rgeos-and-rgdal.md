@@ -1,4 +1,11 @@
-# Installing Rgeos and Rgdal packages
+---
+title: "Installing Rgeos and Rgdal packages"
+author: "John Tipton"
+date: "September 15, 2015"
+layout: post
+---
+
+
 
 ## Package rgdal
 

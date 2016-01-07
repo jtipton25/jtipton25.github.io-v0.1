@@ -6,8 +6,8 @@
 </description>
     <link>http://jtipton25.github.io/</link>
     <atom:link href="http://jtipton25.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Jan 2016 15:01:48 -0700</pubDate>
-    <lastBuildDate>Thu, 07 Jan 2016 15:01:48 -0700</lastBuildDate>
+    <pubDate>Thu, 07 Jan 2016 15:08:40 -0700</pubDate>
+    <lastBuildDate>Thu, 07 Jan 2016 15:08:40 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -71,81 +71,8 @@
       </item>
     
       <item>
-        <title>Normal Benchmarking</title>
-        <description>&lt;h1&gt;random normal timings&lt;/h1&gt;
-
-&lt;p&gt;Load libraries and functions&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;myFunctions&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Warning in .doLoadActions(where, attach): trying to execute load actions
-## without &amp;#39;methods&amp;#39; package
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## 
-## Attaching package: &amp;#39;myFunctions&amp;#39;
-## 
-## The following objects are masked from &amp;#39;package:base&amp;#39;:
-## 
-##     colSums, rowMeans, rowSums
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in library(microbenchmark): there is no package called &amp;#39;microbenchmark&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvtnorm&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvnfast&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in library(mvnfast): there is no package called &amp;#39;mvnfast&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;~/functions/rMVN.R&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-opts_chunk&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;set&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cache&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Simulate data&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;mu &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-D &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-Sig &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;D&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-y &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Run bencmarks on simulating a multivariate normal&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvrnormArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-               rmvnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-               rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-               times &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in print(microbenchmark(mvrnormArma(100, mu, Sig), rmvnorm(100, : could not find function &amp;quot;microbenchmark&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;layout&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvrnormArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rmvnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in hist(rmvn(100, mu, Sig)): could not find function &amp;quot;rmvn&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-3-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot;&gt; &lt;/p&gt;
-
-&lt;h2&gt;Run bencmarks on simulating a full conditional draw&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVN&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;chol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-               rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-               times &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in print(microbenchmark(rMVN(chol(Sig), mu), rMVNArma(Sig, mu), : could not find function &amp;quot;microbenchmark&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;layout&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVN&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;chol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-4-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-4&quot;&gt; &lt;/p&gt;
-
-&lt;h2&gt;Compare mvnfast random normal to rMVN random normal&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-               rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%*%&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;microbenchmark&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Run benchmarks on density evaluation&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dMVNorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-               dmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; log &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;microbenchmark&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        <pubDate>Thu, 01 Oct 2015 00:00:00 -0600</pubDate>
-        <link>http://jtipton25.github.io/2015/10/01/normal-benchmarking.html</link>
-        <guid isPermaLink="true">http://jtipton25.github.io/2015/10/01/normal-benchmarking.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Install Rgeos And Rgdal</title>
-        <description>&lt;h1&gt;Installing Rgeos and Rgdal packages&lt;/h1&gt;
-
-&lt;h2&gt;Package rgdal&lt;/h2&gt;
+        <title>Installing Rgeos and Rgdal packages</title>
+        <description>&lt;h2&gt;Package rgdal&lt;/h2&gt;
 
 &lt;p&gt;The usual &lt;code&gt;install.packages(“rgdal”)&lt;/code&gt; won’t work.&lt;/p&gt;
 
@@ -203,37 +130,37 @@ Save and close the emacs file&lt;/p&gt;
       </item>
     
       <item>
-        <title>Gglpot Commands</title>
+        <title>GGPlot examples</title>
         <description>&lt;h1&gt;ggplot examples&lt;/h1&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Loading required package: methods
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;movies&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 str&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## &amp;#39;data.frame&amp;#39;:    1000 obs. of  24 variables:
-##  $ title      : chr  &amp;quot;Ach du lieber Harry&amp;quot; &amp;quot;Jardin des supplices, Le&amp;quot; &amp;quot;Emmanuelle&amp;#39;s Love&amp;quot; &amp;quot;Abismos da Meia-Noite, Os&amp;quot; ...
-##  $ year       : int  1981 1976 1993 1984 2003 1961 1996 1996 1973 1931 ...
-##  $ length     : int  85 90 83 105 96 90 105 103 8 69 ...
-##  $ budget     : int  NA NA NA NA NA 500000 NA NA NA NA ...
-##  $ rating     : num  5.1 2.4 3.1 4.4 5.5 3.1 9.7 6.7 6.7 5.8 ...
-##  $ votes      : int  54 9 52 10 86 122 10 192 5 24 ...
-##  $ r1         : num  4.5 14.5 14.5 34.5 4.5 14.5 34.5 4.5 0 0 ...
-##  $ r2         : num  4.5 14.5 4.5 0 4.5 14.5 24.5 4.5 0 0 ...
-##  $ r3         : num  4.5 24.5 4.5 0 4.5 14.5 0 4.5 24.5 0 ...
-##  $ r4         : num  4.5 34.5 4.5 0 14.5 14.5 0 4.5 0 4.5 ...
-##  $ r5         : num  24.5 0 4.5 24.5 14.5 14.5 0 4.5 0 14.5 ...
-##  $ r6         : num  24.5 0 4.5 0 14.5 4.5 0 14.5 24.5 44.5 ...
-##  $ r7         : num  14.5 0 4.5 24.5 14.5 4.5 0 14.5 24.5 24.5 ...
-##  $ r8         : num  4.5 0 4.5 0 14.5 4.5 0 14.5 0 14.5 ...
-##  $ r9         : num  0 14.5 4.5 0 4.5 0 24.5 14.5 24.5 0 ...
-##  $ r10        : num  4.5 14.5 44.5 34.5 4.5 4.5 34.5 24.5 24.5 0 ...
-##  $ mpaa       : Factor w/ 5 levels &amp;quot;&amp;quot;,&amp;quot;NC-17&amp;quot;,&amp;quot;PG&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ title      : chr  &amp;quot;Pallbearer, The&amp;quot; &amp;quot;Mrs Meitlemeihr&amp;quot; &amp;quot;Amazing Dobermans, The&amp;quot; &amp;quot;Doctor in the House&amp;quot; ...
+##  $ year       : int  1996 2002 1976 1954 1988 1997 2003 1987 1999 1996 ...
+##  $ length     : int  98 30 96 92 97 118 103 138 96 38 ...
+##  $ budget     : int  NA NA NA NA NA NA NA NA 7000000 NA ...
+##  $ rating     : num  4.8 8.7 4.6 6.8 2.9 3.4 4.7 9.1 6.1 6.2 ...
+##  $ votes      : int  2093 19 101 195 91 15 76 7 2735 20 ...
+##  $ r1         : num  4.5 0 4.5 0 34.5 14.5 4.5 0 4.5 0 ...
+##  $ r2         : num  4.5 0 14.5 4.5 4.5 4.5 4.5 0 4.5 4.5 ...
+##  $ r3         : num  4.5 0 14.5 4.5 4.5 0 4.5 0 4.5 4.5 ...
+##  $ r4         : num  14.5 0 14.5 4.5 14.5 14.5 4.5 14.5 4.5 0 ...
+##  $ r5         : num  14.5 0 14.5 14.5 4.5 4.5 14.5 0 14.5 24.5 ...
+##  $ r6         : num  14.5 4.5 14.5 14.5 4.5 14.5 24.5 0 24.5 4.5 ...
+##  $ r7         : num  14.5 14.5 4.5 24.5 4.5 4.5 14.5 14.5 24.5 0 ...
+##  $ r8         : num  4.5 24.5 4.5 24.5 4.5 24.5 4.5 0 14.5 14.5 ...
+##  $ r9         : num  4.5 14.5 4.5 14.5 4.5 14.5 4.5 44.5 4.5 14.5 ...
+##  $ r10        : num  4.5 44.5 4.5 14.5 14.5 4.5 14.5 24.5 4.5 44.5 ...
+##  $ mpaa       : Factor w/ 5 levels &amp;quot;&amp;quot;,&amp;quot;NC-17&amp;quot;,&amp;quot;PG&amp;quot;,..: 4 1 1 1 1 1 1 1 5 1 ...
 ##  $ Action     : int  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ Animation  : int  0 0 0 0 0 0 0 0 0 0 ...
-##  $ Comedy     : int  1 0 0 0 1 0 0 1 0 0 ...
-##  $ Drama      : int  0 0 1 0 1 0 1 0 0 1 ...
-##  $ Documentary: int  0 0 0 0 0 0 0 0 1 0 ...
-##  $ Romance    : int  0 0 1 0 0 0 0 0 0 1 ...
-##  $ Short      : int  0 0 0 0 0 0 0 0 1 0 ...
+##  $ Comedy     : int  1 1 1 1 0 0 1 0 1 1 ...
+##  $ Drama      : int  1 1 0 0 1 0 0 0 1 0 ...
+##  $ Documentary: int  0 0 0 0 0 0 0 1 0 0 ...
+##  $ Romance    : int  0 0 0 0 0 0 0 0 1 0 ...
+##  $ Short      : int  0 1 0 0 0 0 0 0 0 1 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;rating&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; geom_density&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; facet_grid&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Action &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt; Comedy&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-09-01-gglpot-commands/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot;&gt; &lt;/p&gt;
@@ -246,8 +173,81 @@ str&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&qu
       </item>
     
       <item>
+        <title>Normal Random Variable Simulation Timings</title>
+        <description>&lt;p&gt;Load libraries and functions&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;myFunctions&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Warning in .doLoadActions(where, attach): trying to execute load actions
+## without &amp;#39;methods&amp;#39; package
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## 
+## Attaching package: &amp;#39;myFunctions&amp;#39;
+## 
+## The following objects are masked from &amp;#39;package:base&amp;#39;:
+## 
+##     colSums, rowMeans, rowSums
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvtnorm&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvnfast&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;~/functions/rMVN.R&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+opts_chunk&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;set&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cache&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Simulate data&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;mu &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+D &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+Sig &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;D&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+y &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Run bencmarks on simulating a multivariate normal&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvrnormArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               rmvnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               times &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in print(microbenchmark(mvrnormArma(100, mu, Sig), rmvnorm(100, : could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;layout&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvrnormArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rmvnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in hist(rmvn(100, mu, Sig)): could not find function &amp;quot;rmvn&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-3-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot;&gt; &lt;/p&gt;
+
+&lt;h2&gt;Run bencmarks on simulating a full conditional draw&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVN&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;chol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               times &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in print(microbenchmark(rMVN(chol(Sig), mu), rMVNArma(Sig, mu), : could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;layout&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVN&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;chol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-4-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-4&quot;&gt; &lt;/p&gt;
+
+&lt;h2&gt;Compare mvnfast random normal to rMVN random normal&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%*%&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Run benchmarks on density evaluation&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dMVNorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               dmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; log &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Sat, 15 Aug 2015 00:00:00 -0600</pubDate>
+        <link>http://jtipton25.github.io/2015/08/15/normal-benchmarking.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2015/08/15/normal-benchmarking.html</guid>
+        
+        
+      </item>
+    
+      <item>
         <title>Knitr Commands</title>
-        <description>&lt;h1&gt;Knitr commands&lt;/h1&gt;
+        <description>&lt;p&gt;title: &amp;quot;Helpful Knitr Options&amp;quot;
+author: &amp;quot;John Tipton&amp;quot;
+date: &amp;quot;August 15, 2015&amp;quot;&lt;/p&gt;
+
+&lt;h2&gt;layout: post&lt;/h2&gt;
+
+&lt;h1&gt;Knitr commands&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;To knit an R markdown document using the command line 

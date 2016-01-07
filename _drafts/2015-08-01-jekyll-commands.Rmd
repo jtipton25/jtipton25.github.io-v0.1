@@ -1,3 +1,10 @@
+---
+title: "Jekyll Commands"
+author: "John Tipton"
+date: "August 1, 2015"
+layout: post
+---
+
 # Webpage for a Jekyll workflow
 
 Building the blog

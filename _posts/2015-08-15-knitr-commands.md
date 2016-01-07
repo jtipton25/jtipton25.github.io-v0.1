@@ -1,3 +1,11 @@
+---
+---
+title: "Helpful Knitr Options"
+author: "John Tipton"
+date: "August 15, 2015"
+layout: post
+---
+
 # Knitr commands 
 * To knit an R markdown document using the command line 
 ```bash
