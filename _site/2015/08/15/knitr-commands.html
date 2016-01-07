@@ -1,34 +1,28 @@
-<h1 id="knitr-commands">Knitr commands</h1>
+<h1>Knitr commands</h1>
+
 <ul>
-  <li>
-    <p>To knit an R markdown document using the command line 
-<code>bash
-&gt; Rscript -e "library(knitr); knit('kernelConvolution.Rmd')"
-</code></p>
-  </li>
-  <li>
-    <p>To use accents in Rmd</p>
-  </li>
+<li><p>To knit an R markdown document using the command line 
+```bash</p>
+
+<blockquote>
+<p>Rscript -e &quot;library(knitr); knit(&#39;kernelConvolution.Rmd&#39;)&quot;
+```</p>
+</blockquote></li>
+<li><p>To use accents in Rmd</p></li>
 </ul>
 
 <p>include in the header</p>
-
-<p><code>
-header-includes:
+<div class="highlight"><pre><code class="language-text" data-lang="text">header-includes:
   - \usepackage[latin9]{inputenc}
-</code></p>
-
+</code></pre></div>
 <p>Then on a mac insert the character of interest</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Acute          ó Ó     Option+E, V
 
-<p>```
-Acute          ó Ó     Option+E, V</p>
+Circumflex     ô Ô     Option+I, V
 
-<p>Circumflex     ô Ô     Option+I, V</p>
+Grave          ò Ò     Option+`, V    
 
-<p>Grave          ò Ò     Option+`, V</p>
+Tilde          õ Õ     Option+N, V     Only works with &quot;n,N,o,O,a,A&quot;
 
-<p>Tilde          õ Õ     Option+N, V     Only works with “n,N,o,O,a,A”</p>
-
-<p>Umlaut         ö Ö     Option+U, V
-```</p>
-
+Umlaut         ö Ö     Option+U, V
+</code></pre></div>

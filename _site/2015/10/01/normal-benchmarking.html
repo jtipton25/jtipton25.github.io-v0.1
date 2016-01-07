@@ -1,121 +1,62 @@
-<h1 id="random-normal-timings">random normal timings</h1>
+<h1>random normal timings</h1>
 
 <p>Load libraries and functions</p>
-
-<p><code>r
-library(myFunctions)
-</code></p>
-
-<p><code>
-## Warning in .doLoadActions(where, attach): trying to execute load actions
-## without 'methods' package
-</code></p>
-
-<p><code>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>myFunctions<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Warning in .doLoadActions(where, attach): trying to execute load actions
+## without &#39;methods&#39; package
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## 
+## Attaching package: &#39;myFunctions&#39;
 ## 
-## Attaching package: 'myFunctions'
-## 
-## The following objects are masked from 'package:base':
+## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     colSums, rowMeans, rowSums
-</code></p>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>microbenchmark<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error in library(microbenchmark): there is no package called &#39;microbenchmark&#39;
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>mvtnorm<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>mvnfast<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error in library(mvnfast): there is no package called &#39;mvnfast&#39;
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">source</span><span class="p">(</span><span class="s">&#39;~/functions/rMVN.R&#39;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>knitr<span class="p">)</span>
+opts_chunk<span class="o">$</span>set<span class="p">(</span>cache<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<h2>Simulate data</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r">mu <span class="o">&lt;-</span> rnorm<span class="p">(</span><span class="m">200</span><span class="p">)</span>
+D <span class="o">&lt;-</span> <span class="kp">as.matrix</span><span class="p">(</span>dist<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">200</span><span class="p">))</span>
+Sig <span class="o">&lt;-</span> <span class="kp">exp</span><span class="p">(</span><span class="o">-</span>D<span class="p">)</span>
+y <span class="o">&lt;-</span> rnorm<span class="p">(</span><span class="m">200</span><span class="p">)</span>
+</code></pre></div>
+<h2>Run bencmarks on simulating a multivariate normal</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">print</span><span class="p">(</span>microbenchmark<span class="p">(</span>mvrnormArma<span class="p">(</span><span class="m">100</span><span class="p">,</span> mu<span class="p">,</span> Sig<span class="p">),</span>
+               rmvnorm<span class="p">(</span><span class="m">100</span><span class="p">,</span> mu<span class="p">,</span> Sig<span class="p">),</span>
+               rmvn<span class="p">(</span><span class="m">100</span><span class="p">,</span> mu<span class="p">,</span> Sig<span class="p">),</span>
+               times <span class="o">=</span> <span class="m">100L</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error in print(microbenchmark(mvrnormArma(100, mu, Sig), rmvnorm(100, : could not find function &quot;microbenchmark&quot;
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">layout<span class="p">(</span><span class="kt">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span>
+hist<span class="p">(</span>mvrnormArma<span class="p">(</span><span class="m">100</span><span class="p">,</span> mu<span class="p">,</span> Sig<span class="p">))</span>
+hist<span class="p">(</span>rmvnorm<span class="p">(</span><span class="m">100</span><span class="p">,</span> mu<span class="p">,</span> Sig<span class="p">))</span>
+hist<span class="p">(</span>rmvn<span class="p">(</span><span class="m">100</span><span class="p">,</span> mu<span class="p">,</span> Sig<span class="p">))</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error in hist(rmvn(100, mu, Sig)): could not find function &quot;rmvn&quot;
+</code></pre></div>
+<p><img src="/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"> </p>
 
-<p><code>r
-library(microbenchmark)
-</code></p>
+<h2>Run bencmarks on simulating a full conditional draw</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">print</span><span class="p">(</span>microbenchmark<span class="p">(</span>rMVN<span class="p">(</span><span class="kp">chol</span><span class="p">(</span>Sig<span class="p">),</span> mu<span class="p">),</span>
+               rMVNArma<span class="p">(</span>Sig<span class="p">,</span> mu<span class="p">),</span>
+               times <span class="o">=</span> <span class="m">100L</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error in print(microbenchmark(rMVN(chol(Sig), mu), rMVNArma(Sig, mu), : could not find function &quot;microbenchmark&quot;
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">layout<span class="p">(</span><span class="kt">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">))</span>
+hist<span class="p">(</span>rMVN<span class="p">(</span><span class="kp">chol</span><span class="p">(</span>Sig<span class="p">),</span> mu<span class="p">))</span>
+hist<span class="p">(</span>rMVNArma<span class="p">(</span>Sig<span class="p">,</span> mu<span class="p">))</span>
+</code></pre></div>
+<p><img src="/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"> </p>
 
-<p><code>
-## Error in library(microbenchmark): there is no package called 'microbenchmark'
-</code></p>
-
-<p><code>r
-library(mvtnorm)
-library(mvnfast)
-</code></p>
-
-<p><code>
-## Error in library(mvnfast): there is no package called 'mvnfast'
-</code></p>
-
-<p><code>r
-source('~/functions/rMVN.R')
-library(knitr)
-opts_chunk$set(cache=TRUE)
-</code></p>
-
-<h2 id="simulate-data">Simulate data</h2>
-
-<p><code>r
-mu &lt;- rnorm(200)
-D &lt;- as.matrix(dist(1:200))
-Sig &lt;- exp(-D)
-y &lt;- rnorm(200)
-</code></p>
-
-<h2 id="run-bencmarks-on-simulating-a-multivariate-normal">Run bencmarks on simulating a multivariate normal</h2>
-
-<p><code>r
-print(microbenchmark(mvrnormArma(100, mu, Sig),
-               rmvnorm(100, mu, Sig),
-               rmvn(100, mu, Sig),
-               times = 100L))
-</code></p>
-
-<p><code>
-## Error in print(microbenchmark(mvrnormArma(100, mu, Sig), rmvnorm(100, : could not find function "microbenchmark"
-</code></p>
-
-<p><code>r
-layout(matrix(1:3, 1, 3))
-hist(mvrnormArma(100, mu, Sig))
-hist(rmvnorm(100, mu, Sig))
-hist(rmvn(100, mu, Sig))
-</code></p>
-
-<p><code>
-## Error in hist(rmvn(100, mu, Sig)): could not find function "rmvn"
-</code></p>
-
-<p><img src="/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" /></p>
-
-<h2 id="run-bencmarks-on-simulating-a-full-conditional-draw">Run bencmarks on simulating a full conditional draw</h2>
-
-<p><code>r
-print(microbenchmark(rMVN(chol(Sig), mu),
-               rMVNArma(Sig, mu),
-               times = 100L))
-</code></p>
-
-<p><code>
-## Error in print(microbenchmark(rMVN(chol(Sig), mu), rMVNArma(Sig, mu), : could not find function "microbenchmark"
-</code></p>
-
-<p><code>r
-layout(matrix(1:2, 1, 2))
-hist(rMVN(chol(Sig), mu))
-hist(rMVNArma(Sig, mu))
-</code></p>
-
-<p><img src="/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" /></p>
-
-<h2 id="compare-mvnfast-random-normal-to-rmvn-random-normal">Compare mvnfast random normal to rMVN random normal</h2>
-
-<p><code>r
-microbenchmark(rMVNArma(Sig, mu),
-               rmvn(1, solve(Sig) %*% mu, solve(Sig)))
-</code></p>
-
-<p><code>
-## Error in eval(expr, envir, enclos): could not find function "microbenchmark"
-</code></p>
-
-<h2 id="run-benchmarks-on-density-evaluation">Run benchmarks on density evaluation</h2>
-
-<p><code>r
-microbenchmark(dMVNorm(y, mu, Sig),
-               dmvn(y, mu, Sig, log = TRUE)) 
-</code></p>
-
-<p><code>
-## Error in eval(expr, envir, enclos): could not find function "microbenchmark"
-</code></p>
+<h2>Compare mvnfast random normal to rMVN random normal</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r">microbenchmark<span class="p">(</span>rMVNArma<span class="p">(</span>Sig<span class="p">,</span> mu<span class="p">),</span>
+               rmvn<span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="kp">solve</span><span class="p">(</span>Sig<span class="p">)</span> <span class="o">%*%</span> mu<span class="p">,</span> <span class="kp">solve</span><span class="p">(</span>Sig<span class="p">)))</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): could not find function &quot;microbenchmark&quot;
+</code></pre></div>
+<h2>Run benchmarks on density evaluation</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r">microbenchmark<span class="p">(</span>dMVNorm<span class="p">(</span>y<span class="p">,</span> mu<span class="p">,</span> Sig<span class="p">),</span>
+               dmvn<span class="p">(</span>y<span class="p">,</span> mu<span class="p">,</span> Sig<span class="p">,</span> log <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span> 
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error in eval(expr, envir, enclos): could not find function &quot;microbenchmark&quot;
+</code></pre></div>
