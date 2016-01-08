@@ -13,7 +13,7 @@ The usual `install.packages(“rgdal”)` won’t work.
 
 ### Download the GDAL OS X install from kyngchaos
 Go to http://www.kyngchaos.com/software/frameworks and install the file
-In the Terminal, modify the .bash_profile file by typing
+In the Terminal, modify the `.bash_profile` file by typing
 
 
 ```bash

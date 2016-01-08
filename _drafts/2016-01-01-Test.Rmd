@@ -28,3 +28,8 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations
+$$
+Y_t = \phi Y_{t-1} + \epsilon_t
+$$

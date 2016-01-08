@@ -6,8 +6,8 @@
 </description>
     <link>http://jtipton25.github.io/</link>
     <atom:link href="http://jtipton25.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Jan 2016 15:22:23 -0700</pubDate>
-    <lastBuildDate>Thu, 07 Jan 2016 15:22:23 -0700</lastBuildDate>
+    <pubDate>Fri, 08 Jan 2016 12:57:01 -0700</pubDate>
+    <lastBuildDate>Fri, 08 Jan 2016 12:57:01 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -30,9 +30,14 @@
 
 &lt;p&gt;You can also embed plots, for example:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2016-01-01-Test/pressure-1.png&quot; alt=&quot;plot of chunk pressure&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2016-01-01-Test/pressure-1.png&quot; alt=&quot;plot of chunk pressure&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Note that the &lt;code&gt;echo = FALSE&lt;/code&gt; parameter was added to the code chunk to prevent printing of the R code that generated the plot.&lt;/p&gt;
+
+&lt;p&gt;You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations
+$$
+Y&lt;em&gt;t = \phi Y&lt;/em&gt;{t-1} + \epsilon_t
+$$&lt;/p&gt;
 </description>
         <pubDate>Thu, 07 Jan 2016 00:00:00 -0700</pubDate>
         <link>http://jtipton25.github.io/2016/01/07/Test.html</link>
@@ -79,7 +84,7 @@
 &lt;h3&gt;Download the GDAL OS X install from kyngchaos&lt;/h3&gt;
 
 &lt;p&gt;Go to http://www.kyngchaos.com/software/frameworks and install the file
-In the Terminal, modify the .bash_profile file by typing&lt;/p&gt;
+In the Terminal, modify the &lt;code&gt;.bash_profile&lt;/code&gt; file by typing&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;emacs .bash_profile
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;to open the file and modify the PATH environment by adding the line&lt;/p&gt;
