@@ -62,55 +62,81 @@
   </header>
 
   <article class="post-content">
-    <h2>Package rgdal</h2>
+    <h2 id="package-rgdal">Package rgdal</h2>
 
 <p>The usual <code>install.packages(“rgdal”)</code> won’t work.</p>
 
-<h3>Download the GDAL OS X install from kyngchaos</h3>
-
+<h3 id="download-the-gdal-os-x-install-from-kyngchaos">Download the GDAL OS X install from kyngchaos</h3>
 <p>Go to http://www.kyngchaos.com/software/frameworks and install the file
 In the Terminal, modify the <code>.bash_profile</code> file by typing</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">emacs .bash_profile
-</code></pre></div>
+
+<p><code>bash
+emacs .bash_profile
+</code></p>
+
 <p>to open the file and modify the PATH environment by adding the line</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>”/Library/Frameworks/GDAL.framework/Programs:<span class="nv">$PATH</span>”
-</code></pre></div>
+
+<p><code>bash
+export PATH=”/Library/Frameworks/GDAL.framework/Programs:$PATH”
+</code></p>
+
 <p>Save and close the emacs file</p>
 
-<h3>Download and install proj4 from source</h3>
-
+<h3 id="download-and-install-proj4-from-source">Download and install proj4 from source</h3>
 <ul>
-<li>http://trac.osgeo.org/proj/wiki/WikiStart#Download</li>
-<li>Download source code version proj-4.8.0.tar.gz (or more recent update)</li>
-<li>Fire up the Terminal</li>
+  <li>http://trac.osgeo.org/proj/wiki/WikiStart#Download</li>
+  <li>Download source code version proj-4.8.0.tar.gz (or more recent update)</li>
+  <li>Fire up the Terminal</li>
 </ul>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Downloads/
+
+<p><code>bash
+cd ~/Downloads/
 tar -xzvf proj-4.8.0.tar.gz
-<span class="nb">cd </span>proj-4.8.0
+cd proj-4.8.0
 ./configure
-make <span class="o">&amp;&amp;</span> make <span class="nb">test</span>
+make &amp;&amp; make test
 sudo make install
-</code></pre></div>
+</code></p>
+
 <p>[ should install to /usr/local/lib by default]</p>
 
 <ol>
-<li>Download and install rgdal from source</li>
-<li>http://cran.r-project.org/web/packages/rgdal/index.html &lt;- most recent update</li>
-<li>Fire up the Terminal</li>
+  <li>Download and install rgdal from source
+    <ul>
+      <li>http://cran.r-project.org/web/packages/rgdal/index.html &lt;- most recent update</li>
+      <li>Fire up the Terminal</li>
+    </ul>
+  </li>
 </ol>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Downloads/
-sudo R CMD INSTALL –configure-args<span class="o">=</span>’–with-proj-include<span class="o">=</span>/usr/local/lib’ rgdal_0.8-16.tar.gz
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rgdal<span class="p">)</span>
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: methods
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: sp
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## rgdal: version: 1.0-4, (SVN revision 548)
+
+<p><code>bash
+cd ~/Downloads/
+sudo R CMD INSTALL –configure-args=’–with-proj-include=/usr/local/lib’ rgdal_0.8-16.tar.gz
+</code></p>
+
+<p><code>r
+library(rgdal)
+</code></p>
+
+<p><code>
+## Loading required package: methods
+</code></p>
+
+<p><code>
+## Loading required package: sp
+</code></p>
+
+<p><code>
+## rgdal: version: 1.0-4, (SVN revision 548)
 ##  Geospatial Data Abstraction Library extensions to R successfully loaded
 ##  Loaded GDAL runtime: GDAL 1.11.2, released 2015/02/10
 ##  Path to GDAL shared files: /Users/Tips/Rlibs/rgdal/gdal
 ##  Loaded PROJ.4 runtime: Rel. 4.9.1, 04 March 2015, [PJ_VERSION: 491]
 ##  Path to PROJ.4 shared files: /Users/Tips/Rlibs/rgdal/proj
 ##  Linking to sp version: 1.1-1
-</code></pre></div>
+</code></p>
+
+
   </article>
 
 </div>
