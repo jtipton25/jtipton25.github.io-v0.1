@@ -100,9 +100,19 @@
 
 <p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
 
-<p>You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations</p>
+<p>You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations using <code>\begin{align} Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t} \end{align}</code> to get</p>
 
-<p>$$Y<em>t = \phi Y</em>t + \epsilon$$</p>
+<p>\begin{align}
+Y_{t} = \phi Y_{t-1} + \epsilon_{t}
+\end{align}</p>
+
+<p>or by typing <code>$$Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t}$$</code> to get</p>
+
+<p>$$
+Y_{t} = \phi Y_{t-1} + \epsilon_{t}
+$$</p>
+
+<p>Note that to get the underscore character <code>_</code> to render a subscript properly, you need to use the command <code>\_</code> in markdown to use markdown&#39;s escape mechanism. This means to get $Y_{t}$ to render, type <code>Y\_{t}</code>.</p>
 
   </article>
 

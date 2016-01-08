@@ -6,8 +6,8 @@
 </description>
     <link>http://jtipton25.github.io/</link>
     <atom:link href="http://jtipton25.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Jan 2016 13:59:02 -0700</pubDate>
-    <lastBuildDate>Fri, 08 Jan 2016 13:59:02 -0700</lastBuildDate>
+    <pubDate>Fri, 08 Jan 2016 14:09:50 -0700</pubDate>
+    <lastBuildDate>Fri, 08 Jan 2016 14:09:50 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -34,9 +34,19 @@
 
 &lt;p&gt;Note that the &lt;code&gt;echo = FALSE&lt;/code&gt; parameter was added to the code chunk to prevent printing of the R code that generated the plot.&lt;/p&gt;
 
-&lt;p&gt;You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations&lt;/p&gt;
+&lt;p&gt;You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations using &lt;code&gt;\begin{align} Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t} \end{align}&lt;/code&gt; to get&lt;/p&gt;
 
-&lt;p&gt;$$Y&lt;em&gt;t = \phi Y&lt;/em&gt;t + \epsilon$$&lt;/p&gt;
+&lt;p&gt;\begin{align}
+Y_{t} = \phi Y_{t-1} + \epsilon_{t}
+\end{align}&lt;/p&gt;
+
+&lt;p&gt;or by typing &lt;code&gt;$$Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t}$$&lt;/code&gt; to get&lt;/p&gt;
+
+&lt;p&gt;$$
+Y_{t} = \phi Y_{t-1} + \epsilon_{t}
+$$&lt;/p&gt;
+
+&lt;p&gt;Note that to get the underscore character &lt;code&gt;_&lt;/code&gt; to render a subscript properly, you need to use the command &lt;code&gt;\_&lt;/code&gt; in markdown to use markdown&amp;#39;s escape mechanism. This means to get $Y_{t}$ to render, type &lt;code&gt;Y\_{t}&lt;/code&gt;.&lt;/p&gt;
 </description>
         <pubDate>Thu, 07 Jan 2016 00:00:00 -0700</pubDate>
         <link>http://jtipton25.github.io/2016/01/07/Test.html</link>
