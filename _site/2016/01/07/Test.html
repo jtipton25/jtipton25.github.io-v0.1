@@ -10,8 +10,24 @@
   <meta name="description" content="R Markdown">
 
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/jekyll-github.css">
   <link rel="canonical" href="http://jtipton25.github.io/2016/01/07/Test.html">
   <link rel="alternate" type="application/rss+xml" title="The posterior" href="http://jtipton25.github.io/feed.xml" />
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true
+    }
+  });
+  </script>
 </head>
 
 
@@ -84,8 +100,9 @@
 
 <p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
 
-<p>You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations
-$$Y<em>t = \phi Y</em>{t-1} + \epsilon_t$$</p>
+<p>You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations</p>
+
+<p>$$Y<em>t = \phi Y</em>t + \epsilon$$</p>
 
   </article>
 
