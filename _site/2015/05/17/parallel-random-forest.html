@@ -62,71 +62,53 @@
   </header>
 
   <article class="post-content">
-    <h1 id="some-example-code-to-parallelize-the-building-of-random-forests">some example code to parallelize the building of random forests</h1>
+    <h1>some example code to parallelize the building of random forests</h1>
 
-<h2 id="load-the-required-libraries">load the required libraries</h2>
+<h2>load the required libraries</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>knitr<span class="p">)</span>
+opts_chunk<span class="o">$</span>set<span class="p">(</span>cache <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>randomForest<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>parallel<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>snowfall<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>rlecuyer<span class="p">)</span>
+</code></pre></div>
+<h2>load the data and set up the model</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## load the data</span>
+theData <span class="o">&lt;-</span> iris
 
-<p><code>r
-library(knitr)
-opts_chunk$set(cache = TRUE)
-library(randomForest)
-library(parallel)
-library(snowfall)
-library(rlecuyer)
-</code>
-## load the data and set up the model</p>
+<span class="c1"># set the formula</span>
+theFormula <span class="o">&lt;-</span> as.formula<span class="p">(</span><span class="s">&quot;Species ~ . &quot;</span><span class="p">)</span>
 
-<p>```r
-## load the data
-theData &lt;- iris</p>
+<span class="c1"># total number of trees in the random forest</span>
+totalTrees <span class="o">&lt;-</span> <span class="m">500</span>
+</code></pre></div>
+<h2>Setup the parallel functions</h2>
 
-<h1 id="set-the-formula">set the formula</h1>
-<p>theFormula &lt;- as.formula(“Species ~ . “)</p>
+<h2>Fit the random forest</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># build the random forests</span>
+allForests <span class="o">&lt;-</span> sfClusterApplyLB<span class="p">(</span><span class="m">1</span><span class="o">:</span>threads<span class="p">,</span> parallelRF<span class="p">)</span>
 
-<h1 id="total-number-of-trees-in-the-random-forest">total number of trees in the random forest</h1>
-<p>totalTrees &lt;- 500
-```
-## Setup the parallel functions</p>
+<span class="c1"># Close the cluster</span>
+sfStop<span class="p">()</span>
+</code></pre></div>
+<h2>Process forest output</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># merge all the forests into one object</span>
+myRandomForest <span class="o">&lt;-</span> allForests<span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
+<span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">2</span><span class="o">:</span>threads<span class="p">)</span> <span class="p">{</span>
+    myRandomForest <span class="o">&lt;-</span> combine<span class="p">(</span>myRandomForest<span class="p">,</span> allForests<span class="p">[[</span>i<span class="p">]])</span>
+<span class="p">}</span>
 
-<h2 id="fit-the-random-forest">Fit the random forest</h2>
-
-<p>```r
-# build the random forests
-allForests &lt;- sfClusterApplyLB(1:threads, parallelRF)</p>
-
-<h1 id="close-the-cluster">Close the cluster</h1>
-<p>sfStop()
-```
-## Process forest output</p>
-
-<p>```r
-# merge all the forests into one object
-myRandomForest &lt;- allForests[[1]]
-for (i in 2:threads) {
-    myRandomForest &lt;- combine(myRandomForest, allForests[[i]])
-}</p>
-
-<h1 id="convince-oursleves-we-have-them-all-combined">convince oursleves we have them all combined</h1>
-<p>myRandomForest$ntree
-```</p>
-
-<p><code>
-## [1] 496
-</code></p>
-
-<p><code>r
-# what is important
-myRandomForest$importance
-</code></p>
-
-<p><code>
-##              MeanDecreaseGini
+<span class="c1"># convince oursleves we have them all combined</span>
+myRandomForest<span class="o">$</span>ntree
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## [1] 496
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># what is important</span>
+myRandomForest<span class="o">$</span>importance
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##              MeanDecreaseGini
 ## Sepal.Length        10.025435
 ## Sepal.Width          2.556842
 ## Petal.Length        44.540894
 ## Petal.Width         42.111466
-</code></p>
-
+</code></pre></div>
   </article>
 
 </div>

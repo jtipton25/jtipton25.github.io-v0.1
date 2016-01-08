@@ -6,43 +6,71 @@
 </description>
     <link>http://jtipton25.github.io/</link>
     <atom:link href="http://jtipton25.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Jan 2016 13:41:34 -0700</pubDate>
-    <lastBuildDate>Fri, 08 Jan 2016 13:41:34 -0700</lastBuildDate>
+    <pubDate>Fri, 08 Jan 2016 13:43:31 -0700</pubDate>
+    <lastBuildDate>Fri, 08 Jan 2016 13:43:31 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
         <title>Test Post</title>
-        <description>&lt;h2 id=&quot;r-markdown&quot;&gt;R Markdown&lt;/h2&gt;
+        <description>&lt;h2&gt;R Markdown&lt;/h2&gt;
 
 &lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&quot;http://rmarkdown.rstudio.com&quot;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;When you click the &lt;strong&gt;Knit&lt;/strong&gt; button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-summary(cars)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-##      speed           dist       
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##      speed           dist       
 ##  Min.   : 4.0   Min.   :  2.00  
 ##  1st Qu.:12.0   1st Qu.: 26.00  
 ##  Median :15.0   Median : 36.00  
 ##  Mean   :15.4   Mean   : 42.98  
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
 ##  Max.   :25.0   Max.   :120.00
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;including-plots&quot;&gt;Including Plots&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Including Plots&lt;/h2&gt;
 
 &lt;p&gt;You can also embed plots, for example:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2016-01-01-Test/pressure-1.png&quot; alt=&quot;plot of chunk pressure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2016-01-01-Test/pressure-1.png&quot; alt=&quot;plot of chunk pressure&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Note that the &lt;code&gt;echo = FALSE&lt;/code&gt; parameter was added to the code chunk to prevent printing of the R code that generated the plot.&lt;/p&gt;
 
-&lt;p&gt;You can also include inline equations like &lt;script type=&quot;math/tex&quot;&gt;Y = X \beta + \epsilon&lt;/script&gt; or inset equations&lt;/p&gt;
+&lt;p&gt;You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations
+$$Y&lt;em&gt;t = \phi Y&lt;/em&gt;{t-1} + \epsilon_t$$&lt;/p&gt;
+</description>
+        <pubDate>Thu, 07 Jan 2016 00:00:00 -0700</pubDate>
+        <link>http://jtipton25.github.io/2016/01/07/Test.html</link>
+        <guid isPermaLink="true">http://jtipton25.github.io/2016/01/07/Test.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Test Post</title>
+        <description>&lt;h2&gt;R Markdown&lt;/h2&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Y_t = \phi Y_{t-1} + \epsilon_t&lt;/script&gt;
+&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&quot;http://rmarkdown.rstudio.com&quot;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When you click the &lt;strong&gt;Knit&lt;/strong&gt; button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Including Plots&lt;/h2&gt;
+
+&lt;p&gt;You can also embed plots, for example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2016-01-01-Test/pressure-1.png&quot; alt=&quot;plot of chunk pressure&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that the &lt;code&gt;echo = FALSE&lt;/code&gt; parameter was added to the code chunk to prevent printing of the R code that generated the plot.&lt;/p&gt;
+
+&lt;p&gt;You can also include inline equations like $$Y = X \beta + \epsilon$$ or inset equations&lt;/p&gt;
+
+&lt;p&gt;$$Y&lt;em&gt;t = \phi Y&lt;/em&gt;{t-1} + \epsilon_t$$&lt;/p&gt;
 </description>
         <pubDate>Thu, 07 Jan 2016 00:00:00 -0700</pubDate>
         <link>http://jtipton25.github.io/2016/01/07/Test.html</link>
@@ -54,36 +82,24 @@ summary(cars)
       <item>
         <title>Updating R without needing to re-install packages</title>
         <description>&lt;p&gt;One annoyance when using R is the need to re-install packages with each new installation of R. This is a method to avoid this (at least on unix-like systems), but make sure you use the R command&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-update.packages()
-&lt;/code&gt;
-regularly. The first step is to make a directory where you plan to install the libraries. I choose the home directory &lt;code&gt;~/&lt;/code&gt; and name my directory &lt;code&gt;Rlibs&lt;/code&gt;. To do this, open the terminal and type&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;bash
-mkdir ~/Rlibs
-&lt;/code&gt;
-Then, go to your home directory (by typing &lt;code&gt;cd&lt;/code&gt;) and create a new file (&lt;code&gt;.Renviron&lt;/code&gt;) that R will use to set environment variables using emacs by typing&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;bash
-emacs .Renviron
-&lt;/code&gt;
-opening the file using the &lt;code&gt;emacs&lt;/code&gt; text editor. Then type&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;bash
-R_LIBS=~/Rlibs
-&lt;/code&gt;
-to tell R that packages should be installed and loaded from the &lt;code&gt;~/Rlibs&lt;/code&gt; directory. To save the &lt;code&gt;.Renviron&lt;/code&gt; file, use the emacs command for save&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;bash
-ctrl-x ctrl-s
-&lt;/code&gt;
-where, while holding the &lt;code&gt;ctrl&lt;/code&gt; key you type &lt;code&gt;x&lt;/code&gt; then &lt;code&gt;s&lt;/code&gt;. Then exit emacs using&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;bash
-ctrl-x ctrl-c
-&lt;/code&gt;
-If at anytime you are unsure, just hit &lt;code&gt;esc&lt;/code&gt; a few times to clear out the &lt;code&gt;emacs&lt;/code&gt; buffer. Make sure to use &lt;code&gt;update.packages()&lt;/code&gt; often in R to keep the libraries up to date.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;update.packages&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;regularly. The first step is to make a directory where you plan to install the libraries. I choose the home directory &lt;code&gt;~/&lt;/code&gt; and name my directory &lt;code&gt;Rlibs&lt;/code&gt;. To do this, open the terminal and type&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir ~/Rlibs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, go to your home directory (by typing &lt;code&gt;cd&lt;/code&gt;) and create a new file (&lt;code&gt;.Renviron&lt;/code&gt;) that R will use to set environment variables using emacs by typing&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;emacs .Renviron
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;opening the file using the &lt;code&gt;emacs&lt;/code&gt; text editor. Then type&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;R_LIBS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/Rlibs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;to tell R that packages should be installed and loaded from the &lt;code&gt;~/Rlibs&lt;/code&gt; directory. To save the &lt;code&gt;.Renviron&lt;/code&gt; file, use the emacs command for save&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ctrl-x ctrl-s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;where, while holding the &lt;code&gt;ctrl&lt;/code&gt; key you type &lt;code&gt;x&lt;/code&gt; then &lt;code&gt;s&lt;/code&gt;. Then exit emacs using&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ctrl-x ctrl-c
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If at anytime you are unsure, just hit &lt;code&gt;esc&lt;/code&gt; a few times to clear out the &lt;code&gt;emacs&lt;/code&gt; buffer. Make sure to use &lt;code&gt;update.packages()&lt;/code&gt; often in R to keep the libraries up to date.&lt;/p&gt;
 </description>
         <pubDate>Thu, 15 Oct 2015 00:00:00 -0600</pubDate>
         <link>http://jtipton25.github.io/2015/10/15/updating-R-packages.html</link>
@@ -94,81 +110,55 @@ If at anytime you are unsure, just hit &lt;code&gt;esc&lt;/code&gt; a few times 
     
       <item>
         <title>Installing Rgeos and Rgdal packages</title>
-        <description>&lt;h2 id=&quot;package-rgdal&quot;&gt;Package rgdal&lt;/h2&gt;
+        <description>&lt;h2&gt;Package rgdal&lt;/h2&gt;
 
 &lt;p&gt;The usual &lt;code&gt;install.packages(“rgdal”)&lt;/code&gt; won’t work.&lt;/p&gt;
 
-&lt;h3 id=&quot;download-the-gdal-os-x-install-from-kyngchaos&quot;&gt;Download the GDAL OS X install from kyngchaos&lt;/h3&gt;
+&lt;h3&gt;Download the GDAL OS X install from kyngchaos&lt;/h3&gt;
+
 &lt;p&gt;Go to http://www.kyngchaos.com/software/frameworks and install the file
 In the Terminal, modify the &lt;code&gt;.bash_profile&lt;/code&gt; file by typing&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;bash
-emacs .bash_profile
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;emacs .bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;to open the file and modify the PATH environment by adding the line&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;bash
-export PATH=”/Library/Frameworks/GDAL.framework/Programs:$PATH”
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;”/Library/Frameworks/GDAL.framework/Programs:&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;”
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Save and close the emacs file&lt;/p&gt;
 
-&lt;h3 id=&quot;download-and-install-proj4-from-source&quot;&gt;Download and install proj4 from source&lt;/h3&gt;
+&lt;h3&gt;Download and install proj4 from source&lt;/h3&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;http://trac.osgeo.org/proj/wiki/WikiStart#Download&lt;/li&gt;
-  &lt;li&gt;Download source code version proj-4.8.0.tar.gz (or more recent update)&lt;/li&gt;
-  &lt;li&gt;Fire up the Terminal&lt;/li&gt;
+&lt;li&gt;http://trac.osgeo.org/proj/wiki/WikiStart#Download&lt;/li&gt;
+&lt;li&gt;Download source code version proj-4.8.0.tar.gz (or more recent update)&lt;/li&gt;
+&lt;li&gt;Fire up the Terminal&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;bash
-cd ~/Downloads/
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Downloads/
 tar -xzvf proj-4.8.0.tar.gz
-cd proj-4.8.0
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;proj-4.8.0
 ./configure
-make &amp;amp;&amp;amp; make test
+make &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
 sudo make install
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;[ should install to /usr/local/lib by default]&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Download and install rgdal from source
-    &lt;ul&gt;
-      &lt;li&gt;http://cran.r-project.org/web/packages/rgdal/index.html &amp;lt;- most recent update&lt;/li&gt;
-      &lt;li&gt;Fire up the Terminal&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+&lt;li&gt;Download and install rgdal from source&lt;/li&gt;
+&lt;li&gt;http://cran.r-project.org/web/packages/rgdal/index.html &amp;lt;- most recent update&lt;/li&gt;
+&lt;li&gt;Fire up the Terminal&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;&lt;code&gt;bash
-cd ~/Downloads/
-sudo R CMD INSTALL –configure-args=’–with-proj-include=/usr/local/lib’ rgdal_0.8-16.tar.gz
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-library(rgdal)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## Loading required package: methods
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## Loading required package: sp
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## rgdal: version: 1.0-4, (SVN revision 548)
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/Downloads/
+sudo R CMD INSTALL –configure-args&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;’–with-proj-include&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/lib’ rgdal_0.8-16.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rgdal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Loading required package: methods
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Loading required package: sp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## rgdal: version: 1.0-4, (SVN revision 548)
 ##  Geospatial Data Abstraction Library extensions to R successfully loaded
 ##  Loaded GDAL runtime: GDAL 1.11.2, released 2015/02/10
 ##  Path to GDAL shared files: /Users/Tips/Rlibs/rgdal/gdal
 ##  Loaded PROJ.4 runtime: Rel. 4.9.1, 04 March 2015, [PJ_VERSION: 491]
 ##  Path to PROJ.4 shared files: /Users/Tips/Rlibs/rgdal/proj
 ##  Linking to sp version: 1.1-1
-&lt;/code&gt;&lt;/p&gt;
-
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Tue, 15 Sep 2015 00:00:00 -0600</pubDate>
         <link>http://jtipton25.github.io/2015/09/15/install-rgeos-and-rgdal.html</link>
         <guid isPermaLink="true">http://jtipton25.github.io/2015/09/15/install-rgeos-and-rgdal.html</guid>
@@ -178,24 +168,13 @@ library(rgdal)
     
       <item>
         <title>GGPlot examples</title>
-        <description>&lt;h1 id=&quot;ggplot-examples&quot;&gt;ggplot examples&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;r
-library(ggplot2)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## Loading required package: methods
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-movies=movies[sample(nrow(movies), 1000), ]
-str(movies)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## &#39;data.frame&#39;:	1000 obs. of  24 variables:
-##  $ title      : chr  &quot;Pallbearer, The&quot; &quot;Mrs Meitlemeihr&quot; &quot;Amazing Dobermans, The&quot; &quot;Doctor in the House&quot; ...
+        <description>&lt;h1&gt;ggplot examples&lt;/h1&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Loading required package: methods
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;movies&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+str&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## &amp;#39;data.frame&amp;#39;:    1000 obs. of  24 variables:
+##  $ title      : chr  &amp;quot;Pallbearer, The&amp;quot; &amp;quot;Mrs Meitlemeihr&amp;quot; &amp;quot;Amazing Dobermans, The&amp;quot; &amp;quot;Doctor in the House&amp;quot; ...
 ##  $ year       : int  1996 2002 1976 1954 1988 1997 2003 1987 1999 1996 ...
 ##  $ length     : int  98 30 96 92 97 118 103 138 96 38 ...
 ##  $ budget     : int  NA NA NA NA NA NA NA NA 7000000 NA ...
@@ -211,7 +190,7 @@ str(movies)
 ##  $ r8         : num  4.5 24.5 4.5 24.5 4.5 24.5 4.5 0 14.5 14.5 ...
 ##  $ r9         : num  4.5 14.5 4.5 14.5 4.5 14.5 4.5 44.5 4.5 14.5 ...
 ##  $ r10        : num  4.5 44.5 4.5 14.5 14.5 4.5 14.5 24.5 4.5 44.5 ...
-##  $ mpaa       : Factor w/ 5 levels &quot;&quot;,&quot;NC-17&quot;,&quot;PG&quot;,..: 4 1 1 1 1 1 1 1 5 1 ...
+##  $ mpaa       : Factor w/ 5 levels &amp;quot;&amp;quot;,&amp;quot;NC-17&amp;quot;,&amp;quot;PG&amp;quot;,..: 4 1 1 1 1 1 1 1 5 1 ...
 ##  $ Action     : int  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ Animation  : int  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ Comedy     : int  1 1 1 1 0 0 1 0 1 1 ...
@@ -219,13 +198,9 @@ str(movies)
 ##  $ Documentary: int  0 0 0 0 0 0 0 1 0 0 ...
 ##  $ Romance    : int  0 0 0 0 0 0 0 0 1 0 ...
 ##  $ Short      : int  0 1 0 0 0 0 0 0 0 1 ...
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-ggplot(movies, aes(x=rating)) + geom_density() + facet_grid(Action ~ Comedy)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-09-01-gglpot-commands/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;rating&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; geom_density&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; facet_grid&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Action &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt; Comedy&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-09-01-gglpot-commands/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot;&gt; &lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Sep 2015 00:00:00 -0600</pubDate>
         <link>http://jtipton25.github.io/2015/09/01/gglpot-commands.html</link>
@@ -237,111 +212,63 @@ ggplot(movies, aes(x=rating)) + geom_density() + facet_grid(Action ~ Comedy)
       <item>
         <title>Normal Random Variable Simulation Timings</title>
         <description>&lt;p&gt;Load libraries and functions&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-library(myFunctions)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## Warning in .doLoadActions(where, attach): trying to execute load actions
-## without &#39;methods&#39; package
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;myFunctions&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Warning in .doLoadActions(where, attach): trying to execute load actions
+## without &amp;#39;methods&amp;#39; package
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## 
+## Attaching package: &amp;#39;myFunctions&amp;#39;
 ## 
-## Attaching package: &#39;myFunctions&#39;
-## 
-## The following objects are masked from &#39;package:base&#39;:
+## The following objects are masked from &amp;#39;package:base&amp;#39;:
 ## 
 ##     colSums, rowMeans, rowSums
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvtnorm&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvnfast&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;~/functions/rMVN.R&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+opts_chunk&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;set&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cache&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Simulate data&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;mu &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+D &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+Sig &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;D&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+y &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Run bencmarks on simulating a multivariate normal&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvrnormArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               rmvnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               times &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in print(microbenchmark(mvrnormArma(100, mu, Sig), rmvnorm(100, : could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;layout&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvrnormArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rmvnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in hist(rmvn(100, mu, Sig)): could not find function &amp;quot;rmvn&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-3-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot;&gt; &lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;r
-library(microbenchmark)
-library(mvtnorm)
-library(mvnfast)
-source(&#39;~/functions/rMVN.R&#39;)
-library(knitr)
-opts_chunk$set(cache=TRUE)
-&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Run bencmarks on simulating a full conditional draw&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVN&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;chol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               times &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in print(microbenchmark(rMVN(chol(Sig), mu), rMVNArma(Sig, mu), : could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;layout&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVN&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;chol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-4-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-4&quot;&gt; &lt;/p&gt;
 
-&lt;h2 id=&quot;simulate-data&quot;&gt;Simulate data&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;r
-mu &amp;lt;- rnorm(200)
-D &amp;lt;- as.matrix(dist(1:200))
-Sig &amp;lt;- exp(-D)
-y &amp;lt;- rnorm(200)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;run-bencmarks-on-simulating-a-multivariate-normal&quot;&gt;Run bencmarks on simulating a multivariate normal&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;r
-print(microbenchmark(mvrnormArma(100, mu, Sig),
-               rmvnorm(100, mu, Sig),
-               rmvn(100, mu, Sig),
-               times = 100L))
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## Error in print(microbenchmark(mvrnormArma(100, mu, Sig), rmvnorm(100, : could not find function &quot;microbenchmark&quot;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-layout(matrix(1:3, 1, 3))
-hist(mvrnormArma(100, mu, Sig))
-hist(rmvnorm(100, mu, Sig))
-hist(rmvn(100, mu, Sig))
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## Error in hist(rmvn(100, mu, Sig)): could not find function &quot;rmvn&quot;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-3-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;run-bencmarks-on-simulating-a-full-conditional-draw&quot;&gt;Run bencmarks on simulating a full conditional draw&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;r
-print(microbenchmark(rMVN(chol(Sig), mu),
-               rMVNArma(Sig, mu),
-               times = 100L))
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## Error in print(microbenchmark(rMVN(chol(Sig), mu), rMVNArma(Sig, mu), : could not find function &quot;microbenchmark&quot;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-layout(matrix(1:2, 1, 2))
-hist(rMVN(chol(Sig), mu))
-hist(rMVNArma(Sig, mu))
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-4-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-4&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;compare-mvnfast-random-normal-to-rmvn-random-normal&quot;&gt;Compare mvnfast random normal to rMVN random normal&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;r
-microbenchmark(rMVNArma(Sig, mu),
-               rmvn(1, solve(Sig) %*% mu, solve(Sig)))
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## Error in eval(expr, envir, enclos): could not find function &quot;microbenchmark&quot;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;run-benchmarks-on-density-evaluation&quot;&gt;Run benchmarks on density evaluation&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;r
-microbenchmark(dMVNorm(y, mu, Sig),
-               dmvn(y, mu, Sig, log = TRUE)) 
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## Error in eval(expr, envir, enclos): could not find function &quot;microbenchmark&quot;
-&lt;/code&gt;&lt;/p&gt;
-</description>
+&lt;h2&gt;Compare mvnfast random normal to rMVN random normal&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%*%&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Run benchmarks on density evaluation&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dMVNorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+               dmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; log &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Sat, 15 Aug 2015 00:00:00 -0600</pubDate>
         <link>http://jtipton25.github.io/2015/08/15/normal-benchmarking.html</link>
         <guid isPermaLink="true">http://jtipton25.github.io/2015/08/15/normal-benchmarking.html</guid>
@@ -351,47 +278,40 @@ microbenchmark(dMVNorm(y, mu, Sig),
     
       <item>
         <title>Knitr Commands</title>
-        <description>&lt;p&gt;title: “Helpful Knitr Options”
-author: “John Tipton”
-date: “August 15, 2015”
-layout: post
-—&lt;/p&gt;
+        <description>&lt;p&gt;title: &amp;quot;Helpful Knitr Options&amp;quot;
+author: &amp;quot;John Tipton&amp;quot;
+date: &amp;quot;August 15, 2015&amp;quot;&lt;/p&gt;
 
-&lt;h1 id=&quot;knitr-commands&quot;&gt;Knitr commands&lt;/h1&gt;
+&lt;h2&gt;layout: post&lt;/h2&gt;
+
+&lt;h1&gt;Knitr commands&lt;/h1&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;To knit an R markdown document using the command line 
-&lt;code&gt;bash
-&amp;gt; Rscript -e &quot;library(knitr); knit(&#39;kernelConvolution.Rmd&#39;)&quot;
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;To use accents in Rmd&lt;/p&gt;
-  &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;To knit an R markdown document using the command line 
+```bash&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Rscript -e &amp;quot;library(knitr); knit(&amp;#39;kernelConvolution.Rmd&amp;#39;)&amp;quot;
+```&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;To use accents in Rmd&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;include in the header&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-header-includes:
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;header-includes:
   - \usepackage[latin9]{inputenc}
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then on a mac insert the character of interest&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Acute          ó Ó     Option+E, V
 
-&lt;p&gt;```
-Acute          ó Ó     Option+E, V&lt;/p&gt;
+Circumflex     ô Ô     Option+I, V
 
-&lt;p&gt;Circumflex     ô Ô     Option+I, V&lt;/p&gt;
+Grave          ò Ò     Option+`, V    
 
-&lt;p&gt;Grave          ò Ò     Option+`, V&lt;/p&gt;
+Tilde          õ Õ     Option+N, V     Only works with &amp;quot;n,N,o,O,a,A&amp;quot;
 
-&lt;p&gt;Tilde          õ Õ     Option+N, V     Only works with “n,N,o,O,a,A”&lt;/p&gt;
-
-&lt;p&gt;Umlaut         ö Ö     Option+U, V
-```&lt;/p&gt;
-
-</description>
+Umlaut         ö Ö     Option+U, V
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Sat, 15 Aug 2015 00:00:00 -0600</pubDate>
         <link>http://jtipton25.github.io/2015/08/15/knitr-commands.html</link>
         <guid isPermaLink="true">http://jtipton25.github.io/2015/08/15/knitr-commands.html</guid>
@@ -401,16 +321,13 @@ Acute          ó Ó     Option+E, V&lt;/p&gt;
     
       <item>
         <title>Jekyll Commands</title>
-        <description>&lt;h1 id=&quot;webpage-for-a-jekyll-workflow&quot;&gt;Webpage for a Jekyll workflow&lt;/h1&gt;
+        <description>&lt;h1&gt;Webpage for a Jekyll workflow&lt;/h1&gt;
 
 &lt;p&gt;Building the blog&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;bash
-cd myblog/
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;myblog/
 jekyll build
-# =&amp;gt; The current folder will be generated into ./_site
-&lt;/code&gt;&lt;/p&gt;
-</description>
+&lt;span class=&quot;c&quot;&gt;# =&amp;gt; The current folder will be generated into ./_site&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Sat, 01 Aug 2015 00:00:00 -0600</pubDate>
         <link>http://jtipton25.github.io/2015/08/01/jekyll-commands.html</link>
         <guid isPermaLink="true">http://jtipton25.github.io/2015/08/01/jekyll-commands.html</guid>
@@ -420,71 +337,53 @@ jekyll build
     
       <item>
         <title>parallelRandomForest</title>
-        <description>&lt;h1 id=&quot;some-example-code-to-parallelize-the-building-of-random-forests&quot;&gt;some example code to parallelize the building of random forests&lt;/h1&gt;
+        <description>&lt;h1&gt;some example code to parallelize the building of random forests&lt;/h1&gt;
 
-&lt;h2 id=&quot;load-the-required-libraries&quot;&gt;load the required libraries&lt;/h2&gt;
+&lt;h2&gt;load the required libraries&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;knitr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+opts_chunk&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;set&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cache &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;randomForest&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;parallel&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;snowfall&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rlecuyer&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;load the data and set up the model&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;## load the data&lt;/span&gt;
+theData &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; iris
 
-&lt;p&gt;&lt;code&gt;r
-library(knitr)
-opts_chunk$set(cache = TRUE)
-library(randomForest)
-library(parallel)
-library(snowfall)
-library(rlecuyer)
-&lt;/code&gt;
-## load the data and set up the model&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;# set the formula&lt;/span&gt;
+theFormula &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; as.formula&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Species ~ . &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;p&gt;```r
-## load the data
-theData &amp;lt;- iris&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;# total number of trees in the random forest&lt;/span&gt;
+totalTrees &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;500&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Setup the parallel functions&lt;/h2&gt;
 
-&lt;h1 id=&quot;set-the-formula&quot;&gt;set the formula&lt;/h1&gt;
-&lt;p&gt;theFormula &amp;lt;- as.formula(“Species ~ . “)&lt;/p&gt;
+&lt;h2&gt;Fit the random forest&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# build the random forests&lt;/span&gt;
+allForests &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; sfClusterApplyLB&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;threads&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; parallelRF&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;h1 id=&quot;total-number-of-trees-in-the-random-forest&quot;&gt;total number of trees in the random forest&lt;/h1&gt;
-&lt;p&gt;totalTrees &amp;lt;- 500
-```
-## Setup the parallel functions&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;# Close the cluster&lt;/span&gt;
+sfStop&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Process forest output&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# merge all the forests into one object&lt;/span&gt;
+myRandomForest &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; allForests&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;threads&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    myRandomForest &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; combine&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;myRandomForest&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; allForests&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;i&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;h2 id=&quot;fit-the-random-forest&quot;&gt;Fit the random forest&lt;/h2&gt;
-
-&lt;p&gt;```r
-# build the random forests
-allForests &amp;lt;- sfClusterApplyLB(1:threads, parallelRF)&lt;/p&gt;
-
-&lt;h1 id=&quot;close-the-cluster&quot;&gt;Close the cluster&lt;/h1&gt;
-&lt;p&gt;sfStop()
-```
-## Process forest output&lt;/p&gt;
-
-&lt;p&gt;```r
-# merge all the forests into one object
-myRandomForest &amp;lt;- allForests[[1]]
-for (i in 2:threads) {
-    myRandomForest &amp;lt;- combine(myRandomForest, allForests[[i]])
-}&lt;/p&gt;
-
-&lt;h1 id=&quot;convince-oursleves-we-have-them-all-combined&quot;&gt;convince oursleves we have them all combined&lt;/h1&gt;
-&lt;p&gt;myRandomForest$ntree
-```&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-## [1] 496
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-# what is important
-myRandomForest$importance
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-##              MeanDecreaseGini
+&lt;span class=&quot;c1&quot;&gt;# convince oursleves we have them all combined&lt;/span&gt;
+myRandomForest&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;ntree
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 496
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# what is important&lt;/span&gt;
+myRandomForest&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;importance
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##              MeanDecreaseGini
 ## Sepal.Length        10.025435
 ## Sepal.Width          2.556842
 ## Petal.Length        44.540894
 ## Petal.Width         42.111466
-&lt;/code&gt;&lt;/p&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Sun, 17 May 2015 00:00:00 -0600</pubDate>
         <link>http://jtipton25.github.io/2015/05/17/parallel-random-forest.html</link>
         <guid isPermaLink="true">http://jtipton25.github.io/2015/05/17/parallel-random-forest.html</guid>
@@ -517,127 +416,131 @@ myRandomForest$importance
 &lt;span class=&#39;twelve&#39;&gt;class twelve&lt;/span&gt;
 --&gt;
 
-&lt;h1 id=&quot;why&quot;&gt;why?&lt;/h1&gt;
-&lt;p&gt;## embarassingly parallel tasks
-These are computational tasks which involve many separate, independently executable calculations. Some common statistical examples of embarassingly &lt;span class=&quot;eleven&quot;&gt;&lt;strong&gt;parallel&lt;/strong&gt;&lt;/span&gt; processes:&lt;/p&gt;
+&lt;h1&gt;why?&lt;/h1&gt;
+
+&lt;h2&gt;embarassingly parallel tasks&lt;/h2&gt;
+
+&lt;p&gt;These are computational tasks which involve many separate, independently executable calculations. Some common statistical examples of embarassingly &lt;span class = &#39;eleven&#39;&gt;&lt;strong&gt;parallel&lt;/strong&gt;&lt;/span&gt; processes: &lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;bootstrapping&lt;/li&gt;
-  &lt;li&gt;cross-validation&lt;/li&gt;
-  &lt;li&gt;simulating independent random variables (&lt;code&gt;dorng&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;bootstrapping&lt;/li&gt;
+&lt;li&gt;cross-validation &lt;/li&gt;
+&lt;li&gt;simulating independent random variables (&lt;code&gt;dorng&lt;/code&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;In contrast, some sequential or &lt;span class=&quot;eleven&quot;&gt;&lt;strong&gt;non-parallel&lt;/strong&gt;&lt;/span&gt; processes:&lt;/p&gt;
+&lt;p&gt;In contrast, some sequential or &lt;span class = &#39;eleven&#39;&gt;&lt;strong&gt;non-parallel&lt;/strong&gt;&lt;/span&gt; processes:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;MCMC algorithms&lt;/li&gt;
-  &lt;li&gt;several types of model selection (e.g.: &lt;code&gt;step()&lt;/code&gt; or the LARS algorithm for LASSO)&lt;/li&gt;
+&lt;li&gt;MCMC algorithms &lt;/li&gt;
+&lt;li&gt;several types of model selection (e.g.: &lt;code&gt;step()&lt;/code&gt; or the LARS algorithm for LASSO)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;code&gt;for&lt;/code&gt; loops that do not explicitly involve dependent calculations are wasteful if we have multiple processors available. Perhaps even worse, the time cost of using such an approach can put some useful statistical tools beyond our reach!&lt;/p&gt;
 
-&lt;h2 id=&quot;options&quot;&gt;options&lt;/h2&gt;
+&lt;h2&gt;options&lt;/h2&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;Changing from a for loop to one of the &lt;code&gt;apply()&lt;/code&gt; functions can help, but still doesn’t use multiple processors.&lt;/li&gt;
-  &lt;li&gt;Use the &lt;code&gt;parallel&lt;/code&gt; package.&lt;/li&gt;
-  &lt;li&gt;Don’t use R.&lt;/li&gt;
-  &lt;li&gt;Use the &lt;code&gt;snowfall&lt;/code&gt; package! [@snowfall]&lt;/li&gt;
+&lt;li&gt;Changing from a for loop to one of the &lt;code&gt;apply()&lt;/code&gt; functions can help, but still doesn&amp;#39;t use multiple processors.&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;parallel&lt;/code&gt; package.&lt;/li&gt;
+&lt;li&gt;Don&amp;#39;t use R.&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;snowfall&lt;/code&gt; package! [@snowfall]&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;why-snowfall&quot;&gt;why snowfall?&lt;/h2&gt;
-&lt;p&gt;We would like to find a way to make use of our whole computer, and make valuable tasks like bootstrapping available, but without having to invest large amounts of time in learning new programming languages. Enter &lt;code&gt;snowfall&lt;/code&gt;, which keeps the structure of a for loop, but allows us to drop two key assumptions:&lt;/p&gt;
+&lt;h2&gt;why snowfall?&lt;/h2&gt;
+
+&lt;p&gt;We would like to find a way to make use of our whole computer, and make valuable tasks like bootstrapping available, but without having to invest large amounts of time in learning new programming languages. Enter &lt;code&gt;snowfall&lt;/code&gt;, which keeps the structure of a for loop, but allows us to drop two key assumptions: &lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;sequentiality&lt;/li&gt;
-  &lt;li&gt;single processor architecture&lt;/li&gt;
+&lt;li&gt;sequentiality&lt;/li&gt;
+&lt;li&gt;single processor architecture&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;span class=&quot;ten&quot;&gt;&lt;strong&gt;Our goal&lt;/strong&gt;&lt;/span&gt;: 
-We will begin with a simple chunk of R code involving a for loop and transform it into a &lt;code&gt;snowfall&lt;/code&gt; loop. Along the way, we’ll take a look at the equivalent computation done with an &lt;code&gt;apply()&lt;/code&gt; function, and see that using &lt;code&gt;snowfall&lt;/code&gt; and multiple processors outperforms this.&lt;/p&gt;
+&lt;p&gt;&lt;span class = &#39;ten&#39;&gt;&lt;strong&gt;Our goal&lt;/strong&gt;&lt;/span&gt;: 
+We will begin with a simple chunk of R code involving a for loop and transform it into a &lt;code&gt;snowfall&lt;/code&gt; loop. Along the way, we&amp;#39;ll take a look at the equivalent computation done with an &lt;code&gt;apply()&lt;/code&gt; function, and see that using &lt;code&gt;snowfall&lt;/code&gt; and multiple processors outperforms this.&lt;/p&gt;
 
-&lt;h1 id=&quot;example-data-and-research-question&quot;&gt;example: data and research question&lt;/h1&gt;
-&lt;p&gt;We are going to look at data from the New York City bikeshare program &lt;a href=&quot;https://www.citibikenyc.com/&quot;&gt;Citibike&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;example: data and research question&lt;/h1&gt;
+
+&lt;p&gt;We are going to look at data from the New York City bikeshare program &lt;a href=&quot;https://www.citibikenyc.com/&quot;&gt;Citibike&lt;/a&gt;. &lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;7 busiest locations from May 2014&lt;/li&gt;
-  &lt;li&gt;response: # of arrivals each hour of every day in the month&lt;/li&gt;
-  &lt;li&gt;covariates: hour of the day and whether the day is a weekend&lt;/li&gt;
+&lt;li&gt;7 busiest locations from May 2014&lt;/li&gt;
+&lt;li&gt;response: # of arrivals each hour of every day in the month&lt;/li&gt;
+&lt;li&gt;covariates: hour of the day and whether the day is a weekend&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;One of the costliest parts of operating a bike share program comes from the finiteness of the bicycle stations. A station can only hold so many bicycles, and a full (empty) station means customers cannot drop off (pick up) a bike. Thus, managers are forced to use trucks to manually redistribute bicycles.&lt;/p&gt;
 
 &lt;p&gt;We want to find a model which can offer good prediction, with the hope that this will inform our plans for future station locations/sizes. For this example, we start with a few plausible models and use K-fold cross validation to decide which one to use.&lt;/p&gt;
 
-&lt;h2 id=&quot;locations-of-our-7-sites&quot;&gt;locations of our 7 sites&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;./fig/map_top7.png&quot; alt=&quot;locations&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;locations of our 7 sites&lt;/h2&gt;
 
-&lt;hr /&gt;
-&lt;p&gt;## data
-&lt;img src=&quot;./fig/top7_average_day.png&quot; alt=&quot;data&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./fig/map_top7.png&quot; alt=&quot;locations&quot;&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
-&lt;p&gt;# fitting GLMs and extracting prediction error
-We are considering three increasingly complex models of the arrival behavior. In order to compare three candidate models’ prediction error, we’ll use K-fold cross validation, where we use the same folds for all three models.&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;h2&gt;data&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;./fig/top7_average_day.png&quot; alt=&quot;data&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1&gt;fitting GLMs and extracting prediction error&lt;/h1&gt;
+
+&lt;p&gt;We are considering three increasingly complex models of the arrival behavior. In order to compare three candidate models&amp;#39; prediction error, we&amp;#39;ll use K-fold cross validation, where we use the same folds for all three models. &lt;/p&gt;
 
 &lt;p&gt;First, we the load the data and make our K-fold test sets (and implicitly, our training sets):&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.stat.colostate.edu/~scharfh/CSP_parallel/data/arrivals_subset.RData&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+K &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50&lt;/span&gt;
+N &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;dim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;arrivals.sub&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 
-&lt;p&gt;```r
-load(url(“http://www.stat.colostate.edu/~scharfh/CSP_parallel/data/arrivals_subset.RData”))
-K &amp;lt;- 50
-N &amp;lt;- dim(arrivals.sub)[1]&lt;/p&gt;
-
-&lt;h2 id=&quot;for-convenience-kill-off-8-observations-we-have-5208-and-make-cv-test-sets&quot;&gt;for convenience kill off 8 observations (we have 5208) and make cv test sets&lt;/h2&gt;
-&lt;p&gt;set.seed(1985)
-discarded &amp;lt;- sample(1:N, size = 8)
-cv.test.sets &amp;lt;- matrix(sample((1:N)[-discarded], size = N - 8), ncol = K)
-```&lt;/p&gt;
-
+&lt;span class=&quot;c1&quot;&gt;## for convenience kill off 8 observations (we have 5208) and make cv test sets&lt;/span&gt;
+&lt;span class=&quot;kp&quot;&gt;set.seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1985&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+discarded &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;N&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; size &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+cv.test.sets &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;N&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;discarded&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; size &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; N &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; ncol &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; K&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Next, we build a function to fit the data to the training sets and extract the corresponding estimate of prediciton error. This should still be familiar code, no new packages yet.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-library(splines)
-lq.loss &amp;lt;- function(y, y.hat, q = 1) {(abs(y - y.hat))^q}
-get.errs &amp;lt;- function(test.set = NULL,
-                     discarded = NULL,
-                     q = 1) {
-    sml.glm &amp;lt;- glm(arrivals ~
-                   bs(hour, degree = 4)
-                   + weekend
-                   + as.factor(id),
-                   data = arrivals.sub[-c(discarded, test.set), ],
-                   family = &quot;poisson&quot;)
-    med.glm &amp;lt;- glm(arrivals ~
-                   bs(hour, degree = 4)*weekend
-                   + as.factor(id),
-                   data = arrivals.sub[-c(discarded, test.set), ],
-                   family = &quot;poisson&quot;)
-    big.glm &amp;lt;- glm(arrivals ~
-                   bs(hour, degree = 4)*weekend
-                   + bs(hour, degree = 4)*as.factor(id),
-                   data = arrivals.sub[-c(discarded, test.set), ],
-                   family = &quot;poisson&quot;)
-    sml.err &amp;lt;- mean(lq.loss(predict(object = sml.glm,
-                                    newdata = arrivals.sub[test.set, -7],
-                                    type = &quot;response&quot;),
-                            arrivals.sub[test.set, 7],
-                            q = q))
-    med.err &amp;lt;- mean(lq.loss(predict(object = med.glm,
-                                    newdata = arrivals.sub[test.set, -7],
-                                    type = &quot;response&quot;),
-                            arrivals.sub[test.set, 7],
-                            q = q))
-    big.err &amp;lt;- mean(lq.loss(predict(object = big.glm,
-                                    newdata = arrivals.sub[test.set, -7],
-                                    type = &quot;response&quot;),
-                            arrivals.sub[test.set, 7],
-                            q = q))
-    return(c(sml.err, med.err, big.err))
-}
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;splines&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+lq.loss &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; y.hat&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; q &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; y.hat&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+get.errs &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;test.set &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                     discarded &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                     q &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    sml.glm &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; glm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;arrivals &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;
+                   bs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hour&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; degree &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                   &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; weekend
+                   &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                   data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; arrivals.sub&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;discarded&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; test.set&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                   family &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;poisson&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    med.glm &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; glm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;arrivals &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;
+                   bs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hour&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; degree &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;weekend
+                   &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                   data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; arrivals.sub&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;discarded&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; test.set&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                   family &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;poisson&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    big.glm &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; glm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;arrivals &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;
+                   bs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hour&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; degree &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;weekend
+                   &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; bs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hour&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; degree &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;as.factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                   data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; arrivals.sub&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;discarded&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; test.set&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                   family &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;poisson&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    sml.err &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;lq.loss&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;predict&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;object &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; sml.glm&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    newdata &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; arrivals.sub&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;test.set&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                    type &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;response&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                            arrivals.sub&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;test.set&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                            q &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    med.err &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;lq.loss&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;predict&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;object &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; med.glm&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    newdata &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; arrivals.sub&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;test.set&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                    type &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;response&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                            arrivals.sub&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;test.set&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                            q &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    big.err &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;lq.loss&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;predict&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;object &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; big.glm&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    newdata &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; arrivals.sub&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;test.set&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                    type &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;response&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                            arrivals.sub&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;test.set&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                            q &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;sml.err&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; med.err&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; big.err&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The fits using all the data look like:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;./fig/fit_all.png&quot; alt=&quot;fit.all&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./fig/fit_all.png&quot; alt=&quot;fit.all&quot;&gt;&lt;/p&gt;
 
 &lt;!--
 &lt;img src=&quot;./fig/predictions_sml.png&quot;&gt;
@@ -645,87 +548,78 @@ get.errs &amp;lt;- function(test.set = NULL,
 &lt;img src=&quot;./fig/predictions_big.png&quot;&gt;
 --&gt;
 
-&lt;h2 id=&quot;k-fold-cv-with-a-for-loop&quot;&gt;K-fold CV with a for loop&lt;/h2&gt;
+&lt;h2&gt;K-fold CV with a for loop&lt;/h2&gt;
+
 &lt;p&gt;Using a naive for loop, we could implement this as:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-err.for &amp;lt;- NULL
-system.time(
-    for (i in 1:K) {
-        err.for &amp;lt;- cbind(err.for, get.errs(test.set = cv.test.sets[, i],
-                                           discarded = discarded,
-                                           q = 1))
-        }
-    )
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-##    user  system elapsed 
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;err.for &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;NULL&lt;/span&gt;
+&lt;span class=&quot;kp&quot;&gt;system.time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;K&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        err.for &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;cbind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;err.for&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; get.errs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;test.set &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; cv.test.sets&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt; i&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                           discarded &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; discarded&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                           q &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##    user  system elapsed 
 ##  20.206   1.325  21.542
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;K-fold CV with an apply function&lt;/h2&gt;
 
-&lt;h2 id=&quot;k-fold-cv-with-an-apply-function&quot;&gt;K-fold CV with an apply function&lt;/h2&gt;
-&lt;p&gt;If you’re good with &lt;code&gt;apply()&lt;/code&gt; functions you might upgrade (slightly) to&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r
-## apply version
-system.time(
-    err.apply &amp;lt;- sapply(X = 1:K, 
-                        FUN = function(i) {
-                            get.errs(test.set = cv.test.sets[, i],
-                                     discarded = discarded,
-                                     q = 1)
-                            }
-                        )
-    )
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-##    user  system elapsed 
+&lt;p&gt;If you&amp;#39;re good with &lt;code&gt;apply()&lt;/code&gt; functions you might upgrade (slightly) to&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;## apply version&lt;/span&gt;
+&lt;span class=&quot;kp&quot;&gt;system.time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    err.apply &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;sapply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;X &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;K&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                        FUN &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                            get.errs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;test.set &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; cv.test.sets&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt; i&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                                     discarded &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; discarded&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                     q &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##    user  system elapsed 
 ##  19.800   1.337  21.143
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Neither of the first two methods take advantage of multiple processors. While the &lt;code&gt;apply()&lt;/code&gt; functions avoid the inherently sluggish nature of for loops in &lt;code&gt;R&lt;/code&gt;, they are still ignorant of the processor structure. We want to chop the job into halves, fourths, etc. and use the &lt;em&gt;whole&lt;/em&gt; computer!&lt;/p&gt;
 
-&lt;h2 id=&quot;k-fold-cv-with-a-snowfall-loop&quot;&gt;K-fold CV with a snowfall loop&lt;/h2&gt;
+&lt;h2&gt;K-fold CV with a snowfall loop&lt;/h2&gt;
+
 &lt;p&gt;Here is the same computation written with a &lt;code&gt;snowfall&lt;/code&gt; loop&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;## Define a wrapper function&lt;/span&gt;
+wrapper &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  get.errs&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;test.set &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; cv.test.sets&lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt; i&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; discarded &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; discarded&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; q &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;p&gt;```r
-## Define a wrapper function
-wrapper = function(i){
-  get.errs(test.set = cv.test.sets[, i], discarded = discarded, q = 1)
-}&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;## snowfall version&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;snowfall&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;parallel&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rlecuyer&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# ## determines the number of cores on the machine&lt;/span&gt;
+cps&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;detectCores&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;## Initalize multicore &lt;/span&gt;
+sfInit&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;parallel&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; cpus&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;cps&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;## Setup random number generator on the cluster&lt;/span&gt;
+sfClusterSetupRNG&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# export global variables&lt;/span&gt;
+sfExportAll&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# export library&lt;/span&gt;
+sfLibrary&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;splines&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kp&quot;&gt;system.time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;err.snowfall &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; sfSapply&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;K&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; wrapper&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;## ends snowfall session&lt;/span&gt;
+sfStop&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;components of a snowfall loop&lt;/h1&gt;
 
-&lt;h2 id=&quot;snowfall-version&quot;&gt;snowfall version&lt;/h2&gt;
-&lt;p&gt;library(snowfall)
-library(parallel)
-library(rlecuyer)
-# ## determines the number of cores on the machine
-cps=detectCores()
-## Initalize multicore 
-sfInit(parallel=TRUE, cpus=cps)
-## Setup random number generator on the cluster
-sfClusterSetupRNG()
-# export global variables
-sfExportAll()
-# export library
-sfLibrary(splines)
-system.time(err.snowfall &amp;lt;- sfSapply(1:K, wrapper))
-## ends snowfall session
-sfStop()
-```
-# components of a snowfall loop
-Note that the syntax of snowfall is almost identical to a for loop. The major difference is the need to write a wrapper function that evaluates one iteration of the for loop and the need to set up and export the relevent data, functions, and libraries.&lt;/p&gt;
+&lt;p&gt;Note that the syntax of snowfall is almost identical to a for loop. The major difference is the need to write a wrapper function that evaluates one iteration of the for loop and the need to set up and export the relevent data, functions, and libraries.&lt;/p&gt;
 
-&lt;h1 id=&quot;results&quot;&gt;results&lt;/h1&gt;
+&lt;h1&gt;results&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://pbs.twimg.com/media/B4AFeZvIgAABsqn.jpg&quot; alt=&quot;parallel puppies&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src = &quot;https://pbs.twimg.com/media/B4AFeZvIgAABsqn.jpg&quot; alt = &quot;parallel puppies&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://CRAN.R-project.org/package=snowfall&quot;&gt;snowfall&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;other-tutorials&quot;&gt;Other tutorials&lt;/h2&gt;
+&lt;h2&gt;Other tutorials&lt;/h2&gt;
 
-&lt;h2 id=&quot;data&quot;&gt;Data&lt;/h2&gt;
+&lt;h2&gt;Data&lt;/h2&gt;
+
 &lt;p&gt;&lt;a href=&quot;https://www.citibikenyc.com/system-data&quot;&gt;citibike system data&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 06 May 2014 00:00:00 -0600</pubDate>

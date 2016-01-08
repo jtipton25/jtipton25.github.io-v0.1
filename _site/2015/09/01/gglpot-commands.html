@@ -62,24 +62,13 @@
   </header>
 
   <article class="post-content">
-    <h1 id="ggplot-examples">ggplot examples</h1>
-
-<p><code>r
-library(ggplot2)
-</code></p>
-
-<p><code>
-## Loading required package: methods
-</code></p>
-
-<p><code>r
-movies=movies[sample(nrow(movies), 1000), ]
-str(movies)
-</code></p>
-
-<p><code>
-## 'data.frame':	1000 obs. of  24 variables:
-##  $ title      : chr  "Pallbearer, The" "Mrs Meitlemeihr" "Amazing Dobermans, The" "Doctor in the House" ...
+    <h1>ggplot examples</h1>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: methods
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">movies<span class="o">=</span>movies<span class="p">[</span><span class="kp">sample</span><span class="p">(</span><span class="kp">nrow</span><span class="p">(</span>movies<span class="p">),</span> <span class="m">1000</span><span class="p">),</span> <span class="p">]</span>
+str<span class="p">(</span>movies<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## &#39;data.frame&#39;:    1000 obs. of  24 variables:
+##  $ title      : chr  &quot;Pallbearer, The&quot; &quot;Mrs Meitlemeihr&quot; &quot;Amazing Dobermans, The&quot; &quot;Doctor in the House&quot; ...
 ##  $ year       : int  1996 2002 1976 1954 1988 1997 2003 1987 1999 1996 ...
 ##  $ length     : int  98 30 96 92 97 118 103 138 96 38 ...
 ##  $ budget     : int  NA NA NA NA NA NA NA NA 7000000 NA ...
@@ -95,7 +84,7 @@ str(movies)
 ##  $ r8         : num  4.5 24.5 4.5 24.5 4.5 24.5 4.5 0 14.5 14.5 ...
 ##  $ r9         : num  4.5 14.5 4.5 14.5 4.5 14.5 4.5 44.5 4.5 14.5 ...
 ##  $ r10        : num  4.5 44.5 4.5 14.5 14.5 4.5 14.5 24.5 4.5 44.5 ...
-##  $ mpaa       : Factor w/ 5 levels "","NC-17","PG",..: 4 1 1 1 1 1 1 1 5 1 ...
+##  $ mpaa       : Factor w/ 5 levels &quot;&quot;,&quot;NC-17&quot;,&quot;PG&quot;,..: 4 1 1 1 1 1 1 1 5 1 ...
 ##  $ Action     : int  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ Animation  : int  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ Comedy     : int  1 1 1 1 0 0 1 0 1 1 ...
@@ -103,13 +92,9 @@ str(movies)
 ##  $ Documentary: int  0 0 0 0 0 0 0 1 0 0 ...
 ##  $ Romance    : int  0 0 0 0 0 0 0 0 1 0 ...
 ##  $ Short      : int  0 1 0 0 0 0 0 0 0 1 ...
-</code></p>
-
-<p><code>r
-ggplot(movies, aes(x=rating)) + geom_density() + facet_grid(Action ~ Comedy)
-</code></p>
-
-<p><img src="/figure/drafts/2015-09-01-gglpot-commands/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1" /></p>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>movies<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>rating<span class="p">))</span> <span class="o">+</span> geom_density<span class="p">()</span> <span class="o">+</span> facet_grid<span class="p">(</span>Action <span class="o">~</span> Comedy<span class="p">)</span>
+</code></pre></div>
+<p><img src="/figure/drafts/2015-09-01-gglpot-commands/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
 
   </article>
 
