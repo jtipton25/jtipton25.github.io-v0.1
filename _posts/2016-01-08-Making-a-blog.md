@@ -14,40 +14,48 @@ This tutorial is based on the github website https://help.github.com/articles/us
 ## Installing Jekyll
 ### Installing Ruby
 First, we have to make sure that Ruby language (version greater than `2.0.0`) is installed. To check, open the Terminal application and type
-```{bash, eval=FALSE}
+
+```bash
 ruby --version
 ```
 If Ruby is not installed, follow the directions on https://www.ruby-lang.org/en/downloads/
 
 ### Installing Bundler
 Bundler is a package manager for Ruby. To install bundler, type in the Terminal
-```{bash, eval=FALSE}
+
+```bash
 gem install bundler
 ```
 ### Installing Jekyll
 First, change to your site's repository directory, mine is `~/jtipton25.github.io`
-```{bash, eval=FALSE}
+
+```bash
 cd yourusername.github.io
 ```
 Next, we need to create a file called `Gemfile` using a text editor. I use `emacs`, which is built into any *nix computer. To open the file `Gemfile` and create one if it doesn't already exist, open Terminal and type
-```{bash, eval=FALSE}
+
+```bash
 emacs Gemfile
 ```
 Then type into the emacs file 
-```{bash, eval=FALSE}
+
+```bash
 source 'https://rubygems.org'
 gem 'github-pages'
 ```
 To close and save the file use the emacs command for save
-```{bash, eval=FALSE}
+
+```bash
 ctrl-x ctrl-s
 ```
 where, while holding the `ctrl` key you type `x` then `s`. Then exit emacs using
-```{bash, eval=FALSE}
+
+```bash
 ctrl-x ctrl-c
 ```
 If at anytime you are unsure, just hit `esc` a few times to clear out the `emacs` buffer. To complete the installation type into the Terminal
-```{bash, eval=FALSE}
+
+```bash
 bundle install
 ```
 
@@ -56,7 +64,8 @@ bundle install
 ## Seting up your blog
 s## Configure `head.html` to add mathematical equations to the blog
 If you have the desire to add $\latex$ style equations to your blog, add the following to the file `head.html` in the `_includes/` folder between the lines `<head>` and `<\head>`.
-```{bash, eval=FALSE, tidy=TRUE}
+
+```bash
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -72,11 +81,12 @@ If you have the desire to add $\latex$ style equations to your blog, add the fol
     }
   });
   </script>
-```  
+```
 
 # Make this display right
 My entire `head.html` looks like
-```{r, eval=FALSE, echo=TRUE} 
+
+```r
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -110,7 +120,8 @@ My entire `head.html` looks like
 ## Configure your `_config.yaml` file.
 Use a text editor to edit your `_config.yaml` file. Mine looks like
 
-```{bash, eval=FALSE, echo=TRUE}
+
+```bash
 # Site settings
 title: The posterior
 email: jtipton25@gmail.com
@@ -132,18 +143,20 @@ highlighter: pygments
 ## Equations
 
 You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations using 
-```{bash, eval=FALSE, tidy=TRUE}
+
+```bash
 \begin{align} 
 Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t} 
 \end{align}
-``` 
+```
 to get
 \begin{align}
 Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t}
 \end{align}
 
 or by typing 
-```{bash, eval=FALSE}
+
+```bash
 $$Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t}$$
 ```
 
