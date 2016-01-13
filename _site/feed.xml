@@ -6,8 +6,8 @@
 </description>
     <link>http://jtipton25.github.io/</link>
     <atom:link href="http://jtipton25.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jan 2016 16:41:17 -0700</pubDate>
-    <lastBuildDate>Sat, 09 Jan 2016 16:41:17 -0700</lastBuildDate>
+    <pubDate>Tue, 12 Jan 2016 19:23:30 -0700</pubDate>
+    <lastBuildDate>Tue, 12 Jan 2016 19:23:30 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -150,51 +150,6 @@ Y_{t} = \phi Y_{t-1} + \epsilon_{t}
         <pubDate>Fri, 08 Jan 2016 00:00:00 -0700</pubDate>
         <link>http://jtipton25.github.io/2016/01/08/Making-a-blog.html</link>
         <guid isPermaLink="true">http://jtipton25.github.io/2016/01/08/Making-a-blog.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Test Post</title>
-        <description>&lt;h2&gt;R Markdown&lt;/h2&gt;
-
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&quot;http://rmarkdown.rstudio.com&quot;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;When you click the &lt;strong&gt;Knit&lt;/strong&gt; button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Including Plots&lt;/h2&gt;
-
-&lt;p&gt;You can also embed plots, for example:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2016-01-01-Test/pressure-1.png&quot; alt=&quot;plot of chunk pressure&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Note that the &lt;code&gt;echo = FALSE&lt;/code&gt; parameter was added to the code chunk to prevent printing of the R code that generated the plot.&lt;/p&gt;
-
-&lt;p&gt;You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations using &lt;code&gt;\begin{align} Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t} \end{align}&lt;/code&gt; to get&lt;/p&gt;
-
-&lt;p&gt;\begin{align}
-Y_{t} = \phi Y_{t-1} + \epsilon_{t}
-\end{align}&lt;/p&gt;
-
-&lt;p&gt;or by typing &lt;code&gt;$$Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t}$$&lt;/code&gt; to get&lt;/p&gt;
-
-&lt;p&gt;$$
-Y_{t} = \phi Y_{t-1} + \epsilon_{t}
-$$&lt;/p&gt;
-
-&lt;p&gt;Note that to get the underscore character &lt;code&gt;_&lt;/code&gt; to render a subscript properly, you need to use the command &lt;code&gt;\_&lt;/code&gt; in markdown to use markdown&amp;#39;s escape mechanism. This means to get $Y_{t}$ to render, type &lt;code&gt;Y\_{t}&lt;/code&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 07 Jan 2016 00:00:00 -0700</pubDate>
-        <link>http://jtipton25.github.io/2016/01/07/Test.html</link>
-        <guid isPermaLink="true">http://jtipton25.github.io/2016/01/07/Test.html</guid>
         
         
       </item>
