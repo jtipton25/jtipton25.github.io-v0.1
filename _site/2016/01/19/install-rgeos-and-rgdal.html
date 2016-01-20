@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/jekyll-github.css">
-  <link rel="canonical" href="http://jtipton25.github.io/2015/09/15/install-rgeos-and-rgdal.html">
+  <link rel="canonical" href="http://jtipton25.github.io/2016/01/19/install-rgeos-and-rgdal.html">
   <link rel="alternate" type="application/rss+xml" title="The posterior" href="http://jtipton25.github.io/feed.xml" />
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script type="text/x-mathjax-config">
@@ -74,7 +74,7 @@
 
   <header class="post-header">
     <h1 class="post-title">Installing Rgeos and Rgdal packages</h1>
-    <p class="post-meta">Sep 15, 2015 • John Tipton</p>
+    <p class="post-meta">Jan 19, 2016 • John Tipton</p>
   </header>
 
   <article class="post-content">
@@ -84,48 +84,49 @@
 
 <h3>Download the GDAL OS X install from kyngchaos</h3>
 
-<p>Go to http://www.kyngchaos.com/software/frameworks and install the file
-In the Terminal, modify the <code>.bash_profile</code> file by typing</p>
+<p>Go to <a href="http://www.kyngchaos.com/software/frameworks">www.kyngchaos.com/software/frameworks</a> and install the <code>GDAL Complete</code> dmg file and install using OS X installion.</p>
+
+<p>In the Terminal, modify the <code>.bash_profile</code> file by typing</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">emacs .bash_profile
 </code></pre></div>
 <p>to open the file and modify the PATH environment by adding the line</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>”/Library/Frameworks/GDAL.framework/Programs:<span class="nv">$PATH</span>”
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/Library/Frameworks/GDAL.framework/Programs:<span class="nv">$PATH</span>
 </code></pre></div>
 <p>Save and close the emacs file</p>
 
 <h3>Download and install proj4 from source</h3>
 
 <ul>
-<li>http://trac.osgeo.org/proj/wiki/WikiStart#Download</li>
-<li>Download source code version proj-4.8.0.tar.gz (or more recent update)</li>
-<li>Fire up the Terminal</li>
+<li><a href="http://trac.osgeo.org/proj/wiki/WikiStart#Download">http://trac.osgeo.org/proj/wiki/WikiStart#Download</a></li>
+<li>Download source code version <code>proj-4.9.1.tar.gz</code> (or more recent update)</li>
+<li>Fire up the <code>Terminal</code></li>
 </ul>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Downloads/
-tar -xzvf proj-4.8.0.tar.gz
-<span class="nb">cd </span>proj-4.8.0
+tar -xzvf proj-4.9.1.tar.gz
+<span class="nb">cd </span>proj-4.9.1
 ./configure
 make <span class="o">&amp;&amp;</span> make <span class="nb">test</span>
 sudo make install
 </code></pre></div>
-<p>[ should install to /usr/local/lib by default]</p>
+<p>This should install to<code>/usr/local/lib</code> by default</p>
 
 <ol>
-<li>Download and install rgdal from source</li>
-<li>http://cran.r-project.org/web/packages/rgdal/index.html &lt;- most recent update</li>
-<li>Fire up the Terminal</li>
+<li>Download and install <code>rgdal</code> from source</li>
+<li><a href="http://cran.r-project.org/web/packages/rgdal/index.html">http://cran.r-project.org/web/packages/rgdal/index.html</a> &lt;- most recent update</li>
+<li>Fire up the <code>Terminal</code></li>
 </ol>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Downloads/
 sudo R CMD INSTALL –configure-args<span class="o">=</span>’–with-proj-include<span class="o">=</span>/usr/local/lib’ rgdal_0.8-16.tar.gz
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rgdal<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: methods
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: sp
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## rgdal: version: 1.0-4, (SVN revision 548)
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## rgdal: version: 1.1-3, (SVN revision 594)
 ##  Geospatial Data Abstraction Library extensions to R successfully loaded
-##  Loaded GDAL runtime: GDAL 1.11.2, released 2015/02/10
-##  Path to GDAL shared files: /Users/Tips/Rlibs/rgdal/gdal
+##  Loaded GDAL runtime: GDAL 1.11.3, released 2015/09/16
+##  Path to GDAL shared files: /Library/Frameworks/GDAL.framework/Versions/1.11/Resources/gdal
 ##  Loaded PROJ.4 runtime: Rel. 4.9.1, 04 March 2015, [PJ_VERSION: 491]
-##  Path to PROJ.4 shared files: /Users/Tips/Rlibs/rgdal/proj
-##  Linking to sp version: 1.1-1
+##  Path to PROJ.4 shared files: (autodetected)
+##  Linking to sp version: 1.2-1
 </code></pre></div>
   </article>
 
