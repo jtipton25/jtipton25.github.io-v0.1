@@ -16,75 +16,62 @@ In this post, I will detail the steps needed to make a website using Rstudio and
 This section of the tutorial is based on the [Github website](https://help.github.com/articles/using-jekyll-with-pages/)
 ### Installing Ruby
 First, we have to make sure that Ruby language (version greater than `2.0.0`) is installed. To check, open the Terminal application and type
-
-```bash
+```{bash, eval=FALSE}
 ruby --version
 ```
 If Ruby is not installed, follow the [install directions](https://www.ruby-lang.org/en/downloads/)
 
 ### Installing Bundler
 Bundler is a package manager for Ruby. To install bundler, type in the Terminal
-
-```bash
+```{bash, eval=FALSE}
 gem install bundler
 ```
 ### Installing Jekyll
 First, change to your site's repository directory, mine is `~/jtipton25.github.io`
-
-```bash
+```{bash, eval=FALSE}
 cd yourusername.github.io
 ```
 Next, we need to create a file called `Gemfile` using a text editor. I use `emacs`, which is built into any *nix computer. To open the file `Gemfile` and create one if it doesn't already exist, open Terminal and type
-
-```bash
+```{bash, eval=FALSE}
 emacs Gemfile
 ```
 Then type into the emacs file 
-
-```bash
+```{bash, eval=FALSE}
 source 'https://rubygems.org'
 gem 'github-pages'
 ```
 To close and save the file use the emacs command for save
-
-```bash
+```{bash, eval=FALSE}
 ctrl-x ctrl-s
 ```
 where, while holding the `ctrl` key you type `x` then `s`. Then exit emacs using
-
-```bash
+```{bash, eval=FALSE}
 ctrl-x ctrl-c
 ```
 If at anytime you are unsure, just hit `esc` a few times to clear out the `emacs` buffer. To complete the installation type into the Terminal
-
-```bash
+```{bash, eval=FALSE}
 bundle install
 ```
 
 # Seting up your blog
 To setup a new blog, open `Terminal` and make sure you are in your Github pages username directory
-
-```bash
+```{bash, eval=FALSE}
 cd yourusername.github.io
 ```
 and create the blog using the command 
-
-```bash
+```{bash, eval=FALSE, tidy=TRUE}
 jekyll new .
 ```
 If you don't have a Github Pages directory, you can create a new directory `myBlog` for your blog using 
-
-```bash
+```{bash, eval=FALSE, tidy=TRUE}
 jekyll new myBlog
 ```
 Once your blog is created, you can explore the files using `ls`. For use with `RMarkdown`, I create a new folder
-
-```bash
+```{bash, eval=FALSE, tidy=TRUE}
 mkdir _Rposts
 ```
 You should see the files 
-
-```bash
+```{bash, eval=FALSE, tidy=TRUE}
 Gemfile 
 _config.yaml
 about.md
@@ -92,8 +79,7 @@ feed.xml
 index.html
 ```
 and the folders
-
-```bash
+```{bash, eval=FALSE, tidy=TRUE}
 _drafts
 _includes
 _layouts
@@ -120,10 +106,9 @@ For more see the [jekyll site structure page](http://jekyllrb.com/docs/structure
 ## First Test Build
 To test your new site, open `RStudio`
 
-
-```r
+```{r, eval=FALSE, tidy=TRUE}
 library(servr)
-jekyll(dir = "~/path/to/yourusername.github.io", command = "bundle exec jekyll build")
+jekyll(dir="~/path/to/yourusername.github.io", command="bundle exec jekyll build")
 ```
 and notice the website pops up in the `Viewer` window for your testing. You can even use the button in the `Viewer` window top left corner to pop the website into your web-browser. Now we can go about customizing the site and making posts.
 
@@ -131,8 +116,7 @@ and notice the website pops up in the `Viewer` window for your testing. You can 
 Your 
 Use a text editor to edit your `_config.yaml` file. Mine looks like
 
-
-```bash
+```{bash, eval=FALSE, echo=TRUE}
 # Site settings
 title: The posterior
 email: jtipton25@gmail.com
@@ -153,8 +137,7 @@ There are many options here. You can add social media tags like Twitter (`twitte
  
 ## Configure `head.html` to add mathematical equations to the blog
 If you have the desire to add $\LaTeX$ style equations to your blog, add the following to the file `head.html` in the `_includes/` folder between the lines `<head>` and `<\head>`.
-
-```bash
+```{bash, eval=FALSE, tidy=TRUE}
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -170,11 +153,10 @@ If you have the desire to add $\LaTeX$ style equations to your blog, add the fol
     }
   });
   </script>
-```
+```  
 
 My entire `head.html` file is given below. Feel free to copy and replace.
-
-```bash
+```{bash, eval=FALSE, tidy=TRUE}
 {% raw %}<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -210,47 +192,45 @@ My entire `head.html` file is given below. Feel free to copy and replace.
 ## Customizing the webpage using RMarkdown
 ## R code
 Adding `R` code to your website is super easy. Use an R code chunk in `RStudio` like follows:
-
-
-
-````
-```{r}
-hist(rnorm(100))
+```{r, eval=TRUE, echo=FALSE}
+rchunkprint <- function(code) {
+  cat(paste("```{r}", "\n", code, "\n", "```", sep=""))
+}
+rchunkprint2 <- function(code) {
+  sprintf('``` `r %s` ```', code)
+}
 ```
-````
 
-
-
+```{r, echo=FALSE, comment=''}
+rchunkprint('hist(rnorm(100))')
 ```
-[1] "``` `r hist(rnorm(100))` ```"
+
+
+```{r, echo=FALSE, comment=''}
+rchunkprint2('hist(rnorm(100))')
 ```
 
 produces the output
 
-
-```r
+```{r}
 hist(rnorm(100))
 ```
-
-![plot of chunk unnamed-chunk-22](/figure/Rposts/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png)
 
 ## Equations
 
 You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations using 
-
-```bash
+```{bash, eval=FALSE, tidy=TRUE}
 \begin{align} 
 Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t} 
 \end{align}
-```
+``` 
 to get
 \begin{align}
 Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t}
 \end{align}
 
 or by typing 
-
-```bash
+```{bash, eval=FALSE}
 $$Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t}$$
 ```
 

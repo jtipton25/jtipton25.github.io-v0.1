@@ -6,8 +6,8 @@
 </description>
     <link>http://jtipton25.github.io/</link>
     <atom:link href="http://jtipton25.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 20 Jan 2016 11:58:34 -0700</pubDate>
-    <lastBuildDate>Wed, 20 Jan 2016 11:58:34 -0700</lastBuildDate>
+    <pubDate>Fri, 22 Jan 2016 17:02:30 -0700</pubDate>
+    <lastBuildDate>Fri, 22 Jan 2016 17:02:30 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -75,16 +75,18 @@ sudo R CMD INSTALL –configure-args&lt;span class=&quot;o&quot;&gt;=&lt;/span&g
 
 &lt;h2&gt;Github Pages account&lt;/h2&gt;
 
-&lt;p&gt;This tutorial is based on the github website https://help.github.com/articles/using-jekyll-with-pages/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; will host your site for free. Follow the link to sign up for github if you wish.&lt;/p&gt;
 
 &lt;h2&gt;Installing Jekyll&lt;/h2&gt;
+
+&lt;p&gt;This section of the tutorial is based on the &lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages/&quot;&gt;Github website&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3&gt;Installing Ruby&lt;/h3&gt;
 
 &lt;p&gt;First, we have to make sure that Ruby language (version greater than &lt;code&gt;2.0.0&lt;/code&gt;) is installed. To check, open the Terminal application and type&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ruby --version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If Ruby is not installed, follow the directions on https://www.ruby-lang.org/en/downloads/&lt;/p&gt;
+&lt;p&gt;If Ruby is not installed, follow the &lt;a href=&quot;https://www.ruby-lang.org/en/downloads/&quot;&gt;install directions&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3&gt;Installing Bundler&lt;/h3&gt;
 
@@ -112,10 +114,86 @@ gem &lt;span class=&quot;s1&quot;&gt;&amp;#39;github-pages&amp;#39;&lt;/span&gt;
 &lt;p&gt;If at anytime you are unsure, just hit &lt;code&gt;esc&lt;/code&gt; a few times to clear out the &lt;code&gt;emacs&lt;/code&gt; buffer. To complete the installation type into the Terminal&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;bundle install
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Seting up your blog&lt;/h2&gt;
+&lt;h1&gt;Seting up your blog&lt;/h1&gt;
 
-&lt;p&gt;s## Configure &lt;code&gt;head.html&lt;/code&gt; to add mathematical equations to the blog
-If you have the desire to add $\latex$ style equations to your blog, add the following to the file &lt;code&gt;head.html&lt;/code&gt; in the &lt;code&gt;_includes/&lt;/code&gt; folder between the lines &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;\head&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To setup a new blog, open &lt;code&gt;Terminal&lt;/code&gt; and make sure you are in your Github pages username directory&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;yourusername.github.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and create the blog using the command &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;jekyll new .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you don&amp;#39;t have a Github Pages directory, you can create a new directory &lt;code&gt;myBlog&lt;/code&gt; for your blog using &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;jekyll new myBlog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once your blog is created, you can explore the files using &lt;code&gt;ls&lt;/code&gt;. For use with &lt;code&gt;RMarkdown&lt;/code&gt;, I create a new folder&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir _Rposts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You should see the files &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Gemfile 
+_config.yaml
+about.md
+feed.xml
+index.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and the folders&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;_drafts
+_includes
+_layouts
+_Rposts
+_posts
+_sass
+css
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Overview of the important file structure&lt;/h4&gt;
+
+&lt;p&gt;For more see the &lt;a href=&quot;http://jekyllrb.com/docs/structure/&quot;&gt;jekyll site structure page&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5&gt;Files&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;_config.yaml&lt;/code&gt; stores the configuation information and allows for powerful customization of your site. For more information see &lt;a href=&quot;http://jekyllrb.com/docs/configuration/&quot;&gt;jekyll configuration page&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;about.md&lt;/code&gt; is the page that is shown as the &lt;code&gt;README&lt;/code&gt; when users navigate to your Github repository.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;index.html&lt;/code&gt; is the file that &lt;code&gt;jekyll&lt;/code&gt; uses to build the blog page links.
+#####&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_drafts&lt;/code&gt; is where you can write and test your content without posting. Files should be named &lt;code&gt;title.Rmd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_includes&lt;/code&gt; is for small snippets of code that can be repeatedly reused. Think of headers, footers, title bars, sidebars, etc. Default files include &lt;code&gt;footer.html&lt;/code&gt;, &lt;code&gt;head.html&lt;/code&gt;, and &lt;code&gt;header.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_layouts&lt;/code&gt; are the templates that are used for your website. Layouts are chosen in the &lt;code&gt;YAML Front Matter&lt;/code&gt; of each page. Defalut layouts include &lt;code&gt;default.html&lt;/code&gt;, &lt;code&gt;page.html&lt;/code&gt;, and &lt;code&gt;post.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_Rposts&lt;/code&gt; is needed when you use &lt;code&gt;.Rmd&lt;/code&gt; files to generate your website. Files &lt;strong&gt;MUST&lt;/strong&gt; be named &lt;code&gt;YEAR-MONTH-DAY-title.Rmd&lt;/code&gt; where &lt;code&gt;YEAR&lt;/code&gt; is the four digit year, &lt;code&gt;MONTH&lt;/code&gt; is the two digit month, and &lt;code&gt;DAY&lt;/code&gt; is the two digit day. Examples include &lt;code&gt;2016-01-24-first-post.Rmd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_posts&lt;/code&gt; is where you can use markdown &lt;code&gt;.md&lt;/code&gt; files to generate webpages. Files &lt;strong&gt;MUST&lt;/strong&gt; be named &lt;code&gt;YEAR-MONTH-DAY-title.md&lt;/code&gt;
+-&lt;code&gt;_site&lt;/code&gt; is where the generated site is placed if you want to host your site locally. This is created when you build your site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;First Test Build&lt;/h2&gt;
+
+&lt;p&gt;To test your new site, open &lt;code&gt;RStudio&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;servr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+jekyll&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dir &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/path/to/yourusername.github.io&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; command &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;bundle exec jekyll build&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and notice the website pops up in the &lt;code&gt;Viewer&lt;/code&gt; window for your testing. You can even use the button in the &lt;code&gt;Viewer&lt;/code&gt; window top left corner to pop the website into your web-browser. Now we can go about customizing the site and making posts.&lt;/p&gt;
+
+&lt;h2&gt;Configure your &lt;code&gt;_config.yaml&lt;/code&gt; file.&lt;/h2&gt;
+
+&lt;p&gt;Your 
+Use a text editor to edit your &lt;code&gt;_config.yaml&lt;/code&gt; file. Mine looks like&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Site settings&lt;/span&gt;
+title: The posterior
+email: jtipton25@gmail.com
+description: &amp;gt; &lt;span class=&quot;c&quot;&gt;# this means to ignore newlines until &amp;quot;baseurl:&amp;quot;&lt;/span&gt;
+  Here I will post commonly used code examples and statistical problems 
+
+baseurl: &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# the subpath of your site, e.g. /blog/&lt;/span&gt;
+url: &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://jtipton25.github.io&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# the base hostname &amp;amp; protocol for your site&lt;/span&gt;
+github_username:  jtipton25
+
+&lt;span class=&quot;c&quot;&gt;# Build settings&lt;/span&gt;
+markdown: redcarpet
+highlighter: pygments
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There are many options here. You can add social media tags like Twitter (&lt;code&gt;twitter_username:&lt;/code&gt;) and others under the &lt;code&gt;github_username:&lt;/code&gt;. There are two &lt;code&gt;markdown&lt;/code&gt; options, &lt;code&gt;kramdown&lt;/code&gt; amd &lt;code&gt;redcarpet&lt;/code&gt;.  &lt;/p&gt;
+
+&lt;h2&gt;Configure &lt;code&gt;head.html&lt;/code&gt; to add mathematical equations to the blog&lt;/h2&gt;
+
+&lt;p&gt;If you have the desire to add $\LaTeX$ style equations to your blog, add the following to the file &lt;code&gt;head.html&lt;/code&gt; in the &lt;code&gt;_includes/&lt;/code&gt; folder between the lines &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;\head&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  &amp;lt;script &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;
   &amp;lt;script &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;text/x-mathjax-config&amp;quot;&lt;/span&gt;&amp;gt;
   MathJax.Hub.Config&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;
@@ -132,58 +210,54 @@ If you have the desire to add $\latex$ style equations to your blog, add the fol
   &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &amp;lt;/script&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Make this display right&lt;/h1&gt;
+&lt;p&gt;My entire &lt;code&gt;head.html&lt;/code&gt; file is given below. Feel free to copy and replace.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&amp;lt;head&amp;gt;
+  &amp;lt;meta &lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&amp;gt;
+  &amp;lt;meta http-equiv&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;X-UA-Compatible&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;IE=edge&amp;quot;&lt;/span&gt;&amp;gt;
+  &amp;lt;meta &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;viewport&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;width=device-width, initial-scale=1&amp;quot;&lt;/span&gt;&amp;gt;
 
-&lt;p&gt;My entire &lt;code&gt;head.html&lt;/code&gt; looks like&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;meta charset&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;meta http&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;equiv&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;X-UA-Compatible&amp;quot;&lt;/span&gt; content&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;IE=edge&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;meta name&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;viewport&amp;quot;&lt;/span&gt; content&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;width=device-width, initial-scale=1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &amp;lt;title&amp;gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;% &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; page.title %&lt;span class=&quot;o&quot;&gt;}{{&lt;/span&gt; page.title &lt;span class=&quot;o&quot;&gt;}}{&lt;/span&gt;% &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; %&lt;span class=&quot;o&quot;&gt;}{{&lt;/span&gt; site.title &lt;span class=&quot;o&quot;&gt;}}{&lt;/span&gt;% endif %&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&amp;lt;/title&amp;gt;
+  &amp;lt;meta &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}&amp;quot;&lt;/span&gt;&amp;gt;
 
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;title&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;Making a Github pages Blog with RStudio and Jekyll on a Mac&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;title&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;meta name&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt; content&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;In this post, I will detail the steps needed to make a website using Rstudio and Jekyll. For this tutorial, we host our website on Github pages, although thi...&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;link rel&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; href&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/css/main.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;link rel&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; href&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/css/jekyll-github.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;link rel&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;canonical&amp;quot;&lt;/span&gt; href&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://jtipton25.github.io/2016/01/08/Making-a-blog.html&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;link rel&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;alternate&amp;quot;&lt;/span&gt; type&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;application/rss+xml&amp;quot;&lt;/span&gt; title&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;The posterior&amp;quot;&lt;/span&gt; href&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://jtipton25.github.io/feed.xml&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;script type&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; src&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;script&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;script type&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/x-mathjax-config&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  MathJax.Hub.Config&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    TeX&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      equationNumbers&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        autoNumber&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;AMS&amp;quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    tex2jax&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      inlineMath&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\\(&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\\)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-      displayMath&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;$$&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;$$&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-      processEscapes&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; true 
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &amp;lt;link &lt;span class=&quot;nv&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;{{ &amp;quot;&lt;/span&gt;/css/main.css&lt;span class=&quot;s2&quot;&gt;&amp;quot; | prepend: site.baseurl }}&amp;quot;&lt;/span&gt;&amp;gt;
+  &amp;lt;link &lt;span class=&quot;nv&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;{{ &amp;quot;&lt;/span&gt;/css/jekyll-github.css&lt;span class=&quot;s2&quot;&gt;&amp;quot; }}&amp;quot;&lt;/span&gt;&amp;gt;
+  &amp;lt;link &lt;span class=&quot;nv&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;canonical&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;{{ page.url | replace:&amp;#39;index.html&amp;#39;,&amp;#39;&amp;#39; | prepend: site.baseurl | prepend: site.url }}&amp;quot;&lt;/span&gt;&amp;gt;
+  &amp;lt;link &lt;span class=&quot;nv&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alternate&amp;quot;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;application/rss+xml&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;{{ site.title }}&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;{{ &amp;quot;&lt;/span&gt;/feed.xml&lt;span class=&quot;s2&quot;&gt;&amp;quot; | prepend: site.baseurl | prepend: site.url }}&amp;quot;&lt;/span&gt; /&amp;gt;
+  &amp;lt;script &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;
+  &amp;lt;script &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;text/x-mathjax-config&amp;quot;&lt;/span&gt;&amp;gt;
+  MathJax.Hub.Config&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;
+    TeX: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      equationNumbers: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        autoNumber: &lt;span class=&quot;s2&quot;&gt;&amp;quot;AMS&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+    tex2jax: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      inlineMath: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;,&lt;span class=&quot;s1&quot;&gt;&amp;#39;$&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;, &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;\\(&amp;quot;&lt;/span&gt;,&lt;span class=&quot;s2&quot;&gt;&amp;quot;\\)&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;,
+      displayMath: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;$$&amp;#39;&lt;/span&gt;,&lt;span class=&quot;s1&quot;&gt;&amp;#39;$$&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;,
+      processEscapes: &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Configure your &lt;code&gt;_config.yaml&lt;/code&gt; file.&lt;/h2&gt;
+&lt;!-- ``` --&gt;
 
-&lt;p&gt;Use a text editor to edit your &lt;code&gt;_config.yaml&lt;/code&gt; file. Mine looks like&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Site settings&lt;/span&gt;
-title: The posterior
-email: jtipton25@gmail.com
-description: &amp;gt; &lt;span class=&quot;c&quot;&gt;# this means to ignore newlines until &amp;quot;baseurl:&amp;quot;&lt;/span&gt;
-  Here I will post commonly used code examples and statistical problems 
-
-baseurl: &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# the subpath of your site, e.g. /blog/&lt;/span&gt;
-url: &lt;span class=&quot;s2&quot;&gt;&amp;quot;http://jtipton25.github.io&amp;quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# the base hostname &amp;amp; protocol for your site&lt;/span&gt;
-github_username:  jtipton25
-
-&lt;span class=&quot;c&quot;&gt;# Build settings&lt;/span&gt;
-markdown: redcarpet
-highlighter: pygments
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Customizing the webpage using RMarkdown&lt;/h2&gt;
 
 &lt;h2&gt;R code&lt;/h2&gt;
+
+&lt;p&gt;Adding &lt;code&gt;R&lt;/code&gt; code to your website is super easy. Use an R code chunk in &lt;code&gt;RStudio&lt;/code&gt; like follows:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;```{r}
+hist(rnorm(100))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[1] &amp;quot;&lt;code&gt;`r hist(rnorm(100))`&lt;/code&gt;&amp;quot;
+```&lt;/p&gt;
+
+&lt;p&gt;produces the output&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/Rposts/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-22&quot;&gt;&lt;/p&gt;
 
 &lt;h2&gt;Equations&lt;/h2&gt;
 
@@ -246,38 +320,14 @@ Y_{t} = \phi Y_{t-1} + \epsilon_{t}
         <title>GGPlot examples</title>
         <description>&lt;h1&gt;ggplot examples&lt;/h1&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Loading required package: methods
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Warning: package &amp;#39;ggplot2&amp;#39; was built under R version 3.2.3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;movies&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-str&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## &amp;#39;data.frame&amp;#39;:    1000 obs. of  24 variables:
-##  $ title      : chr  &amp;quot;Pallbearer, The&amp;quot; &amp;quot;Mrs Meitlemeihr&amp;quot; &amp;quot;Amazing Dobermans, The&amp;quot; &amp;quot;Doctor in the House&amp;quot; ...
-##  $ year       : int  1996 2002 1976 1954 1988 1997 2003 1987 1999 1996 ...
-##  $ length     : int  98 30 96 92 97 118 103 138 96 38 ...
-##  $ budget     : int  NA NA NA NA NA NA NA NA 7000000 NA ...
-##  $ rating     : num  4.8 8.7 4.6 6.8 2.9 3.4 4.7 9.1 6.1 6.2 ...
-##  $ votes      : int  2093 19 101 195 91 15 76 7 2735 20 ...
-##  $ r1         : num  4.5 0 4.5 0 34.5 14.5 4.5 0 4.5 0 ...
-##  $ r2         : num  4.5 0 14.5 4.5 4.5 4.5 4.5 0 4.5 4.5 ...
-##  $ r3         : num  4.5 0 14.5 4.5 4.5 0 4.5 0 4.5 4.5 ...
-##  $ r4         : num  14.5 0 14.5 4.5 14.5 14.5 4.5 14.5 4.5 0 ...
-##  $ r5         : num  14.5 0 14.5 14.5 4.5 4.5 14.5 0 14.5 24.5 ...
-##  $ r6         : num  14.5 4.5 14.5 14.5 4.5 14.5 24.5 0 24.5 4.5 ...
-##  $ r7         : num  14.5 14.5 4.5 24.5 4.5 4.5 14.5 14.5 24.5 0 ...
-##  $ r8         : num  4.5 24.5 4.5 24.5 4.5 24.5 4.5 0 14.5 14.5 ...
-##  $ r9         : num  4.5 14.5 4.5 14.5 4.5 14.5 4.5 44.5 4.5 14.5 ...
-##  $ r10        : num  4.5 44.5 4.5 14.5 14.5 4.5 14.5 24.5 4.5 44.5 ...
-##  $ mpaa       : Factor w/ 5 levels &amp;quot;&amp;quot;,&amp;quot;NC-17&amp;quot;,&amp;quot;PG&amp;quot;,..: 4 1 1 1 1 1 1 1 5 1 ...
-##  $ Action     : int  0 0 0 0 0 0 0 0 0 0 ...
-##  $ Animation  : int  0 0 0 0 0 0 0 0 0 0 ...
-##  $ Comedy     : int  1 1 1 1 0 0 1 0 1 1 ...
-##  $ Drama      : int  1 1 0 0 1 0 0 0 1 0 ...
-##  $ Documentary: int  0 0 0 0 0 0 0 1 0 0 ...
-##  $ Romance    : int  0 0 0 0 0 0 0 0 1 0 ...
-##  $ Short      : int  0 1 0 0 0 0 0 0 0 1 ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): object &amp;#39;movies&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;str&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in str(movies): object &amp;#39;movies&amp;#39; not found
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;rating&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; geom_density&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; facet_grid&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Action &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt; Comedy&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-09-01-gglpot-commands/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot;&gt; &lt;/p&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in ggplot(movies, aes(x = rating)): object &amp;#39;movies&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Tue, 01 Sep 2015 00:00:00 -0600</pubDate>
         <link>http://jtipton25.github.io/2015/09/01/gglpot-commands.html</link>
         <guid isPermaLink="true">http://jtipton25.github.io/2015/09/01/gglpot-commands.html</guid>
@@ -293,8 +343,7 @@ str&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;movies&lt;span class=&quot;p&qu
 ## without &amp;#39;methods&amp;#39; package
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## 
 ## Attaching package: &amp;#39;myFunctions&amp;#39;
-## 
-## The following objects are masked from &amp;#39;package:base&amp;#39;:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## The following objects are masked from &amp;#39;package:base&amp;#39;:
 ## 
 ##     colSums, rowMeans, rowSums
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -315,35 +364,60 @@ y &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; rnorm&lt;span class=&qu
                rmvnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
                rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
                times &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in print(microbenchmark(mvrnormArma(100, mu, Sig), rmvnorm(100, : could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Unit: milliseconds
+##                       expr       min        lq      mean    median
+##  mvrnormArma(100, mu, Sig)  7.517604  7.697766  8.123462  7.891844
+##      rmvnorm(100, mu, Sig) 43.952678 45.826324 51.335066 47.220533
+##         rmvn(100, mu, Sig)  4.928578  5.157637  6.312240  5.458924
+##         uq       max neval
+##   8.327086  10.88990   100
+##  49.320606 117.54393   100
+##   5.926290  68.69926   100
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;layout&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mvrnormArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rmvnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in hist(rmvn(100, mu, Sig)): could not find function &amp;quot;rmvn&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-3-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/Rposts/2015-10-01-normal-benchmarking/unnamed-chunk-3-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-3&quot;&gt;&lt;/p&gt;
 
 &lt;h2&gt;Run bencmarks on simulating a full conditional draw&lt;/h2&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVN&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;chol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
                rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
                times &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in print(microbenchmark(rMVN(chol(Sig), mu), rMVNArma(Sig, mu), : could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Unit: milliseconds
+##                 expr      min       lq     mean   median       uq      max
+##  rMVN(chol(Sig), mu) 1.898108 1.903474 2.024149 1.907876 1.922207 4.116775
+##    rMVNArma(Sig, mu) 1.907692 1.914327 2.034609 1.991254 2.074717 2.518760
+##  neval
+##    100
+##    100
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;layout&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVN&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;chol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/figure/drafts/2015-10-01-normal-benchmarking/unnamed-chunk-4-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-4&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/Rposts/2015-10-01-normal-benchmarking/unnamed-chunk-4-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-4&quot;&gt;&lt;/p&gt;
 
 &lt;h2&gt;Compare mvnfast random normal to rMVN random normal&lt;/h2&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVNArma&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
                rmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%*%&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Sig&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Unit: milliseconds
+##                                    expr      min        lq      mean
+##                       rMVNArma(Sig, mu)  1.90987  1.916362  1.936648
+##  rmvn(1, solve(Sig) %*% mu, solve(Sig)) 43.67131 44.516671 46.285954
+##    median        uq        max neval
+##   1.93646  1.947418   1.999725   100
+##  45.13733 45.797646 103.241224   100
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Run benchmarks on density evaluation&lt;/h2&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;microbenchmark&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dMVNorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
                dmvn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;y&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; mu&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Sig&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; log &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error in eval(expr, envir, enclos): could not find function &amp;quot;microbenchmark&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Unit: milliseconds
+##                          expr      min       lq     mean   median       uq
+##           dMVNorm(y, mu, Sig) 3.452547 3.454811 3.482762 3.458741 3.466584
+##  dmvn(y, mu, Sig, log = TRUE) 1.869927 1.874071 1.897030 1.877027 1.883651
+##       max neval
+##  4.129725   100
+##  2.407329   100
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Sat, 15 Aug 2015 00:00:00 -0600</pubDate>
         <link>http://jtipton25.github.io/2015/08/15/normal-benchmarking.html</link>
@@ -353,24 +427,16 @@ hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rMVNArma&lt;span class=&quot;p
       </item>
     
       <item>
-        <title>Knitr Commands</title>
-        <description>&lt;p&gt;title: &amp;quot;Helpful Knitr Options&amp;quot;
-author: &amp;quot;John Tipton&amp;quot;
-date: &amp;quot;August 15, 2015&amp;quot;&lt;/p&gt;
-
-&lt;h2&gt;layout: post&lt;/h2&gt;
-
-&lt;h1&gt;Knitr commands&lt;/h1&gt;
+        <title>Helpful Knitr Options</title>
+        <description>&lt;h1&gt;Knitr commands&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;To knit an R markdown document using the command line 
-```bash&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Rscript -e &amp;quot;library(knitr); knit(&amp;#39;kernelConvolution.Rmd&amp;#39;)&amp;quot;
-```&lt;/p&gt;
-&lt;/blockquote&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;To use accents in Rmd&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;To knit an R markdown document using the command line &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Rscript -e &lt;span class=&quot;s2&quot;&gt;&amp;quot;library(knitr); knit(&amp;#39;kernelConvolution.Rmd&amp;#39;)&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;To use accents in Rmd&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;include in the header&lt;/p&gt;
@@ -378,15 +444,15 @@ date: &amp;quot;August 15, 2015&amp;quot;&lt;/p&gt;
   - \usepackage[latin9]{inputenc}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Then on a mac insert the character of interest&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Acute          ó Ó     Option+E, V
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Acute          ó Ó     Option+E, O 
 
-Circumflex     ô Ô     Option+I, V
+Circumflex     ô Ô     Option+I, O
 
-Grave          ò Ò     Option+`, V    
+Grave          ò Ò     Option+`, O    
 
-Tilde          õ Õ     Option+N, V     Only works with &amp;quot;n,N,o,O,a,A&amp;quot;
+Tilde          õ Õ     Option+N, O     Only works with &amp;quot;n,N,o,O,a,A&amp;quot;
 
-Umlaut         ö Ö     Option+U, V
+Umlaut         ö Ö     Option+U, O
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         <pubDate>Sat, 15 Aug 2015 00:00:00 -0600</pubDate>
         <link>http://jtipton25.github.io/2015/08/15/knitr-commands.html</link>
@@ -636,7 +702,7 @@ get.errs &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##    user  system elapsed 
-##  20.206   1.325  21.542
+##  21.582   1.197  22.811
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;K-fold CV with an apply function&lt;/h2&gt;
 
@@ -652,7 +718,7 @@ get.errs &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&
                         &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##    user  system elapsed 
-##  19.800   1.337  21.143
+##  21.860   1.228  23.186
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Neither of the first two methods take advantage of multiple processors. While the &lt;code&gt;apply()&lt;/code&gt; functions avoid the inherently sluggish nature of for loops in &lt;code&gt;R&lt;/code&gt;, they are still ignorant of the processor structure. We want to chop the job into halves, fourths, etc. and use the &lt;em&gt;whole&lt;/em&gt; computer!&lt;/p&gt;
 

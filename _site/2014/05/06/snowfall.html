@@ -245,7 +245,7 @@ get.errs <span class="o">&lt;-</span> <span class="kr">function</span><span clas
         <span class="p">}</span>
     <span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##    user  system elapsed 
-##  20.206   1.325  21.542
+##  21.582   1.197  22.811
 </code></pre></div>
 <h2>K-fold CV with an apply function</h2>
 
@@ -261,7 +261,7 @@ get.errs <span class="o">&lt;-</span> <span class="kr">function</span><span clas
                         <span class="p">)</span>
     <span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##    user  system elapsed 
-##  19.800   1.337  21.143
+##  21.860   1.228  23.186
 </code></pre></div>
 <p>Neither of the first two methods take advantage of multiple processors. While the <code>apply()</code> functions avoid the inherently sluggish nature of for loops in <code>R</code>, they are still ignorant of the processor structure. We want to chop the job into halves, fourths, etc. and use the <em>whole</em> computer!</p>
 
