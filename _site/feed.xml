@@ -6,8 +6,8 @@
 </description>
     <link>http://jtipton25.github.io/</link>
     <atom:link href="http://jtipton25.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Jan 2016 13:04:27 -0700</pubDate>
-    <lastBuildDate>Mon, 25 Jan 2016 13:04:27 -0700</lastBuildDate>
+    <pubDate>Mon, 25 Jan 2016 13:12:25 -0700</pubDate>
+    <lastBuildDate>Mon, 25 Jan 2016 13:12:25 -0700</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -67,7 +67,7 @@ gem &lt;span class=&quot;s1&quot;&gt;&amp;#39;github-pages&amp;#39;&lt;/span&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;jekyll new myBlog
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Once your blog is created, you can explore the files using &lt;code&gt;ls&lt;/code&gt;. For use with &lt;code&gt;RMarkdown&lt;/code&gt;, I create a new folder&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir _Rposts
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkdir _source
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You should see the files &lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Gemfile 
@@ -80,7 +80,7 @@ index.html
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;_drafts
 _includes
 _layouts
-_Rposts
+_source
 _posts
 _sass
 css
@@ -99,7 +99,7 @@ css
 &lt;li&gt;&lt;code&gt;_drafts&lt;/code&gt; is where you can write and test your content without posting. Files should be named &lt;code&gt;title.Rmd&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;_includes&lt;/code&gt; is for small snippets of code that can be repeatedly reused. Think of headers, footers, title bars, sidebars, etc. Default files include &lt;code&gt;footer.html&lt;/code&gt;, &lt;code&gt;head.html&lt;/code&gt;, and &lt;code&gt;header.html&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;_layouts&lt;/code&gt; are the templates that are used for your website. Layouts are chosen in the &lt;code&gt;YAML Front Matter&lt;/code&gt; of each page. Defalut layouts include &lt;code&gt;default.html&lt;/code&gt;, &lt;code&gt;page.html&lt;/code&gt;, and &lt;code&gt;post.html&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;_Rposts&lt;/code&gt; is needed when you use &lt;code&gt;.Rmd&lt;/code&gt; files to generate your website. Files &lt;strong&gt;MUST&lt;/strong&gt; be named &lt;code&gt;YEAR-MONTH-DAY-title.Rmd&lt;/code&gt; where &lt;code&gt;YEAR&lt;/code&gt; is the four digit year, &lt;code&gt;MONTH&lt;/code&gt; is the two digit month, and &lt;code&gt;DAY&lt;/code&gt; is the two digit day. Examples include &lt;code&gt;2016-01-24-first-post.Rmd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;_source&lt;/code&gt; is needed when you use &lt;code&gt;.Rmd&lt;/code&gt; files to generate your website. Files &lt;strong&gt;MUST&lt;/strong&gt; be named &lt;code&gt;YEAR-MONTH-DAY-title.Rmd&lt;/code&gt; where &lt;code&gt;YEAR&lt;/code&gt; is the four digit year, &lt;code&gt;MONTH&lt;/code&gt; is the two digit month, and &lt;code&gt;DAY&lt;/code&gt; is the two digit day. Examples include &lt;code&gt;2016-01-24-first-post.Rmd&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;_posts&lt;/code&gt; is where you can use markdown &lt;code&gt;.md&lt;/code&gt; files to generate webpages. Files &lt;strong&gt;MUST&lt;/strong&gt; be named &lt;code&gt;YEAR-MONTH-DAY-title.md&lt;/code&gt;
 -&lt;code&gt;_site&lt;/code&gt; is where the generated site is placed if you want to host your site locally. This is created when you build your site&lt;/li&gt;
 &lt;/ul&gt;
@@ -110,11 +110,11 @@ css
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;servr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 jekyll&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dir &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/path/to/yourusername.github.io&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; command &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;bundle exec jekyll build&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;and notice the website pops up in the &lt;code&gt;Viewer&lt;/code&gt; window for your testing. You can even use the button in the &lt;code&gt;Viewer&lt;/code&gt; window top left corner to pop the website into your web-browser. Now we can go about customizing the site and making posts.&lt;/p&gt;
+&lt;p&gt;and notice the website pops up in the &lt;code&gt;Viewer&lt;/code&gt; window for your testing. You can even use the button in the &lt;code&gt;Viewer&lt;/code&gt; window top left corner to pop the website into your web-browser. More information on the &lt;code&gt;servr&lt;/code&gt; package can be found at &lt;a href=&quot;http://yihui.name/knitr-jekyll/2014/09/jekyll-with-knitr.html&quot;&gt;Serve Jekyll Websites with servr and knitr&lt;/a&gt;. Now we can go about customizing the site and making posts.&lt;/p&gt;
 
 &lt;h3&gt;Making your first website&lt;/h3&gt;
 
-&lt;p&gt;To make your first website, open a new &lt;code&gt;RMarkdown&lt;/code&gt; file using the menu by selecting &lt;code&gt;File -&amp;gt; New File -&amp;gt; R Markdown&lt;/code&gt;. Give your file a title like &lt;em&gt;My First Blog&lt;/em&gt; and save it in the folder &lt;code&gt;~/path/to/yourusername.github.io/_drafts&lt;/code&gt;. Feel free to edit the file, then once you are satisfied, move the file to the &lt;code&gt;_Rposts&lt;/code&gt; folder and rename the file to something like &lt;code&gt;YEAR-MONTH-DAY-My-First-Post.Rmd&lt;/code&gt;. To finish building the blog, type into &lt;code&gt;RStudio&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To make your first website, open a new &lt;code&gt;RMarkdown&lt;/code&gt; file using the menu by selecting &lt;code&gt;File -&amp;gt; New File -&amp;gt; R Markdown&lt;/code&gt;. Give your file a title like &lt;em&gt;My First Blog&lt;/em&gt; and save it in the folder &lt;code&gt;~/path/to/yourusername.github.io/_drafts&lt;/code&gt;. Feel free to edit the file, then once you are satisfied, move the file to the &lt;code&gt;_source&lt;/code&gt; folder and rename the file to something like &lt;code&gt;YEAR-MONTH-DAY-My-First-Post.Rmd&lt;/code&gt;. To finish building the blog, type into &lt;code&gt;RStudio&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;servr&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 jekyll&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dir &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;~/path/to/yourusername.github.io&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; command &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;bundle exec jekyll build&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -202,7 +202,7 @@ highlighter: pygments
 &lt;p&gt;to produce the output&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;hist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/figure/Rposts/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-22&quot;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-22&quot;&gt;&lt;/p&gt;
 
 &lt;h2&gt;Equations&lt;/h2&gt;
 

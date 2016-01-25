@@ -80,7 +80,7 @@ jekyll new myBlog
 Once your blog is created, you can explore the files using `ls`. For use with `RMarkdown`, I create a new folder
 
 ```bash
-mkdir _Rposts
+mkdir _source
 ```
 You should see the files 
 
@@ -97,7 +97,7 @@ and the folders
 _drafts
 _includes
 _layouts
-_Rposts
+_source
 _posts
 _sass
 css
@@ -112,7 +112,7 @@ For more see the [jekyll site structure page](http://jekyllrb.com/docs/structure
 - `_drafts` is where you can write and test your content without posting. Files should be named `title.Rmd`
 - `_includes` is for small snippets of code that can be repeatedly reused. Think of headers, footers, title bars, sidebars, etc. Default files include `footer.html`, `head.html`, and `header.html`
 - `_layouts` are the templates that are used for your website. Layouts are chosen in the `YAML Front Matter` of each page. Defalut layouts include `default.html`, `page.html`, and `post.html`
-- `_Rposts` is needed when you use `.Rmd` files to generate your website. Files **MUST** be named `YEAR-MONTH-DAY-title.Rmd` where `YEAR` is the four digit year, `MONTH` is the two digit month, and `DAY` is the two digit day. Examples include `2016-01-24-first-post.Rmd`
+- `_source` is needed when you use `.Rmd` files to generate your website. Files **MUST** be named `YEAR-MONTH-DAY-title.Rmd` where `YEAR` is the four digit year, `MONTH` is the two digit month, and `DAY` is the two digit day. Examples include `2016-01-24-first-post.Rmd`
 - `_posts` is where you can use markdown `.md` files to generate webpages. Files **MUST** be named `YEAR-MONTH-DAY-title.md`
 -`_site` is where the generated site is placed if you want to host your site locally. This is created when you build your site
 
@@ -125,10 +125,10 @@ To test your new site, open `RStudio`
 library(servr)
 jekyll(dir = "~/path/to/yourusername.github.io", command = "bundle exec jekyll build")
 ```
-and notice the website pops up in the `Viewer` window for your testing. You can even use the button in the `Viewer` window top left corner to pop the website into your web-browser. Now we can go about customizing the site and making posts.
+and notice the website pops up in the `Viewer` window for your testing. You can even use the button in the `Viewer` window top left corner to pop the website into your web-browser. More information on the `servr` package can be found at [Serve Jekyll Websites with servr and knitr](http://yihui.name/knitr-jekyll/2014/09/jekyll-with-knitr.html). Now we can go about customizing the site and making posts.
 
 ### Making your first website
-To make your first website, open a new `RMarkdown` file using the menu by selecting `File -> New File -> R Markdown`. Give your file a title like *My First Blog* and save it in the folder `~/path/to/yourusername.github.io/_drafts`. Feel free to edit the file, then once you are satisfied, move the file to the `_Rposts` folder and rename the file to something like `YEAR-MONTH-DAY-My-First-Post.Rmd`. To finish building the blog, type into `RStudio`
+To make your first website, open a new `RMarkdown` file using the menu by selecting `File -> New File -> R Markdown`. Give your file a title like *My First Blog* and save it in the folder `~/path/to/yourusername.github.io/_drafts`. Feel free to edit the file, then once you are satisfied, move the file to the `_source` folder and rename the file to something like `YEAR-MONTH-DAY-My-First-Post.Rmd`. To finish building the blog, type into `RStudio`
 
 ```r
 library(servr)
@@ -235,7 +235,7 @@ to produce the output
 hist(rnorm(100))
 ```
 
-![plot of chunk unnamed-chunk-22](/figure/Rposts/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png) 
+![plot of chunk unnamed-chunk-22](/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png)
 
 ## Equations
 

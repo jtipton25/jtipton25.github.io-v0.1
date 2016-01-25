@@ -133,7 +133,7 @@ gem <span class="s1">&#39;github-pages&#39;</span>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll new myBlog
 </code></pre></div>
 <p>Once your blog is created, you can explore the files using <code>ls</code>. For use with <code>RMarkdown</code>, I create a new folder</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir _Rposts
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir _source
 </code></pre></div>
 <p>You should see the files </p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">Gemfile 
@@ -146,7 +146,7 @@ index.html
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">_drafts
 _includes
 _layouts
-_Rposts
+_source
 _posts
 _sass
 css
@@ -165,7 +165,7 @@ css
 <li><code>_drafts</code> is where you can write and test your content without posting. Files should be named <code>title.Rmd</code></li>
 <li><code>_includes</code> is for small snippets of code that can be repeatedly reused. Think of headers, footers, title bars, sidebars, etc. Default files include <code>footer.html</code>, <code>head.html</code>, and <code>header.html</code></li>
 <li><code>_layouts</code> are the templates that are used for your website. Layouts are chosen in the <code>YAML Front Matter</code> of each page. Defalut layouts include <code>default.html</code>, <code>page.html</code>, and <code>post.html</code></li>
-<li><code>_Rposts</code> is needed when you use <code>.Rmd</code> files to generate your website. Files <strong>MUST</strong> be named <code>YEAR-MONTH-DAY-title.Rmd</code> where <code>YEAR</code> is the four digit year, <code>MONTH</code> is the two digit month, and <code>DAY</code> is the two digit day. Examples include <code>2016-01-24-first-post.Rmd</code></li>
+<li><code>_source</code> is needed when you use <code>.Rmd</code> files to generate your website. Files <strong>MUST</strong> be named <code>YEAR-MONTH-DAY-title.Rmd</code> where <code>YEAR</code> is the four digit year, <code>MONTH</code> is the two digit month, and <code>DAY</code> is the two digit day. Examples include <code>2016-01-24-first-post.Rmd</code></li>
 <li><code>_posts</code> is where you can use markdown <code>.md</code> files to generate webpages. Files <strong>MUST</strong> be named <code>YEAR-MONTH-DAY-title.md</code>
 -<code>_site</code> is where the generated site is placed if you want to host your site locally. This is created when you build your site</li>
 </ul>
@@ -176,11 +176,11 @@ css
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>servr<span class="p">)</span>
 jekyll<span class="p">(</span>dir <span class="o">=</span> <span class="s">&quot;~/path/to/yourusername.github.io&quot;</span><span class="p">,</span> command <span class="o">=</span> <span class="s">&quot;bundle exec jekyll build&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>and notice the website pops up in the <code>Viewer</code> window for your testing. You can even use the button in the <code>Viewer</code> window top left corner to pop the website into your web-browser. Now we can go about customizing the site and making posts.</p>
+<p>and notice the website pops up in the <code>Viewer</code> window for your testing. You can even use the button in the <code>Viewer</code> window top left corner to pop the website into your web-browser. More information on the <code>servr</code> package can be found at <a href="http://yihui.name/knitr-jekyll/2014/09/jekyll-with-knitr.html">Serve Jekyll Websites with servr and knitr</a>. Now we can go about customizing the site and making posts.</p>
 
 <h3>Making your first website</h3>
 
-<p>To make your first website, open a new <code>RMarkdown</code> file using the menu by selecting <code>File -&gt; New File -&gt; R Markdown</code>. Give your file a title like <em>My First Blog</em> and save it in the folder <code>~/path/to/yourusername.github.io/_drafts</code>. Feel free to edit the file, then once you are satisfied, move the file to the <code>_Rposts</code> folder and rename the file to something like <code>YEAR-MONTH-DAY-My-First-Post.Rmd</code>. To finish building the blog, type into <code>RStudio</code></p>
+<p>To make your first website, open a new <code>RMarkdown</code> file using the menu by selecting <code>File -&gt; New File -&gt; R Markdown</code>. Give your file a title like <em>My First Blog</em> and save it in the folder <code>~/path/to/yourusername.github.io/_drafts</code>. Feel free to edit the file, then once you are satisfied, move the file to the <code>_source</code> folder and rename the file to something like <code>YEAR-MONTH-DAY-My-First-Post.Rmd</code>. To finish building the blog, type into <code>RStudio</code></p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>servr<span class="p">)</span>
 jekyll<span class="p">(</span>dir <span class="o">=</span> <span class="s">&quot;~/path/to/yourusername.github.io&quot;</span><span class="p">,</span> command <span class="o">=</span> <span class="s">&quot;bundle exec jekyll build&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -268,7 +268,7 @@ highlighter: pygments
 <p>to produce the output</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">hist<span class="p">(</span>rnorm<span class="p">(</span><span class="m">100</span><span class="p">))</span>
 </code></pre></div>
-<p><img src="/figure/Rposts/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22"> </p>
+<p><img src="/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22"></p>
 
 <h2>Equations</h2>
 
