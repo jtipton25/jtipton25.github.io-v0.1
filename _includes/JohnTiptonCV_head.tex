@@ -1,0 +1,170 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.11 (19/6/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{banking} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.75]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%%
+%% Define block comments
+%%
+
+\long\def\/*#1*/{}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{John} % Your first name
+\familyname{Tipton} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curriculum Vitae}
+\address{2212 Vassar Ave}{Fort Collins, CO, 80525}
+\mobile{(970) 231-9494}
+\email{jtipton25@gmail.com}
+% \homepage{staff.org.edu/~jsmith}{staff.org.edu/$\sim$jsmith} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+% \extrainfo{additional information}
+%\photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%
+
+%\quote{``The imagination of nature is far, far greater than the imagination of man'' - Richard Feynman}
+%\quote{``Mathematics is not just a language. Mathematics is a language plus reasoning'' - Richard Feynman}
+%----------------------------------------------------------------------------------------
+
+
+%\nocite{*}
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+
+% To remove the cover letter, comment out this entire block
+
+\recipient{Dr. Fuentes and Dr. Reich}{North Carolina State
+  University\\ Department of Statistics\\ 5109 SAS Hall \\Raleigh, NC 26795} % Letter recipient
+\date{\today} % Letter date
+\opening{Dear Dr. Fuentes and Dr. Reich,} % Opening greeting
+\closing{Sincerely,} % Closing phrase
+\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
+
+\makelettertitle % Print letter title
+%Now that I am at the end of my graduate education, I am looking for
+%opportunities to continue developing and learning. The postdoc position
+%through the NSF and STATMOS studying spatial extremes applied to
+%climate data is exactly the project I want.  I am well qualified for a project
+%studying extreme weather events for the purpose of improving hurricane forecasting
+%models. I have studied extreme value  statistics with Dr. Dan Cooley
+%and have a strong background of computational and spatial
+%statistics. Based on these research interests, I will make an
+%impactful contribution to this work. 
+%
+%
+%In my young research career, I have produced quality
+%research using statistical modeling techniques to answer a number of
+%scientific questions using spatio-temporal and computational statistics. Recent projects include: 
+%
+%\begin{itemize}
+%\item A mechanistic, multiscale model for reconstruction of late
+%  Holocene joint temperature and precipitation from tree ring width
+%  data. 
+%\begin{itemize}
+%\item ASA ENVR 2015 student paper award.
+%\end{itemize}
+%\item A spatio-temporal reconstruction of early 1800's temperature in
+%  the Upper Midwestern United States from sparse historical
+%  temperature records. 
+%\item A reconstruction of water depth from assemblages of testate
+%  Amoeba species data in peat bogs. 
+%\end{itemize}
+%
+%For each project I developed novel models to meet
+%the needs of the data. I  conducted simulation studies to evaluate model
+%performance,  wrote MCMC samplers in C++ and R, and explored
+%spatio-temporal models that incorporate dimension reduction,
+%regularization, restriced spatial regression, Gaussian Markov Random
+%Fields, and improved computational methods.
+%
+%I am an excellent collaborator, having received awards for my
+%consulting, and thrive in an interdisciplinary team environment. I
+%worked on projects for PalEON, the US Forest Service, and the US
+%National Park Service. I know because of my statistical background
+%and history of working with other scientists, I can make a
+%contribution to this project studying the spatial extremes of climate
+%data.
+I am a well qualified candidate for your postdoc project
+studying extreme weather events for the purpose of improving hurricane forecasting
+models. In addition to several courses on Bayesian statistics taught
+be Drs. Hoeting and Hooten as well as time series, sampling and survey
+statistics by Drs. Opsomer and Breidt, I also took a graduate level
+course on extreme value statistics with Dr. Dan Cooley
+and have a strong background of computational and spatial
+statistics. Based on these research interests, I will make an
+immediate and meaningful contribution to this work. 
+
+In my research career, I have produced quality
+research using statistical modeling techniques to answer a number of
+scientific questions using spatio-temporal and computational
+statistics and I am defending my dissertation on this research in late August. Recent projects include: 
+
+\begin{itemize}
+\item A mechanistic, multiscale model for reconstruction of late
+  Holocene joint temperature and precipitation from tree ring width
+  data. 
+\begin{itemize}
+\item ASA ENVR 2015 student paper award.
+\end{itemize}
+\item A spatio-temporal reconstruction of early 1800's temperature in
+  the Upper Midwestern United States from sparse historical
+  temperature records. 
+\item A reconstruction of water depth from assemblages of Testate
+  Amoeba species data in peat bogs. 
+\end{itemize}
+
+For each project I developed novel models to meet
+the needs of the data. I  conducted simulation studies to evaluate model
+performance,  wrote MCMC samplers in C++ and R, and explored
+spatio-temporal models that incorporate dimension reduction,
+regularization and model selection, restricted spatial regression, Gaussian Markov Random
+Field techniques, and improved computation within a Bayesian
+hierarchical model framework.
+
+I am an excellent collaborator, having received awards for my
+consulting, and I thrive in an interdisciplinary team environment. I
+have collaborated with many research groups and government agencies
+including PalEON, the US Forest Service, and the US National Park
+Service. Because of my statistical background and history working with 
+other scientists, I can make a contribution to this project studying
+the spatial extremes of climate data. 
+
+
+\makeletterclosing % Print letter signature
+\clearpage

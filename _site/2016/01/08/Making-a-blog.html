@@ -178,10 +178,19 @@ jekyll<span class="p">(</span>dir <span class="o">=</span> <span class="s">&quot
 </code></pre></div>
 <p>and notice the website pops up in the <code>Viewer</code> window for your testing. You can even use the button in the <code>Viewer</code> window top left corner to pop the website into your web-browser. Now we can go about customizing the site and making posts.</p>
 
+<h3>Making your first website</h3>
+
+<p>To make your first website, open a new <code>RMarkdown</code> file using the menu by selecting <code>File -&gt; New File -&gt; R Markdown</code>. Give your file a title like <em>My First Blog</em> and save it in the folder <code>~/path/to/yourusername.github.io/_drafts</code>. Feel free to edit the file, then once you are satisfied, move the file to the <code>_Rposts</code> folder and rename the file to something like <code>YEAR-MONTH-DAY-My-First-Post.Rmd</code>. To finish building the blog, type into <code>RStudio</code></p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>servr<span class="p">)</span>
+jekyll<span class="p">(</span>dir <span class="o">=</span> <span class="s">&quot;~/path/to/yourusername.github.io&quot;</span><span class="p">,</span> command <span class="o">=</span> <span class="s">&quot;bundle exec jekyll build&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>I keep the above code in the file <code>~/path/to/yourusername.github.io/makeBlog.R</code></p>
+
+<h1>How to customize your website</h1>
+
 <h2>Configure your <code>_config.yaml</code> file.</h2>
 
-<p>Your 
-Use a text editor to edit your <code>_config.yaml</code> file. Mine looks like</p>
+<p>Your <code>_config.yaml</code> serves as a template for configuring the basics of your site. You can use a text editor (I use <code>emacs</code>) to edit your <code>_config.yaml</code> file. Mine looks like</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Site settings</span>
 title: The posterior
 email: jtipton25@gmail.com
@@ -247,24 +256,19 @@ highlighter: pygments
   &lt;/script&gt;
 &lt;/head&gt;
 </code></pre></div>
-<!-- ``` -->
-
 <h2>Customizing the webpage using RMarkdown</h2>
 
 <h2>R code</h2>
 
-<p>Adding <code>R</code> code to your website is super easy. Use an R code chunk in <code>RStudio</code> like follows:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">```{r}
-hist(rnorm(100))
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">
+<p>Adding <code>R</code> code to your website is super easy. For example, to genereate a histogram using an <code>R</code> chunk in <code>RStudio</code> use:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">     ```{r}
+     hist(rnorm(100))
+     ```
 </code></pre></div>
-<p>[1] &quot;<code>`r hist(rnorm(100))`</code>&quot;
-```</p>
-
-<p>produces the output</p>
+<p>to produce the output</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">hist<span class="p">(</span>rnorm<span class="p">(</span><span class="m">100</span><span class="p">))</span>
 </code></pre></div>
-<p><img src="/figure/Rposts/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22"></p>
+<p><img src="/figure/Rposts/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22"> </p>
 
 <h2>Equations</h2>
 

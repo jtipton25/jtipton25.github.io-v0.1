@@ -127,9 +127,19 @@ jekyll(dir = "~/path/to/yourusername.github.io", command = "bundle exec jekyll b
 ```
 and notice the website pops up in the `Viewer` window for your testing. You can even use the button in the `Viewer` window top left corner to pop the website into your web-browser. Now we can go about customizing the site and making posts.
 
+### Making your first website
+To make your first website, open a new `RMarkdown` file using the menu by selecting `File -> New File -> R Markdown`. Give your file a title like *My First Blog* and save it in the folder `~/path/to/yourusername.github.io/_drafts`. Feel free to edit the file, then once you are satisfied, move the file to the `_Rposts` folder and rename the file to something like `YEAR-MONTH-DAY-My-First-Post.Rmd`. To finish building the blog, type into `RStudio`
+
+```r
+library(servr)
+jekyll(dir = "~/path/to/yourusername.github.io", command = "bundle exec jekyll build")
+```
+I keep the above code in the file `~/path/to/yourusername.github.io/makeBlog.R`
+
+# How to customize your website
+
 ## Configure your `_config.yaml` file.
-Your 
-Use a text editor to edit your `_config.yaml` file. Mine looks like
+Your `_config.yaml` serves as a template for configuring the basics of your site. You can use a text editor (I use `emacs`) to edit your `_config.yaml` file. Mine looks like
 
 
 ```bash
@@ -204,35 +214,28 @@ My entire `head.html` file is given below. Feel free to copy and replace.
   </script>
 </head>{% endraw %}
 ```
-<!-- ``` -->
 
 
 ## Customizing the webpage using RMarkdown
 ## R code
-Adding `R` code to your website is super easy. Use an R code chunk in `RStudio` like follows:
-
-
-
-````
-```{r}
-hist(rnorm(100))
-```
-````
+Adding `R` code to your website is super easy. For example, to genereate a histogram using an `R` chunk in `RStudio` use:
 
 
 
 ```
-[1] "``` `r hist(rnorm(100))` ```"
+     ```{r}
+     hist(rnorm(100))
+     ```
 ```
 
-produces the output
+to produce the output
 
 
 ```r
 hist(rnorm(100))
 ```
 
-![plot of chunk unnamed-chunk-22](/figure/Rposts/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png)
+![plot of chunk unnamed-chunk-22](/figure/Rposts/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png) 
 
 ## Equations
 
