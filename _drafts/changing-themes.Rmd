@@ -1,0 +1,8 @@
+---
+title: "Changing Themes"
+author: "John Tipton"
+date: "January 26, 2016"
+output: html_document
+---
+## Changing themes
+To pick a new theme for your website, go to [http://jekyll.tips/templates/](http://jekyll.tips/templates/) and pick a theme. 
