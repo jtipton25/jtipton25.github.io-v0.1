@@ -109,20 +109,7 @@
 <p>First, change to your site&#39;s repository directory, mine is <code>~/jtipton25.github.io</code></p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>yourusername.github.io
 </code></pre></div>
-<p>Next, we need to create a file called <code>Gemfile</code> using a text editor. I use <code>emacs</code>, which is built into any *nix computer. To open the file <code>Gemfile</code> and create one if it doesn&#39;t already exist, open Terminal and type</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">emacs Gemfile
-</code></pre></div>
-<p>Then type into the emacs file </p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source</span> <span class="s1">&#39;https://rubygems.org&#39;</span>
-gem <span class="s1">&#39;github-pages&#39;</span>
-</code></pre></div>
-<p>To close and save the file use the emacs command for save</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ctrl-x ctrl-s
-</code></pre></div>
-<p>where, while holding the <code>ctrl</code> key you type <code>x</code> then <code>s</code>. Then exit emacs using</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ctrl-x ctrl-c
-</code></pre></div>
-<p>If at anytime you are unsure, just hit <code>esc</code> a few times to clear out the <code>emacs</code> buffer. To complete the installation type into the Terminal</p>
+<p>To complete the installation type into the Terminal</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">bundle install
 </code></pre></div>
 <h1>Seting up your blog</h1>
@@ -136,6 +123,21 @@ gem <span class="s1">&#39;github-pages&#39;</span>
 <p>If you don&#39;t have a Github Pages directory, you can create a new directory <code>myBlog</code> for your blog using </p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll new myBlog
 </code></pre></div>
+<p>Next, we need to create a file called <code>Gemfile</code> using a text editor. I use <code>emacs</code>, which is built into any *nix computer. To open the file <code>Gemfile</code> and create one if it doesn&#39;t already exist, open Terminal and type</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">emacs Gemfile
+</code></pre></div>
+<p>Then type into the emacs file </p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source</span> <span class="s1">&#39;https://rubygems.org&#39;</span>
+gem <span class="s1">&#39;github-pages&#39;</span>
+</code></pre></div>
+<p>To close and save the file use the emacs command for save</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ctrl-x ctrl-s
+</code></pre></div>
+<p>where, while holding the <code>ctrl</code> key you type <code>x</code> then <code>s</code>. Then exit emacs using</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ctrl-x ctrl-c
+</code></pre></div>
+<p>If at anytime you are unsure, just hit <code>esc</code> a few times to clear out the <code>emacs</code> buffer.</p>
+
 <p>Once your blog is created, you can explore the files using <code>ls</code>. For use with <code>RMarkdown</code>, I create a new folder</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir _source
 </code></pre></div>
@@ -272,7 +274,7 @@ highlighter: pygments
 <p>to produce the output</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">hist<span class="p">(</span>rnorm<span class="p">(</span><span class="m">100</span><span class="p">))</span>
 </code></pre></div>
-<p><img src="/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22"></p>
+<p><img src="/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22"> </p>
 
 <h2>Equations</h2>
 

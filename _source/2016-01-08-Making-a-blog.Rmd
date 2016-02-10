@@ -31,24 +31,7 @@ First, change to your site's repository directory, mine is `~/jtipton25.github.i
 ```{bash, eval=FALSE}
 cd yourusername.github.io
 ```
-Next, we need to create a file called `Gemfile` using a text editor. I use `emacs`, which is built into any *nix computer. To open the file `Gemfile` and create one if it doesn't already exist, open Terminal and type
-```{bash, eval=FALSE}
-emacs Gemfile
-```
-Then type into the emacs file 
-```{bash, eval=FALSE}
-source 'https://rubygems.org'
-gem 'github-pages'
-```
-To close and save the file use the emacs command for save
-```{bash, eval=FALSE}
-ctrl-x ctrl-s
-```
-where, while holding the `ctrl` key you type `x` then `s`. Then exit emacs using
-```{bash, eval=FALSE}
-ctrl-x ctrl-c
-```
-If at anytime you are unsure, just hit `esc` a few times to clear out the `emacs` buffer. To complete the installation type into the Terminal
+ To complete the installation type into the Terminal
 ```{bash, eval=FALSE}
 bundle install
 ```
@@ -66,6 +49,25 @@ If you don't have a Github Pages directory, you can create a new directory `myBl
 ```{bash, eval=FALSE, tidy=TRUE}
 jekyll new myBlog
 ```
+Next, we need to create a file called `Gemfile` using a text editor. I use `emacs`, which is built into any *nix computer. To open the file `Gemfile` and create one if it doesn't already exist, open Terminal and type
+```{bash, eval=FALSE}
+emacs Gemfile
+```
+Then type into the emacs file 
+```{bash, eval=FALSE}
+source 'https://rubygems.org'
+gem 'github-pages'
+```
+To close and save the file use the emacs command for save
+```{bash, eval=FALSE}
+ctrl-x ctrl-s
+```
+where, while holding the `ctrl` key you type `x` then `s`. Then exit emacs using
+```{bash, eval=FALSE}
+ctrl-x ctrl-c
+```
+If at anytime you are unsure, just hit `esc` a few times to clear out the `emacs` buffer.
+
 Once your blog is created, you can explore the files using `ls`. For use with `RMarkdown`, I create a new folder
 ```{bash, eval=FALSE, tidy=TRUE}
 mkdir _source
@@ -138,7 +140,7 @@ github_username:  jtipton25
 
 # Build settings
 markdown: redcarpet
-highlighter: pygments
+highlighter: rogue
 ```
 
 There are many options here. You can add social media tags like Twitter (`twitter_username:`) and others under the `github_username:`. There are two `markdown` options, `kramdown` amd `redcarpet`.  

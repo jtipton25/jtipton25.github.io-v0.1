@@ -34,28 +34,7 @@ First, change to your site's repository directory, mine is `~/jtipton25.github.i
 ```bash
 cd yourusername.github.io
 ```
-Next, we need to create a file called `Gemfile` using a text editor. I use `emacs`, which is built into any *nix computer. To open the file `Gemfile` and create one if it doesn't already exist, open Terminal and type
-
-```bash
-emacs Gemfile
-```
-Then type into the emacs file 
-
-```bash
-source 'https://rubygems.org'
-gem 'github-pages'
-```
-To close and save the file use the emacs command for save
-
-```bash
-ctrl-x ctrl-s
-```
-where, while holding the `ctrl` key you type `x` then `s`. Then exit emacs using
-
-```bash
-ctrl-x ctrl-c
-```
-If at anytime you are unsure, just hit `esc` a few times to clear out the `emacs` buffer. To complete the installation type into the Terminal
+ To complete the installation type into the Terminal
 
 ```bash
 bundle install
@@ -77,6 +56,29 @@ If you don't have a Github Pages directory, you can create a new directory `myBl
 ```bash
 jekyll new myBlog
 ```
+Next, we need to create a file called `Gemfile` using a text editor. I use `emacs`, which is built into any *nix computer. To open the file `Gemfile` and create one if it doesn't already exist, open Terminal and type
+
+```bash
+emacs Gemfile
+```
+Then type into the emacs file 
+
+```bash
+source 'https://rubygems.org'
+gem 'github-pages'
+```
+To close and save the file use the emacs command for save
+
+```bash
+ctrl-x ctrl-s
+```
+where, while holding the `ctrl` key you type `x` then `s`. Then exit emacs using
+
+```bash
+ctrl-x ctrl-c
+```
+If at anytime you are unsure, just hit `esc` a few times to clear out the `emacs` buffer.
+
 Once your blog is created, you can explore the files using `ls`. For use with `RMarkdown`, I create a new folder
 
 ```bash
@@ -235,7 +237,7 @@ to produce the output
 hist(rnorm(100))
 ```
 
-![plot of chunk unnamed-chunk-22](/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png)
+![plot of chunk unnamed-chunk-22](/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png) 
 
 ## Equations
 
