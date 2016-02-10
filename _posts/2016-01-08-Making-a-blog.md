@@ -156,8 +156,8 @@ url: "http://jtipton25.github.io" # the base hostname & protocol for your site
 github_username:  jtipton25
 
 # Build settings
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+highlighter: rogue
 ```
 
 There are many options here. You can add social media tags like Twitter (`twitter_username:`) and others under the `github_username:`. There are two `markdown` options, `kramdown` amd `redcarpet`.  

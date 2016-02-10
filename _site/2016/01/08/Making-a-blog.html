@@ -84,218 +84,254 @@
   <article class="post-content">
     <p>In this post, I will detail the steps needed to make a website using Rstudio and Jekyll. For this tutorial, we host our website on Github pages, although this method does build a site that you can host on your own. First, we assume that you have a github account. If not, signing up is free for a public account and is a good idea for anyone who actively develops code.</p>
 
-<h2>Github Pages account</h2>
+<h2 id="github-pages-account">Github Pages account</h2>
 
 <p><a href="https://pages.github.com/">Github Pages</a> will host your site for free. Follow the link to sign up for github if you wish.</p>
 
-<h2>Installing Jekyll</h2>
+<h2 id="installing-jekyll">Installing Jekyll</h2>
+<p>This section of the tutorial is based on the <a href="https://help.github.com/articles/using-jekyll-with-pages/">Github website</a>
+### Installing Ruby
+First, we have to make sure that Ruby language (version greater than <code>2.0.0</code>) is installed. To check, open the Terminal application and type</p>
 
-<p>This section of the tutorial is based on the <a href="https://help.github.com/articles/using-jekyll-with-pages/">Github website</a></p>
+<p><code>bash
+ruby --version
+</code>
+If Ruby is not installed, follow the <a href="https://www.ruby-lang.org/en/downloads/">install directions</a></p>
 
-<h3>Installing Ruby</h3>
-
-<p>First, we have to make sure that Ruby language (version greater than <code>2.0.0</code>) is installed. To check, open the Terminal application and type</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ruby --version
-</code></pre></div>
-<p>If Ruby is not installed, follow the <a href="https://www.ruby-lang.org/en/downloads/">install directions</a></p>
-
-<h3>Installing Bundler</h3>
-
+<h3 id="installing-bundler">Installing Bundler</h3>
 <p>Bundler is a package manager for Ruby. To install bundler, type in the Terminal</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">gem install bundler
-</code></pre></div>
-<h3>Installing Jekyll</h3>
 
-<p>First, change to your site&#39;s repository directory, mine is <code>~/jtipton25.github.io</code></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>yourusername.github.io
-</code></pre></div>
-<p>To complete the installation type into the Terminal</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">bundle install
-</code></pre></div>
-<h1>Seting up your blog</h1>
+<p><code>bash
+gem install bundler
+</code>
+### Installing Jekyll
+First, change to your site’s repository directory, mine is <code>~/jtipton25.github.io</code></p>
 
+<p><code>bash
+cd yourusername.github.io
+</code>
+ To complete the installation type into the Terminal</p>
+
+<p><code>bash
+bundle install
+</code></p>
+
+<h1 id="seting-up-your-blog">Seting up your blog</h1>
 <p>To setup a new blog, open <code>Terminal</code> and make sure you are in your Github pages username directory</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>yourusername.github.io
-</code></pre></div>
-<p>and create the blog using the command </p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll new .
-</code></pre></div>
-<p>If you don&#39;t have a Github Pages directory, you can create a new directory <code>myBlog</code> for your blog using </p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">jekyll new myBlog
-</code></pre></div>
-<p>Next, we need to create a file called <code>Gemfile</code> using a text editor. I use <code>emacs</code>, which is built into any *nix computer. To open the file <code>Gemfile</code> and create one if it doesn&#39;t already exist, open Terminal and type</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">emacs Gemfile
-</code></pre></div>
-<p>Then type into the emacs file </p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source</span> <span class="s1">&#39;https://rubygems.org&#39;</span>
-gem <span class="s1">&#39;github-pages&#39;</span>
-</code></pre></div>
-<p>To close and save the file use the emacs command for save</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ctrl-x ctrl-s
-</code></pre></div>
-<p>where, while holding the <code>ctrl</code> key you type <code>x</code> then <code>s</code>. Then exit emacs using</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ctrl-x ctrl-c
-</code></pre></div>
-<p>If at anytime you are unsure, just hit <code>esc</code> a few times to clear out the <code>emacs</code> buffer.</p>
+
+<p><code>bash
+cd yourusername.github.io
+</code>
+and create the blog using the command</p>
+
+<p><code>bash
+jekyll new .
+</code>
+If you don’t have a Github Pages directory, you can create a new directory <code>myBlog</code> for your blog using</p>
+
+<p><code>bash
+jekyll new myBlog
+</code>
+Next, we need to create a file called <code>Gemfile</code> using a text editor. I use <code>emacs</code>, which is built into any *nix computer. To open the file <code>Gemfile</code> and create one if it doesn’t already exist, open Terminal and type</p>
+
+<p><code>bash
+emacs Gemfile
+</code>
+Then type into the emacs file</p>
+
+<p><code>bash
+source 'https://rubygems.org'
+gem 'github-pages'
+</code>
+To close and save the file use the emacs command for save</p>
+
+<p><code>bash
+ctrl-x ctrl-s
+</code>
+where, while holding the <code>ctrl</code> key you type <code>x</code> then <code>s</code>. Then exit emacs using</p>
+
+<p><code>bash
+ctrl-x ctrl-c
+</code>
+If at anytime you are unsure, just hit <code>esc</code> a few times to clear out the <code>emacs</code> buffer.</p>
 
 <p>Once your blog is created, you can explore the files using <code>ls</code>. For use with <code>RMarkdown</code>, I create a new folder</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir _source
-</code></pre></div>
-<p>You should see the files </p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Gemfile 
+
+<p><code>bash
+mkdir _source
+</code>
+You should see the files</p>
+
+<p><code>bash
+Gemfile 
 _config.yaml
 about.md
 feed.xml
 index.html
-</code></pre></div>
-<p>and the folders</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">_drafts
+</code>
+and the folders</p>
+
+<p><code>bash
+_drafts
 _includes
 _layouts
 _source
 _posts
 _sass
 css
-</code></pre></div>
-<h4>Overview of the important file structure</h4>
+</code>
+#### Overview of the important file structure
+For more see the <a href="http://jekyllrb.com/docs/structure/">jekyll site structure page</a>
+##### Files
+- <code>_config.yaml</code> stores the configuation information and allows for powerful customization of your site. For more information see <a href="http://jekyllrb.com/docs/configuration/">jekyll configuration page</a>.
+- <code>about.md</code> is the page that is shown as the <code>README</code> when users navigate to your Github repository.
+- <code>index.html</code> is the file that <code>jekyll</code> uses to build the blog page links.
+#####
+- <code>_drafts</code> is where you can write and test your content without posting. Files should be named <code>title.Rmd</code>
+- <code>_includes</code> is for small snippets of code that can be repeatedly reused. Think of headers, footers, title bars, sidebars, etc. Default files include <code>footer.html</code>, <code>head.html</code>, and <code>header.html</code>
+- <code>_layouts</code> are the templates that are used for your website. Layouts are chosen in the <code>YAML Front Matter</code> of each page. Defalut layouts include <code>default.html</code>, <code>page.html</code>, and <code>post.html</code>
+- <code>_source</code> is needed when you use <code>.Rmd</code> files to generate your website. Files <strong>MUST</strong> be named <code>YEAR-MONTH-DAY-title.Rmd</code> where <code>YEAR</code> is the four digit year, <code>MONTH</code> is the two digit month, and <code>DAY</code> is the two digit day. Examples include <code>2016-01-24-first-post.Rmd</code>
+- <code>_posts</code> is where you can use markdown <code>.md</code> files to generate webpages. Files <strong>MUST</strong> be named <code>YEAR-MONTH-DAY-title.md</code>
+-<code>_site</code> is where the generated site is placed if you want to host your site locally. This is created when you build your site</p>
 
-<p>For more see the <a href="http://jekyllrb.com/docs/structure/">jekyll site structure page</a></p>
-
-<h5>Files</h5>
-
-<ul>
-<li><code>_config.yaml</code> stores the configuation information and allows for powerful customization of your site. For more information see <a href="http://jekyllrb.com/docs/configuration/">jekyll configuration page</a>.</li>
-<li><code>about.md</code> is the page that is shown as the <code>README</code> when users navigate to your Github repository.</li>
-<li><code>index.html</code> is the file that <code>jekyll</code> uses to build the blog page links.
-#####</li>
-<li><code>_drafts</code> is where you can write and test your content without posting. Files should be named <code>title.Rmd</code></li>
-<li><code>_includes</code> is for small snippets of code that can be repeatedly reused. Think of headers, footers, title bars, sidebars, etc. Default files include <code>footer.html</code>, <code>head.html</code>, and <code>header.html</code></li>
-<li><code>_layouts</code> are the templates that are used for your website. Layouts are chosen in the <code>YAML Front Matter</code> of each page. Defalut layouts include <code>default.html</code>, <code>page.html</code>, and <code>post.html</code></li>
-<li><code>_source</code> is needed when you use <code>.Rmd</code> files to generate your website. Files <strong>MUST</strong> be named <code>YEAR-MONTH-DAY-title.Rmd</code> where <code>YEAR</code> is the four digit year, <code>MONTH</code> is the two digit month, and <code>DAY</code> is the two digit day. Examples include <code>2016-01-24-first-post.Rmd</code></li>
-<li><code>_posts</code> is where you can use markdown <code>.md</code> files to generate webpages. Files <strong>MUST</strong> be named <code>YEAR-MONTH-DAY-title.md</code>
--<code>_site</code> is where the generated site is placed if you want to host your site locally. This is created when you build your site</li>
-</ul>
-
-<h2>First Test Build</h2>
-
+<h2 id="first-test-build">First Test Build</h2>
 <p>To test your new site, open <code>RStudio</code></p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>servr<span class="p">)</span>
-jekyll<span class="p">(</span>dir <span class="o">=</span> <span class="s">&quot;~/path/to/yourusername.github.io&quot;</span><span class="p">,</span> command <span class="o">=</span> <span class="s">&quot;bundle exec jekyll build&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>and notice the website pops up in the <code>Viewer</code> window for your testing. You can even use the button in the <code>Viewer</code> window top left corner to pop the website into your web-browser. More information on the <code>servr</code> package can be found at <a href="http://yihui.name/knitr-jekyll/2014/09/jekyll-with-knitr.html">Serve Jekyll Websites with servr and knitr</a>. Now we can go about customizing the site and making posts.</p>
 
-<h3>Making your first website</h3>
+<p><code>r
+library(servr)
+jekyll(dir = "~/path/to/yourusername.github.io", command = "bundle exec jekyll build")
+</code>
+and notice the website pops up in the <code>Viewer</code> window for your testing. You can even use the button in the <code>Viewer</code> window top left corner to pop the website into your web-browser. More information on the <code>servr</code> package can be found at <a href="http://yihui.name/knitr-jekyll/2014/09/jekyll-with-knitr.html">Serve Jekyll Websites with servr and knitr</a>. Now we can go about customizing the site and making posts.</p>
 
+<h3 id="making-your-first-website">Making your first website</h3>
 <p>To make your first website, open a new <code>RMarkdown</code> file using the menu by selecting <code>File -&gt; New File -&gt; R Markdown</code>. Give your file a title like <em>My First Blog</em> and save it in the folder <code>~/path/to/yourusername.github.io/_drafts</code>. Feel free to edit the file, then once you are satisfied, move the file to the <code>_source</code> folder and rename the file to something like <code>YEAR-MONTH-DAY-My-First-Post.Rmd</code>. To finish building the blog, type into <code>RStudio</code></p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>servr<span class="p">)</span>
-jekyll<span class="p">(</span>dir <span class="o">=</span> <span class="s">&quot;~/path/to/yourusername.github.io&quot;</span><span class="p">,</span> command <span class="o">=</span> <span class="s">&quot;bundle exec jekyll build&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>I keep the above code in the file <code>~/path/to/yourusername.github.io/makeBlog.R</code></p>
 
-<h1>How to customize your website</h1>
+<p><code>r
+library(servr)
+jekyll(dir = "~/path/to/yourusername.github.io", command = "bundle exec jekyll build")
+</code>
+I keep the above code in the file <code>~/path/to/yourusername.github.io/makeBlog.R</code></p>
 
-<h2>Configure your <code>_config.yaml</code> file.</h2>
+<h1 id="how-to-customize-your-website">How to customize your website</h1>
 
+<h2 id="configure-your-configyaml-file">Configure your <code>_config.yaml</code> file.</h2>
 <p>Your <code>_config.yaml</code> serves as a template for configuring the basics of your site. You can use a text editor (I use <code>emacs</code>) to edit your <code>_config.yaml</code> file. Mine looks like</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Site settings</span>
+
+<p>```bash
+# Site settings
 title: The posterior
 email: jtipton25@gmail.com
-description: &gt; <span class="c"># this means to ignore newlines until &quot;baseurl:&quot;</span>
-  Here I will post commonly used code examples and statistical problems 
+description: &gt; # this means to ignore newlines until “baseurl:”
+  Here I will post commonly used code examples and statistical problems</p>
 
-baseurl: <span class="s2">&quot;&quot;</span> <span class="c"># the subpath of your site, e.g. /blog/</span>
-url: <span class="s2">&quot;http://jtipton25.github.io&quot;</span> <span class="c"># the base hostname &amp; protocol for your site</span>
-github_username:  jtipton25
+<p>baseurl: “” # the subpath of your site, e.g. /blog/
+url: “http://jtipton25.github.io” # the base hostname &amp; protocol for your site
+github_username:  jtipton25</p>
 
-<span class="c"># Build settings</span>
-markdown: redcarpet
-highlighter: pygments
-</code></pre></div>
-<p>There are many options here. You can add social media tags like Twitter (<code>twitter_username:</code>) and others under the <code>github_username:</code>. There are two <code>markdown</code> options, <code>kramdown</code> amd <code>redcarpet</code>.  </p>
+<h1 id="build-settings">Build settings</h1>
+<p>markdown: kramdown
+highlighter: rogue
+```</p>
 
-<h2>Configure <code>head.html</code> to add mathematical equations to the blog</h2>
+<p>There are many options here. You can add social media tags like Twitter (<code>twitter_username:</code>) and others under the <code>github_username:</code>. There are two <code>markdown</code> options, <code>kramdown</code> amd <code>redcarpet</code>.</p>
 
+<h2 id="configure-headhtml-to-add-mathematical-equations-to-the-blog">Configure <code>head.html</code> to add mathematical equations to the blog</h2>
 <p>If you have the desire to add $\LaTeX$ style equations to your blog, add the following to the file <code>head.html</code> in the <code>_includes/</code> folder between the lines <code>&lt;head&gt;</code> and <code>&lt;\head&gt;</code>.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">  &lt;script <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span>&gt;&lt;/script&gt;
-  &lt;script <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/x-mathjax-config&quot;</span>&gt;
-  MathJax.Hub.Config<span class="o">({</span>
-    TeX: <span class="o">{</span>
-      equationNumbers: <span class="o">{</span>
-        autoNumber: <span class="s2">&quot;AMS&quot;</span>
-      <span class="o">}</span>
-    <span class="o">}</span>,
-    tex2jax: <span class="o">{</span>
-      inlineMath: <span class="o">[</span> <span class="o">[</span><span class="s1">&#39;$&#39;</span>,<span class="s1">&#39;$&#39;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;\\(&quot;</span>,<span class="s2">&quot;\\)&quot;</span><span class="o">]</span> <span class="o">]</span>,
-      displayMath: <span class="o">[</span> <span class="o">[</span><span class="s1">&#39;$$&#39;</span>,<span class="s1">&#39;$$&#39;</span><span class="o">]</span> <span class="o">]</span>,
-      processEscapes: <span class="nb">true</span>
-    <span class="o">}</span>
-  <span class="o">})</span><span class="p">;</span>
+
+<p><code>bash
+  &lt;script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt;
+  &lt;script type="text/x-mathjax-config"&gt;
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true
+    }
+  });
   &lt;/script&gt;
-</code></pre></div>
+</code></p>
+
 <p>My entire <code>head.html</code> file is given below. Feel free to copy and replace.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">&lt;head&gt;
-  &lt;meta <span class="nv">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span>&gt;
-  &lt;meta http-equiv<span class="o">=</span><span class="s2">&quot;X-UA-Compatible&quot;</span> <span class="nv">content</span><span class="o">=</span><span class="s2">&quot;IE=edge&quot;</span>&gt;
-  &lt;meta <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;viewport&quot;</span> <span class="nv">content</span><span class="o">=</span><span class="s2">&quot;width=device-width, initial-scale=1&quot;</span>&gt;
 
-  &lt;title&gt;<span class="o">{</span>% <span class="k">if</span> page.title %<span class="o">}{{</span> page.title <span class="o">}}{</span>% <span class="k">else</span> %<span class="o">}{{</span> site.title <span class="o">}}{</span>% endif %<span class="o">}</span>&lt;/title&gt;
-  &lt;meta <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;description&quot;</span> <span class="nv">content</span><span class="o">=</span><span class="s2">&quot;{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}&quot;</span>&gt;
+<p>```bash</p>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  &lt;link <span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;{{ &quot;</span>/css/main.css<span class="s2">&quot; | prepend: site.baseurl }}&quot;</span>&gt;
-  &lt;link <span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;{{ &quot;</span>/css/jekyll-github.css<span class="s2">&quot; }}&quot;</span>&gt;
-  &lt;link <span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;canonical&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;{{ page.url | replace:&#39;index.html&#39;,&#39;&#39; | prepend: site.baseurl | prepend: site.url }}&quot;</span>&gt;
-  &lt;link <span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;alternate&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;application/rss+xml&quot;</span> <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;{{ site.title }}&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;{{ &quot;</span>/feed.xml<span class="s2">&quot; | prepend: site.baseurl | prepend: site.url }}&quot;</span> /&gt;
-  &lt;script <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span>&gt;&lt;/script&gt;
-  &lt;script <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/x-mathjax-config&quot;</span>&gt;
-  MathJax.Hub.Config<span class="o">({</span>
-    TeX: <span class="o">{</span>
-      equationNumbers: <span class="o">{</span>
-        autoNumber: <span class="s2">&quot;AMS&quot;</span>
-      <span class="o">}</span>
-    <span class="o">}</span>,
-    tex2jax: <span class="o">{</span>
-      inlineMath: <span class="o">[</span> <span class="o">[</span><span class="s1">&#39;$&#39;</span>,<span class="s1">&#39;$&#39;</span><span class="o">]</span>, <span class="o">[</span><span class="s2">&quot;\\(&quot;</span>,<span class="s2">&quot;\\)&quot;</span><span class="o">]</span> <span class="o">]</span>,
-      displayMath: <span class="o">[</span> <span class="o">[</span><span class="s1">&#39;$$&#39;</span>,<span class="s1">&#39;$$&#39;</span><span class="o">]</span> <span class="o">]</span>,
-      processEscapes: <span class="nb">true</span> 
-    <span class="o">}</span>
-  <span class="o">})</span><span class="p">;</span>
-  &lt;/script&gt;
-&lt;/head&gt;
-</code></pre></div>
-<h2>Customizing the webpage using RMarkdown</h2>
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
 
-<h2>R code</h2>
+  &lt;link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}"&gt;
+  &lt;link rel="stylesheet" href="{{ "/css/jekyll-github.css" }}"&gt;
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+  &lt;link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" /&gt;
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true 
+    }
+  });
+  </script>
+</head>
+<p>```</p>
 
-<p>Adding <code>R</code> code to your website is super easy. For example, to genereate a histogram using an <code>R</code> chunk in <code>RStudio</code> use:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">     ```{r}
+<h2 id="customizing-the-webpage-using-rmarkdown">Customizing the webpage using RMarkdown</h2>
+<p>## R code
+Adding <code>R</code> code to your website is super easy. For example, to genereate a histogram using an <code>R</code> chunk in <code>RStudio</code> use:</p>
+
+<p><code>
+    </code>{r}
      hist(rnorm(100))
-     ```
-</code></pre></div>
+     <code>
+</code></p>
+
 <p>to produce the output</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">hist<span class="p">(</span>rnorm<span class="p">(</span><span class="m">100</span><span class="p">))</span>
-</code></pre></div>
-<p><img src="/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22"> </p>
 
-<h2>Equations</h2>
+<p><code>r
+hist(rnorm(100))
+</code></p>
 
-<p>You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations using </p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="se">\b</span>egin<span class="o">{</span>align<span class="o">}</span> 
-Y<span class="se">\_</span><span class="o">{</span>t<span class="o">}</span> <span class="o">=</span> <span class="se">\p</span>hi Y<span class="se">\_</span><span class="o">{</span>t-1<span class="o">}</span> + <span class="se">\e</span>psilon<span class="se">\_</span><span class="o">{</span>t<span class="o">}</span> 
-<span class="se">\e</span>nd<span class="o">{</span>align<span class="o">}</span>
-</code></pre></div>
-<p>to get
+<p><img src="/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22" /></p>
+
+<h2 id="equations">Equations</h2>
+
+<p>You can also include inline equations like $Y = X \beta + \epsilon$ or inset equations using</p>
+
+<p><code>bash
+\begin{align} 
+Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t} 
+\end{align}
+</code>
+to get
 \begin{align}
 Y_{t} = \phi Y_{t-1} + \epsilon_{t}
 \end{align}</p>
 
-<p>or by typing </p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$$</span>Y<span class="se">\_</span><span class="o">{</span>t<span class="o">}</span> <span class="o">=</span> <span class="se">\p</span>hi Y<span class="se">\_</span><span class="o">{</span>t-1<span class="o">}</span> + <span class="se">\e</span>psilon<span class="se">\_</span><span class="o">{</span>t<span class="o">}</span><span class="nv">$$</span>
-</code></pre></div>
+<p>or by typing</p>
+
+<p><code>bash
+$$Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t}$$
+</code></p>
+
 <p>to get</p>
 
-<p>$$Y_{t} = \phi Y_{t-1} + \epsilon_{t}$$</p>
+<script type="math/tex; mode=display">Y\_{t} = \phi Y\_{t-1} + \epsilon\_{t}</script>
 
-<p>Note that to get the underscore character <code>_</code> to render a subscript properly, you need to use the command <code>\_</code> in markdown to use markdown&#39;s escape mechanism. This means to get $Y_{t}$ to render, type <code>Y\_{t}</code>.</p>
+<p>Note that to get the underscore character <code>_</code> to render a subscript properly, you need to use the command <code>\_</code> in markdown to use markdown’s escape mechanism. This means to get $Y_{t}$ to render, type <code>Y\_{t}</code>.</p>
 
   </article>
 
