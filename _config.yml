@@ -10,6 +10,6 @@ github_username:  jtipton25
 
 # Build settings
 markdown: kramdown
-highlighter: rogue
+highlighter: rouge
 
 

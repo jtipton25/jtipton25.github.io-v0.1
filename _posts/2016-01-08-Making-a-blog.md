@@ -157,7 +157,7 @@ github_username:  jtipton25
 
 # Build settings
 markdown: kramdown
-highlighter: rogue
+highlighter: rouge
 ```
 
 There are many options here. You can add social media tags like Twitter (`twitter_username:`) and others under the `github_username:`. There are two `markdown` options, `kramdown` amd `redcarpet`.  
@@ -237,7 +237,7 @@ to produce the output
 hist(rnorm(100))
 ```
 
-![plot of chunk unnamed-chunk-22](/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png) 
+![plot of chunk unnamed-chunk-22](/figure/source/2016-01-08-Making-a-blog/unnamed-chunk-22-1.png)
 
 ## Equations
 
