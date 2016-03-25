@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CV
-permalink: /assets/JohnTiptonCV_short.pdf
+permalink: /assets/JohnTiptonCV-short.pdf
 ---
 
 
