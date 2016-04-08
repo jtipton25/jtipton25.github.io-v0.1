@@ -20,13 +20,13 @@ In the Terminal, modify the `.bash_profile` file by typing
 emacs .bash_profile
 ```
 
-to open the file and modify the PATH environment by adding the line
+to open the file and modify the `PATH` environment by adding the line
 
 ```{bash, eval=FALSE}
 export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
 ```
 
-Save and close the emacs file
+Save and close the `emacs` file
 
 ### Download and install proj4 from source
 - [http://trac.osgeo.org/proj/wiki/WikiStart#Download](http://trac.osgeo.org/proj/wiki/WikiStart#Download)
@@ -67,6 +67,7 @@ library(rgdal)
 
 ```{bash, eval=FALSE}
 cd ~/Downloads/
+
 sudo R CMD INSTALL rgeos_0.3-19.tar.gz --configure-args="--with-geos-config=/Library/Frameworks/GEOS.framework/unix/bin/geos-config"
 ```
 
