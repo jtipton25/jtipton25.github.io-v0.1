@@ -1,0 +1,170 @@
+---
+title: "Elliptical Slice Sampling"
+author: "John Tipton"
+date: \today
+layout: post
+---
+In many models, one assumes a latent Gaussian process (GP) to account for temporal or spatial autocorrelation or to express a flexible prior belief about a functional relationship between covariates and response. In linear mixed models, the latent process can be integrated out of the likelihood, thus sampling the latent random effect can be done post estimation using composition sampling. In the generalized linear mixed model framework, one often is unable to integrate out the latent GP and must sample the random effect, often using a Metropolis-Hastings algorithm. In very high dimensional models or models with multi-modal posteriors, the Metropolis-Hastings algorithm can be highly inefficient. Recently, Murray et. al. (2010) proposed an algorithm that is highly efficient at exploring the posterior distribution of the latent GP while being computationally efficient and requiring no tuning. 
+
+**Idea:** specify first order models for fast sampling instead of second order models, especially for GLMMs where we can't integrate out the latent GP. I've found in practice this method can be very efficient in high-dimensional problems.
+
+
+<!-- ## Elliptical slice sampling -->
+
+<!-- Why elliptical slice sampling works -->
+
+<!-- Traditional Metropolis-Hastings methods sample a proposal variable, then calculate a propability of acceptance. Slice sampling reverses this process, first calculating a probability of acceptance, (thus inducing a transition kernel), then taking slices of the target distributions that have sets of equal measure as the current value [@nealSlice]. Hence, the slice is the set of potential proposal values that have a certain transition probability.  -->
+
+<!-- Elliptical slice sampling uses the property of Gaussian Processes that the sets of equal measure between two Gaussian Processes lie on an ellipse. Thus, the set of potential transition probabilities is defined on this ellipse and thus choosing a valid proposal variable is equivalent to traversing the ellipse and testing if the proposed random variable has valid measure???[@murrayelliptical] -->
+
+<!-- Thus, it is possible to sample random variables that are distant from the distribution of interest and avoiding random walks.  -->
+
+<!-- we follow the idea above, choosing a tranist -->
+
+## Example
+Following code is translated from [Iaian Murray's code site](http://homepages.inf.ed.ac.uk/imurray2/pub/10ess/) following the file [elliptical_slice.m](http://homepages.inf.ed.ac.uk/imurray2/pub/10ess/elliptical_slice.m) and from [Michael Hughes's code site](http://web.michaelchughes.com/research/elliptical-slice-sampling). We start by definig our naive target distribution. Given a Gaussian prior
+\begin{align*}
+\boldsymbol{\mu} & \sim \mathrm{N}\left(\boldsymbol{\mu}_0, \boldsymbol{\Sigma}_0\right)
+\end{align*}
+and Gaussian likelihood
+\begin{align*}
+\mathbf{y} & \sim \mathrm{N}\left(\boldsymbol{\mu}, \boldsymbol{\Sigma}\right),
+\end{align*}
+we want to sample the mean parameter $\boldsymbol{\mu}$. In this example, we can do this analytically, where the posterior distribution of $\boldsymbol{\mu}$ is 
+\begin{align*}
+\left[ \boldsymbol{\mu} \middle| \mathbf{y} \right] & \propto \exp\left\{-\frac{1}{2} \left(\mathbf{y} - \boldsymbol{\mu} \right) \boldsymbol{\Sigma}^{-1} \left(\mathbf{y} - \boldsymbol{\mu} \right)\right\} \exp\left\{-\frac{1}{2} \left( \boldsymbol{\mu} - \boldsymbol{\mu}_0 \right) \boldsymbol{\Sigma}_0^{-1} \left( \boldsymbol{\mu} - \boldsymbol{\mu}_0 \right) \right\} \\
+& \propto \exp\left\{-\frac{1}{2} \left(\boldsymbol{\mu}' \left(\boldsymbol{\Sigma}^{-1} + \boldsymbol{\Sigma}_0^{-1} \right) \boldsymbol{\mu} - 2 \boldsymbol{\mu}' \left(\boldsymbol{\Sigma}^{-1} \mathbf{y} + \boldsymbol{\Sigma}_0^{-1}  \boldsymbol{\mu}_0 \right) \right) \right\}
+\end{align*}
+which is $\mathrm{N}\left(\mathbf{A}^{-1} \mathbf{b}, \mathbf{A}^{-1} \right)$ where
+\begin{align*}
+\mathbf{A} & = \boldsymbol{\Sigma}^{-1} + \boldsymbol{\Sigma}_0^{-1} \\
+\mathbf{b} & = \boldsymbol{\Sigma}^{-1} \mathbf{y} + \boldsymbol{\Sigma}_0^{-1}  \boldsymbol{\mu}_0
+\end{align*}
+
+```{r}
+p <- 2
+y <- c(2, 0)
+mu_0 <- c(-2, 0)
+Sigma_0 <- diag(2)
+chol_Sigma_0 <- chol(Sigma_0)
+Sigma <- diag(2)
+chol_Sigma <- chol(Sigma)
+
+## Analytic Posterior
+Sigma_post <- solve(solve(Sigma) + solve(Sigma_0))
+mu_post <- Sigma_post %*% (solve(Sigma) %*% y + solve(Sigma_0) %*% mu_0)
+
+library(mvnfast)
+## number of replicates for plotting
+N <- 1000
+x1 <- seq(-5, 5, length.out=50)
+x2 <- seq(-5, 5, length.out=50)
+z_prior <- matrix(dmvn(as.matrix(expand.grid(x1, x2)), mu_0, Sigma_0), length(x1), length(x2))
+z_likelihood <- matrix(dmvn(as.matrix(expand.grid(x1, x2)), y, Sigma), length(x1), length(x2))
+z_post <- matrix(dmvn(as.matrix(expand.grid(x1, x2)), mu_post, Sigma_post), length(x1), length(x2))
+## Make Plot
+contour(x1, x2, z_prior, col="blue")
+contour(x1, x2, z_likelihood, col="red", add=TRUE)
+contour(x1, x2, z_post, col="black", add=TRUE)
+```
+
+The elliptical slice sampler requires that the prior mean $\boldsymbol{\mu}_0$ of $\boldsymbol{\mu}$ is $\mathbf{0}$. In practice, this can be relaxed by defining $\tilde{\boldsymbol{\mu}} = \boldsymbol{\mu} - \boldsymbol{\mu}_0$. Then the prior becomes
+\begin{align*}
+\tilde{\boldsymbol{\mu}} & \sim \mathrm{N}\left(\mathbf{0}, \boldsymbol{\Sigma}_0 \right),
+\end{align*}
+where we sample $\tilde{\boldsymbol{\mu}}$ at each MCMC update and then add in the prior mean. First, we define the MCMC function `elliptical_slice`.
+
+```{r}
+## log likelihood function
+
+elliptical_slice <- function (mu, prior) { #, angle_range, varargin
+  ## mu is the current value of the parameter
+  ## prior is either a prior sample or a Cholesky of prior covariance
+  # p <- length(mu)
+  angle_range <- 0
+  current_log_like <- dmvn(mu + mu_0, y, Sigma, log=TRUE)
+  # if (length(prior) == p) {
+    ## user provided a prior sample
+    nu <- prior
+  # } else {
+  #   ## user provided a Cholesky of prior covariance
+  # nu <- t(prior) %*% rnorm(p)
+  # }
+  
+  hh <- log(runif(1)) + current_log_like
+  
+  ## Setup a bracket and pick a first proposal
+  ## Bracket whole ellipse with both edges at first proposed point
+  phi <- runif(1) * 2 * pi
+  phi_min <- phi - 2 * pi
+  phi_max <- phi
+  
+  test <- TRUE
+  ## Slice sampling loop
+  while (test) {
+    ## compute mu_proposal for proposed angle difference and check to see if it is on ther slice
+    mu_proposal <- mu * cos(phi) + nu * sin(phi)
+    current_log_like <- dmvn(mu_proposal + mu_0, y, Sigma, log=TRUE)
+    if (current_log_like > hh) {
+      ## proposal is on the slice
+      mu <- mu_proposal
+      test <- FALSE
+    } else if (phi > 0) {
+      phi_max <- phi
+    } else if (phi < 0) {
+      phi_min <- phi
+    } else {
+      warning("Bug detected - elliptical slice sampling shrunk to current position and still not acceptable")
+    }
+    ## Propose new angle difference
+    phi <- runif(1) * (phi_max - phi_min) + phi_min
+  }
+  return(mu)
+}
+
+```
+
+Now we apply our elliptical slice sampler
+```{r, cache=TRUE}
+## Sample using MCMC  
+n_mcmc <- 10000
+mu <- matrix(0, n_mcmc, p)
+mu[1, ] <- rmvn(1, rep(0, p), Sigma_0)
+for (i in 2:n_mcmc) {
+  if (i %% 1000 == 0){
+    cat(i, "\n")
+  }
+  mu_prior <- rmvn(1, rep(0, p), Sigma_0)
+  mu[i, ] <- elliptical_slice(mu[i-1, ], mu_prior)
+}
+## Make Plot
+contour(x1, x2, z_prior, col="blue")
+contour(x1, x2, z_likelihood, col="red", add=TRUE)
+contour(x1, x2, z_post, col="black", add=TRUE)
+points(sweep(mu, 2, mu_0, "+"), col=adjustcolor('black', alpha.f = 0.05))
+```
+
+We do the same process again, this time using compiled `c++` code using the `RcppArmadillo` package.
+
+```{r, RcppESS}
+Rcpp::sourceCpp("./ess.cpp")
+## Sample using MCMC  
+n_mcmc <- 10000
+mu <- matrix(0, n_mcmc, p)
+mu[1, ] <- rmvn(1, rep(0, p), Sigma_0)
+for (i in 2:n_mcmc) {
+  if (i %% 1000 == 0){
+    cat(i, "\n")
+  }
+  mu_prior <- rmvn(1, rep(0, p), Sigma_0)
+  mu[i, ] <- essVec(mu[i-1, ], mu_prior, mu_0, y, Sigma)
+}
+## Make Plot
+contour(x1, x2, z_prior, col="blue")
+contour(x1, x2, z_likelihood, col="red", add=TRUE)
+contour(x1, x2, z_post, col="black", add=TRUE)
+points(sweep(mu, 2, mu_0, "+"), col=adjustcolor('black', alpha.f = 0.05))
+```
+
+## Bibliography
+Murray, Iain, Adams, R.P., and MacKay, D.J. (2010). Elliptical slice sampling. *AISTATS.* Vol. 13.

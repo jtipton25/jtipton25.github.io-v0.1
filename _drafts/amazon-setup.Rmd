@@ -1,0 +1,112 @@
+---
+title: "Setting up AWS"
+author: "John Tipton"
+date: "July 6, 2016"
+output: html_document
+---
+
+Adapted from http://blog.davidchudzicki.com/2011/02/installing-r-on-amazon-linux.html
+
+But now I wanted to run R on a virtual machine which I could (for free) leave running all the time. For this I needed to run Amazon Linux on a "micro" instance, which ruled out both of the above. I launched a micro instance running Amazon Linux, and ssh'd into it
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Installing R on an AWS Linux Instance
+
+#### Log onto AWS
+Open terminal and `cd` into the directory with your <amazon-key.pem> AWS key. 
+
+```{bash, eval=FALSE}
+ssh -i "<amazon_key.pem>" ec2-user@<remote_ec2_box_name>
+```
+
+You can find this by clicking the connect button on the AWS instances page.
+
+Okay, now how do I install R?
+
+I'll outline the process I went through. But I also went through a lot more confusion/frustration than I'll describe!
+
+Can I use an automatic installer? Apt-get and yum seem to work for various people on the internet. But not for me! Oh well.
+How do I install R? Where are the files I need to download to install R? 
+Googled, found installation instructions and a file.
+
+Download the latest source version of R using 
+```{bash, eval=FALSE}
+wget http://cran.r-project.org/src/base/R-3/R-3.3.1.tar.gz
+```
+
+How do I unzip this? Googled, found:
+```{bash, eval=FALSE} 
+tar xzvf R-3.3.1.tar.gz
+cd R-3.3.1
+```
+
+Then, to set up for install
+```{bash, eval=FALSE} 
+./configure
+```
+
+There's an error message! Google the error message to learn I need a C compiler. I had learned earlier that yum is for installing things, and googling reveals that gcc is a C compiler:
+
+```{bash, eval=FALSE} 
+sudo yum install gcc
+./configure
+```
+
+Another error message! Google the message to find that I need a C++ compiler. Maybe something like gcc will help...
+yum search gcc
+Yep! I now see gcc-c++, so I'll install that:
+
+```{bash, eval=FALSE} 
+sudo yum install gcc-c++
+./configure
+```
+
+Another error message! I need a fortran compiler. In the search above, I saw gcc-gfortran, so:
+```{bash, eval=FALSE} 
+sudo yum install gcc-gfortran
+./configure
+```
+
+Another error message! Google the message, revealing that I need readline-devel. I still don't know what that is, but this works:
+
+```{bash, eval=FALSE} 
+sudo yum install readline-devel
+./configure
+```
+
+Another error message! Google shows me a post from someone who seems a bit confused, but less confused than I am. Following the advice in that post (which seems like it will get me an incomplete R build, maybe with something related to windowing missing--but I won't be using windows anyway):
+
+```{bash, eval=FALSE} 
+./configure --with-x=no
+```
+
+OR 
+
+
+
+ amazon-linux-x11-instr.txt
+# These instructions assume you are using a Linux or Mac machine as 
+# the “local” machine and an Amazon Linux as the “remote” machine. 
+# Here’s one way to get X11 working between the two.
+
+# on the local machine (Linux or Mac with X11 already installed) 
+$ ssh -X -i <amazon_key.pem> ec2-user@<remote_ec2_box_name>
+
+# then on the remote Amazon Linux EC2 box
+
+```{bash, eval=FALSE} 
+sudo yum install xauth
+sudo yum install xterm
+sudo yum install xorg-x11-apps
+xeyes
+```
+
+# should result in the XEyes application displaying on the local machine
+
+It works!
+
+make
+PATH=$PATH:~/R-2.12.1/bin/
