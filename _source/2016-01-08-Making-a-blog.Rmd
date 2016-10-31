@@ -91,8 +91,11 @@ _sass
 css
 ```
 #### Overview of the important file structure
+
 For more see the [jekyll site structure page](http://jekyllrb.com/docs/structure/)
+
 ##### Files
+
 - `_config.yaml` stores the configuation information and allows for powerful customization of your site. For more information see [jekyll configuration page](http://jekyllrb.com/docs/configuration/).
 - `about.md` is the page that is shown as the `README` when users navigate to your Github repository.
 - `index.html` is the file that `jekyll` uses to build the blog page links.
