@@ -1,0 +1,16 @@
+---
+title: "A brief introduction to collaboration using GitHub"
+author: "John Tipton"
+date: "October 31, 2016"
+output: html_document
+---
+
+# What is Git/GitHub?
+
+Git is a commonly used form of version control. Version control software is similar to track-changes for Word when developing computer code. Version control allows for developers to make changes to code in a robust manner. Version control integrates backups of code (versioning), branching of code (i.e. a release branch that is the current stable version and a development branch that is experimental), and tools for effective collaboration. Other protocols for version control include svn and mercurial.
+
+GitHub is an online client for git that provides software, online hosting, and tools for individual and enterprise code development. GitHub makes sharing code easy through repositories.  
+
+# How do I use Git/GitHub
+
+There are two main ways to interact with GitHub. There is a downloadable graphical user interface (GUI) client that allows for point and click interaction with GitHub. The more powerful way to use GitHub is through the command line. 
