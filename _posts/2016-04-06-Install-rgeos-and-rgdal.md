@@ -32,7 +32,7 @@ Save and close the `emacs` file
 
 ### Download and install proj4 from source
 - [http://proj4.org/download.html]
-- Download source code version - as of writing this the current version is `proj-4.9.1.tar.gz`
+- Download source code version - as of writing this the current version is `proj-4.9.3.tar.gz`
 - Fire up the `Terminal`
 
 
