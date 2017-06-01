@@ -11,7 +11,7 @@ github_username:  jtipton25
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minimal-mistakes-jekyll
+theme: jekyll-theme-cayman
 
 # Google services
 google_analytics: UA-82243010-1
