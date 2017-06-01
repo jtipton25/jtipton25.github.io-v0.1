@@ -38,8 +38,8 @@ Save and close the `emacs` file
 
 ```bash
 cd ~/Downloads/
-tar -xzvf proj-4.9.1.tar.gz
-cd proj-4.9.1
+tar -xzvf proj-4.9.3.tar.gz
+cd proj-4.9.3
 ./configure
 make && make test
 sudo make install
